@@ -2,4 +2,3 @@ target-branch: main
 helm-extra-args: --timeout 300s
 check-version-increment: true
 debug: true
-wait: 300s
