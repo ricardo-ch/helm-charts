@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ template "promlens.fullname" . }}
+  labels:
+    app: {{ template "promlens.name" . }}
+    chart: {{ template "promlens.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      app: {{ template "promlens.name" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "promlens.name" . }}
+    spec:
+      containers:
+      - name: promlens
+        image: {{ .Values.image }}:{{ .Values.version }}
+        args:
+          - "--shared-links.gcs.bucket={{ .Values.shared_links_bucket_name }}"
+          - "--grafana.url={{ .Values.grafana_url }}"
+          - "--grafana.api-token"
+          - {{ .Values.grafana_api_key | quote  }}
+          - "--license.key"
+          - {{ .Values.license | quote  }}
+        env:
+          - name: GOOGLE_APPLICATION_CREDENTIALS
+            value: /var/secret-files/gcs-cred.json
+        volumeMounts:
+        - mountPath: /var/secret-files
+          name: secret-files
+      volumes:
+        - name: secret-files
+          secret:
+            defaultMode: 420
+            secretName: promlens-secrets

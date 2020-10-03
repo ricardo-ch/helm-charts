@@ -1,0 +1,8 @@
+replicas: 1
+license: ""
+grafana_url: ""
+grafana_api_key: ""
+gcs_sa: ""
+image: promlabs/promlens
+version: latest
+shared_links_bucket_name: promlens
