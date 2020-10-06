@@ -3,5 +3,5 @@ name: promlens
 version: 0.1.2
 description: This Chart installs and configures PromLens
 maintainers:
-  - name: bueti
-    email: benjamin.buetikofer@ricardo.ch
+  - name: Ricardo AG
+    email: sre@ricardo.ch
