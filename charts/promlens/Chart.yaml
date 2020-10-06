@@ -3,5 +3,5 @@ name: promlens
 version: 0.1.3
 description: This Chart installs and configures PromLens
 maintainers:
-  - name: Ricardo AG
+  - name: ricardo-ch
     email: sre@ricardo.ch
