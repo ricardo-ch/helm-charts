@@ -1,16 +1,16 @@
-replicas: 1
 # -- Number of replicas
-license: ""
+replicas: 1
 # -- PromLens License
-grafana_url: ""
+license: ""
 # -- Grafana URL
-grafana_api_key: ""
+grafana_url: ""
 # -- Grafana API Key, see https://grafana.com/docs/grafana/latest/http_api/auth/
-gcs_sa: ""
+grafana_api_key: ""
 # -- Google Cloud Storage Account
-shared_links_bucket_name: promlens
+gcs_sa: ""
 # -- Bucket Name in Storage Account
-image: promlabs/promlens
+shared_links_bucket_name: promlens
 # -- PromLens Conatiner Image
+image: promlabs/promlens
+# -- PromLens Container Image Version
 version: latest
-# --PromLens Container Image Version
