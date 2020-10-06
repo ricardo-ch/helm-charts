@@ -24,8 +24,8 @@ Simply add this Chart repository to your Helm:
 | image | PromLens image repository and name | 'promlabs/promlens' |
 | version | PromLens image tag | latest |
 | replicas | Number of replicas | 1 |
-| license | PromLens License | |
+| license | PromLens License (string) | |
 | grafana_url | Grafana URL | |
 | grafana_api_key | Grafana API Key | |
 | gcs_sa | Google Storage Account | |
-| shared_links_bucket_name | Bucket name for shared links | promlens |
+| shared_links_bucket_name | Bucket name for shared links | 'promlens' |
