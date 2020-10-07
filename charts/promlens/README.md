@@ -34,7 +34,7 @@ Simply add this Chart repository to Helm:
 | config.shared_links.gcs.storage_account | string | `nil` | Google Cloud Storage Account |
 | config.web.default_prometheus_url | string | `nil` | The default Prometheus URL to load PromLens with. |
 | config.web.external_url | string | `nil` | The URL under which PromLens is externally reachable (for example, if PromLens is served via a reverse proxy). Used for generating relative and absolute links back to PromLens itself. If the URL has a path portion, it will be used to prefix all HTTP endpoints served by PromLens. If omitted, relevant URL components will be derived automatically. |
-| config.web.listen_address | string | `":8080"` | The address to listen on for the web API. |
+| config.web.listen_address | int | `8080` | The address to listen on for the web API. |
 | deployment.image | string | `"promlabs/promlens"` | PromLens Conatiner Image |
 | deployment.replicas | int | `1` | Number of replicas |
 | deployment.version | string | `"latest"` | PromLens Container Image Version |
