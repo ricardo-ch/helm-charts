@@ -2,6 +2,21 @@ apiVersion: v1
 entries:
   promlens:
   - apiVersion: v2
+    created: "2020-10-07T14:54:29.613951789Z"
+    description: This Chart installs and configures PromLens
+    digest: fcd058e669217295b035357bb93c27b185a8fd8ffae4f89d42068f6d090539c4
+    home: https://promlens.com
+    icon: https://promlens.com/apple-touch-icon.png
+    maintainers:
+    - email: sre@ricardo.ch
+      name: ricardo-ch
+    name: promlens
+    sources:
+    - https://github.com/ricardo-ch/helm-charts/tree/main/charts/promlens
+    urls:
+    - https://github.com/ricardo-ch/helm-charts/releases/download/promlens-1.0.1/promlens-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
     created: "2020-10-07T14:06:28.763767462Z"
     description: This Chart installs and configures PromLens
     digest: c3e8f744191c6685202a002934fae23431cda161771b981aa635f19018a5619b
