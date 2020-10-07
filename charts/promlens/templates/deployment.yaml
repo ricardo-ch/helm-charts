@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: promlens
-        image: {{ .Values.image }}:{{ .Values.config.version }}
+        image: {{ .Values.image }}:{{ .Values.deployment.version }}
         args:
           - "--shared-links.gcs.bucket={{ .Values.config.shared_links_bucket_name }}"
           - "--grafana.url={{ .Values.config.grafana_url }}"
