@@ -19,14 +19,14 @@ spec:
     spec:
       containers:
       - name: promlens
-        image: {{ .Values.image }}:{{ .Values.version }}
+        image: {{ .Values.image }}:{{ .Values.deployment.version }}
         args:
-          - "--shared-links.gcs.bucket={{ .Values.shared_links_bucket_name }}"
-          - "--grafana.url={{ .Values.grafana_url }}"
+          - "--shared-links.gcs.bucket={{ .Values.config.shared_links_bucket_name }}"
+          - "--grafana.url={{ .Values.config.grafana_url }}"
           - "--grafana.api-token"
-          - {{ .Values.grafana_api_key | quote  }}
+          - {{ .Values.config.grafana_api_key | quote  }}
           - "--license.key"
-          - {{ .Values.license | quote  }}
+          - {{ .Values.config.license | quote  }}
         env:
           - name: GOOGLE_APPLICATION_CREDENTIALS
             value: /var/secret-files/gcs-cred.json
