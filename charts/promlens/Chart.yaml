@@ -1,6 +1,6 @@
 apiVersion: v2
 name: promlens
-version: 1.0.0
+version: 1.0.1
 description: This Chart installs and configures PromLens
 home: https://promlens.com
 icon: https://promlens.com/apple-touch-icon.png
