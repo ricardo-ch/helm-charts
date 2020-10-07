@@ -2,6 +2,19 @@ apiVersion: v1
 entries:
   promlens:
   - apiVersion: v2
+    created: "2020-10-07T08:58:02.404231362Z"
+    description: This Chart installs and configures PromLens
+    digest: d282e2a60bb3ff16c8c5a68b34e1cdd855936e48e2f35965e7ae7a5c91070247
+    maintainers:
+    - email: sre@ricardo.ch
+      name: ricardo-ch
+    name: promlens
+    sources:
+    - https://github.com/ricardo-ch/helm-charts/tree/main/charts/promlens
+    urls:
+    - https://github.com/ricardo-ch/helm-charts/releases/download/promlens-0.2.2/promlens-0.2.2.tgz
+    version: 0.2.2
+  - apiVersion: v2
     created: "2020-10-07T06:12:19.273099511Z"
     description: This Chart installs and configures PromLens
     digest: 1b708054e39d7093cb36caf0897902f157ee33b8b732c9d3e9aedf99a574c513
