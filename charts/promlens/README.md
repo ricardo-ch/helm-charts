@@ -1,6 +1,6 @@
 # PromLens
 
-![Version: 0.2.2](https://img.shields.io/badge/Version-0.2.2-informational?style=flat-square) ![Release Status](https://github.com/ricardo-ch/helm-charts/workflows/Release%20Charts/badge.svg)
+![Version: 0.3.0](https://img.shields.io/badge/Version-0.3.0-informational?style=flat-square) ![Release Status](https://github.com/ricardo-ch/helm-charts/workflows/Release%20Charts/badge.svg)
 
 This chart installs [PromLens](https://promlens.com/) from [PromLabs](https://promlabs.com/).
 
@@ -23,11 +23,18 @@ Simply add this Chart repository to Helm:
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| config.gcs_sa | string | `""` | Google Cloud Storage Account |
-| config.grafana_api_key | string | `""` | Grafana API Key, see https://grafana.com/docs/grafana/latest/http_api/auth/ |
-| config.grafana_url | string | `""` | Grafana URL |
-| config.license | string | `""` | PromLens License |
-| config.shared_links_bucket_name | string | `"promlens"` | Bucket Name in Storage Account |
+| config.grafana.api_token | string | `nil` | The auth token to pass to the Grafana API, see https://grafana.com/docs/grafana/latest/http_api/auth/ |
+| config.grafana.enabled | bool | `true` | Enable Grafana Integration |
+| config.grafana.url | string | `nil` | The URL of your Grafana installation, to enable the Grafana datasource selector. |
+| config.license_key | string | `""` | License key for PromLens |
+| config.log.format | string | `"logfmt"` | Output format of log messages. One of: [logfmt, json] |
+| config.log.level | string | `"info"` | Only log messages with the given severity or above. One of: [debug, info, warn, error] |
+| config.shared_links.gcs.bucket | string | `"promlens"` | Bucket Name in Storage Account |
+| config.shared_links.gcs.enabled | bool | `true` | Enable Link Sharing via Google Storage Bucket |
+| config.shared_links.gcs.storage_account | string | `nil` | Google Cloud Storage Account |
+| config.web.default_prometheus_url | string | `nil` | The default Prometheus URL to load PromLens with. |
+| config.web.external_url | string | `nil` | The URL under which PromLens is externally reachable (for example, if PromLens is served via a reverse proxy). Used for generating relative and absolute links back to PromLens itself. If the URL has a path portion, it will be used to prefix all HTTP endpoints served by PromLens. If omitted, relevant URL components will be derived automatically. |
+| config.web.listen_address | string | `":8080"` | The address to listen on for the web API. |
 | deployment.image | string | `"promlabs/promlens"` | PromLens Conatiner Image |
 | deployment.replicas | int | `1` | Number of replicas |
 | deployment.version | string | `"latest"` | PromLens Container Image Version |

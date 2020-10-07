@@ -1,7 +1,9 @@
 apiVersion: v2
 name: promlens
-version: 0.2.2
+version: 0.3.0
 description: This Chart installs and configures PromLens
+home: https://promlens.com
+icon:	https://promlens.com/apple-touch-icon.png
 sources: ["https://github.com/ricardo-ch/helm-charts/tree/main/charts/promlens"]
 maintainers:
   - name: ricardo-ch
