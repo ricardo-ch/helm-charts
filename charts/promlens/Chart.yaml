@@ -1,7 +1,8 @@
 apiVersion: v2
-name: promlens
-version: 0.1.4
+name: PromLens
+version: 0.2.0
 description: This Chart installs and configures PromLens
+sources: ["https://github.com/ricardo-ch/helm-charts/tree/main/charts/promlens"]
 maintainers:
   - name: ricardo-ch
     email: sre@ricardo.ch

@@ -1,0 +1,28 @@
+{{ template "chart.header" . }}
+
+{{ template "chart.deprecationWarning" . }}
+
+{{ template "chart.versionBadge" . }}{{ template "chart.typeBadge" . }}{{ template "chart.appVersionBadge" . }}![Release Status](https://github.com/ricardo-ch/helm-charts/workflows/Release%20Charts/badge.svg)
+
+This chart installs [PromLens](https://promlens.com/) from [PromLabs](https://promlabs.com/).
+
+PromLens is a tool that makes learning and using PromQL easier and more productive. It integrates a visual query builder with explanation and visualization features.
+
+## Helm Chart
+
+This is an initial release, based on the Helm chart we are using to deploy the tool internally. Currently, there are multiple features of PromLens that this Chart doesn't provide. If something is missing, feel free to open and issue or submit a Pull Request.
+
+### How To Install
+
+Simply add this Chart repository to Helm:
+
+```sh
+➜ helm repo add ricardo https://ricardo-ch.github.io/helm-charts/
+"ricardo" has been added to your repositories
+```
+
+{{ template "chart.valuesSection" . }}
+
+{{ template "chart.sourcesSection" . }}
+
+{{ template "helm-docs.versionFooter" . }}
