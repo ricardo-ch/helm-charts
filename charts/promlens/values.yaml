@@ -5,7 +5,7 @@ deployment:
   image: promlabs/promlens
   # -- PromLens Container Image Version
   version: latest
-configuration:
+config:
   # -- PromLens License
   license: ""
   # -- Grafana URL
