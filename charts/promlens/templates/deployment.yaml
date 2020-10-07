@@ -21,12 +21,25 @@ spec:
       - name: promlens
         image: {{ .Values.deployment.image }}:{{ .Values.deployment.version }}
         args:
-          - "--shared-links.gcs.bucket={{ .Values.config.shared_links_bucket_name }}"
-          - "--grafana.url={{ .Values.config.grafana_url }}"
-          - "--grafana.api-token"
-          - {{ .Values.config.grafana_api_key | quote  }}
-          - "--license.key"
-          - {{ .Values.config.license | quote  }}
+          {{- if .Values.config.shared_links.gcs.enabled }}
+          - --shared-links.gcs.bucket={{ .Values.config.shared_links.gcs.bucket }}
+          {{- end }}
+          {{- if .Values.config.grafana.enabled }}
+          - --grafana.url={{ .Values.config.grafana.url }}
+          - --grafana.api-token={{ .Values.config.grafana.api_token }}
+          {{- end }}
+          - --web.listen-address=":{{ .Values.config.web.listen_address }}"
+          {{- if .Values.config.web.external_url }}
+          - --web.external-url={{ .Values.config.web.external_url | quote }}
+          {{- end }}
+          {{- if .Values.config.web.default_prometheus_url }}
+          - --web.default-prometheus-url={{ .Values.config.web.default_prometheus_url | quote }}
+          {{- end }}
+          - --log.level={{ .Values.config.log.level }}
+          - --log.format={{ .Values.config.log.format }}
+          - --license.key={{ .Values.config.license_key }}
+
+{{ if .Values.config.shared_links.gcs.enabled }}
         env:
           - name: GOOGLE_APPLICATION_CREDENTIALS
             value: /var/secret-files/gcs-cred.json
@@ -38,3 +51,4 @@ spec:
           secret:
             defaultMode: 420
             secretName: promlens-secrets
+{{ end }}
