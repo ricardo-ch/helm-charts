@@ -28,12 +28,11 @@ spec:
           - --grafana.url={{ .Values.config.grafana.url }}
           - --grafana.api-token={{ .Values.config.grafana.api_token }}
           {{- end }}
-          - --web.listen-address=":{{ .Values.config.web.listen_address }}"
           {{- if .Values.config.web.external_url }}
-          - --web.external-url={{ .Values.config.web.external_url | quote }}
+          - --web.external-url={{ .Values.config.web.external_url }}
           {{- end }}
           {{- if .Values.config.web.default_prometheus_url }}
-          - --web.default-prometheus-url={{ .Values.config.web.default_prometheus_url | quote }}
+          - --web.default-prometheus-url={{ .Values.config.web.default_prometheus_url }}
           {{- end }}
           - --log.level={{ .Values.config.log.level }}
           - --log.format={{ .Values.config.log.format }}
