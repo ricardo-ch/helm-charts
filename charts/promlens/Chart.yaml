@@ -1,6 +1,7 @@
 apiVersion: v2
 name: promlens
 version: 1.0.2
+appVersion: 0.9.1
 description: This Chart installs and configures PromLens from PromLabs.
 home: https://promlens.com
 icon: https://promlens.com/apple-touch-icon.png
@@ -12,4 +13,3 @@ maintainers:
     email: sre@ricardo.ch
 keywords:
   - promlens
-appVersion: 0.9.1
