@@ -4,7 +4,7 @@ deployment:
   # -- PromLens Conatiner Image
   image: "promlabs/promlens"
   # -- PromLens Container Image Version
-  version: "latest"
+  version: "v0.9.1"
 
 config:
   # -- License key for PromLens
