@@ -12,5 +12,4 @@ maintainers:
     email: sre@ricardo.ch
 keywords:
   - promlens
-appVersion:
-  - 0.9.1
+appVersion: 0.9.1
