@@ -1,0 +1,100 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ template "imaginary.fullname" . }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    heritage: {{ .Release.Service | quote }}
+    release: {{ .Release.Name | quote }}
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
+    app: {{ template "imaginary.fullname" . }}
+    {{- range $key, $value := .Values.additionalLabels }}
+    {{ $key }}: {{ $value }}
+    {{- end }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ template "imaginary.fullname" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "imaginary.fullname" . }}
+        {{- range $key, $value := .Values.additionalLabels }}
+        {{ $key }}: {{ $value }}
+        {{- end }}
+      annotations:
+{{ toYaml .Values.additionalAnnotations | indent 8 }}
+    spec:
+      {{- if .Values.nodeSelector }}
+      nodeSelector:
+{{ toYaml .Values.nodeSelector | indent 8 }}
+      {{- end }}
+      containers:
+      - name: "imaginary"
+        image: {{ .Values.image | quote }}
+        imagePullPolicy: {{ .Values.imagePullPolicy }}
+        env:
+        - name: PORT
+          value: {{ .Values.httpPort | quote }}
+        {{- if .Values.apiKey }}
+        - name: API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: {{ template "imaginary.fullname" . }}-secret
+              key: apikey
+        {{- end }}
+        args:
+        {{- /* apiKey is not in the config object because I fail to set the value from helm secret when I do so */}}
+        {{- if .Values.apiKey }}
+          - "-key=$(API_KEY)"
+        {{- end }}
+        {{- range $configKey, $configValue := .Values.config }}
+          - "-{{ $configKey }}={{ print $configValue }}"
+        {{- end }}
+        {{- if and .Values.tls.certificate .Values.tls.privateKey }}
+          - "-certfile=/etc/tls.crt"
+          - "-keyfile=/etc/tls.key"
+        volumeMounts:
+          - mountPath: /etc/tls.key
+            name: certificates
+            subPath: tls.key
+          - mountPath: /etc/tls.crt
+            name: certificates
+            subPath: tls.crt
+        {{- end }}
+        resources:
+{{ toYaml .Values.resources | indent 10 }}
+        ports:
+        - containerPort: {{ .Values.httpPort }}
+          name: http
+          protocol: TCP
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: {{ .Values.httpPort }}
+            scheme: HTTP
+            {{- if .Values.apiKey }}
+            httpHeaders:
+            - name: api-key
+              {{- /* Yes it means it is in PLAIN text in the k8s resource. No idea how to reference a k8s secret here */}}
+              value: {{ print .Values.apiKey | quote }}
+            {{- end }}
+          initialDelaySeconds: 10
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: {{ .Values.httpPort }}
+            scheme: HTTP
+            {{- if .Values.apiKey }}
+            httpHeaders:
+            - name: api-key
+              {{- /* Yes it means it is in PLAIN text in the k8s resource. No idea how to reference a k8s secret here */}}
+              value: {{ print .Values.apiKey | quote }}
+            {{- end }}
+          initialDelaySeconds: 10
+      {{- if and .Values.tls.certificate .Values.tls.privateKey }}
+      volumes:
+      - name: certificates
+        secret:
+          secretName: {{ template "imaginary.fullname" . }}-tls
+      {{- end }}

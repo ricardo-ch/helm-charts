@@ -1,0 +1,21 @@
+apiVersion: v2
+appVersion: "1.2.4"
+description: Deploy imaginary to process pictures on the fly
+name: imaginary
+version: 0.1.0
+home: https://github.com/h2non/imaginary
+sources:
+  - https://github.com/ricardo-ch/helm-charts/tree/main/charts/imaginary
+  - https://github.com/h2non/imaginary
+maintainers:
+  - name: ricardo-ch
+    email: sre@ricardo.ch
+keywords:
+  - imaginary
+  - h2non
+annotations:
+  artifacthub.io/changes: |
+    - Initial release
+  artifacthub.io/images: |
+    - name: imaginary
+      image: h2non/imaginary:v1.2.4
