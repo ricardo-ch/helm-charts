@@ -1,0 +1,69 @@
+# -- A node selector label
+nodeSelector: {}
+
+# -- Docker image repository to pull it.
+image: "h2non/imaginary:1.2.4"
+# -- imagePullPolicy used by k8s
+imagePullPolicy: IfNotPresent
+
+# -- Set kubernetes specific resource limits
+resources: {}
+  # limits:
+  #   cpu: 700m
+  #   memory: 700Mi
+  # requests:
+  #   cpu: 700m
+  #   memory: 700Mi
+
+# -- Which port should Imaginary and its Kubernetes service listen
+httpPort: 8080
+
+# -- Kubernetes service type
+serviceType: "ClusterIP"
+
+# -- Config for Liveness & Readiness probes
+readinessProbe:
+  periodSeconds: 10
+  timeoutSeconds: 1
+  successThreshold: 1
+  failureThreshold: 3
+livenessProbe:
+  periodSeconds: 10
+  timeoutSeconds: 1
+  successThreshold: 1
+  failureThreshold: 3
+
+# -- Imaginary arguments.
+# use the same hyphen separated synthax for the key.
+# use strings for the value or you might get a bad formatting.
+config: {}
+  # example
+  # path-prefix: "/nya"
+
+tls:
+  # -- Base64 encoded private key file for TLS certificate.
+  privateKey: ""
+
+  # -- Base64 encoded TLS certificate file
+  certificate: ""
+
+# -- Horizontal pod autoscaling configuration
+hpa:
+  minReplicas: 2
+  maxReplicas: 2
+
+
+# -- Define API key for authorization
+apikey: ""
+
+# -- append labels to both the deployment, pdb, hpa and the pods label list
+additionalLabels: {}
+  # example_label: "hello"
+
+# -- append annotation to the pod annotation list
+additionalAnnotations: {}
+  # sumologic.com/exclude: "true"
+
+pdb:
+  # -- minAvailable field from k8s pdb
+  minAvailable: 50%

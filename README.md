@@ -8,6 +8,7 @@ The public Ricardo AG Helm Charts. The code is provided as-is with no warranties
 ## Available Charts
 
 * [promlens](https://github.com/ricardo-ch/helm-charts/tree/main/charts/promlens)
+* [imaginary](https://github.com/ricardo-ch/helm-charts/tree/main/charts/imaginary)
 
 ## How To Use These Charts
 
