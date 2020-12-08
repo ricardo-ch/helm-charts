@@ -95,7 +95,7 @@ spec:
         lifecycle:
           preStop:
             exec:
-              command: ["sleep","{{ gracefullShutdownDelaySeconds }}"]
+              command: ["sleep","{{ .Values.gracefullShutdownDelaySeconds }}"]
       {{- if and .Values.tls.certificate .Values.tls.privateKey }}
       volumes:
       - name: certificates
