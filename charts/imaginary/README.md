@@ -28,7 +28,7 @@ Simply add this Chart repository to Helm:
 | additionalLabels | object | `{}` | append labels to both the deployment, pdb, hpa and the pods label list |
 | apikey | string | `""` | Define API key for authorization |
 | config | object | `{}` | Imaginary arguments. use the same hyphen separated synthax for the key. use strings for the value or you might get a bad formatting. |
-| gracefullShutdownDelaySeconds | int | `10` | estimated time to propagate the information the pod is not part of the service anymore |
+| gracefulShutdownDelaySeconds | int | `10` | estimated time to propagate the information the pod is not part of the service anymore |
 | hpa | object | `{"maxReplicas":2,"minReplicas":2}` | Horizontal pod autoscaling configuration |
 | httpPort | int | `8080` | Which port should Imaginary and its Kubernetes service listen |
 | image | string | `"h2non/imaginary:1.2.4"` | Docker image repository to pull it. |

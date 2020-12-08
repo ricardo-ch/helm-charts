@@ -59,7 +59,7 @@ additionalAnnotations: {}
   # sumologic.com/exclude: "true"
 
 # -- estimated time to propagate the information the pod is not part of the service anymore
-gracefullShutdownDelaySeconds:
+gracefulShutdownDelaySeconds:
   10
 
 pdb:
