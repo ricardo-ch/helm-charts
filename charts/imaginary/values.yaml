@@ -47,12 +47,6 @@ tls:
   # -- Base64 encoded TLS certificate file
   certificate: ""
 
-# -- Horizontal pod autoscaling configuration
-hpa:
-  minReplicas: 2
-  maxReplicas: 2
-
-
 # -- Define API key for authorization
 apikey: ""
 
@@ -64,6 +58,15 @@ additionalLabels: {}
 additionalAnnotations: {}
   # sumologic.com/exclude: "true"
 
+# -- estimated time to propagate the information the pod is not part of the service anymore
+gracefulShutdownDelaySeconds:
+  10
+
 pdb:
   # -- minAvailable field from k8s pdb
   minAvailable: 50%
+
+# -- Horizontal pod autoscaling configuration
+hpa:
+  minReplicas: 2
+  maxReplicas: 2

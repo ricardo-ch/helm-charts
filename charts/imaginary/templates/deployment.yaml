@@ -92,6 +92,10 @@ spec:
               value: {{ print .Values.apiKey | quote }}
             {{- end }}
           initialDelaySeconds: 10
+        lifecycle:
+          preStop:
+            exec:
+              command: ["sleep","{{ .Values.gracefulShutdownDelaySeconds }}"]
       {{- if and .Values.tls.certificate .Values.tls.privateKey }}
       volumes:
       - name: certificates
