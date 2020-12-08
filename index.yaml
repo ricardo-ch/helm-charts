@@ -3,6 +3,31 @@ entries:
   imaginary:
   - annotations:
       artifacthub.io/changes: |
+        - Fix Container Image Annotation
+      artifacthub.io/images: |
+        - name: imaginary
+          image: h2non/imaginary:1.2.4
+    apiVersion: v2
+    appVersion: 1.2.4
+    created: "2020-12-08T18:29:50.007814461Z"
+    description: Deploy imaginary to process pictures on the fly
+    digest: d97a8c138b69d6943f60c9b76760b91402127bb2f637e5318579ee3edb0ba7ce
+    home: https://github.com/h2non/imaginary
+    keywords:
+    - imaginary
+    - h2non
+    maintainers:
+    - email: sre@ricardo.ch
+      name: ricardo-ch
+    name: imaginary
+    sources:
+    - https://github.com/ricardo-ch/helm-charts/tree/main/charts/imaginary
+    - https://github.com/h2non/imaginary
+    urls:
+    - https://github.com/ricardo-ch/helm-charts/releases/download/imaginary-0.1.2/imaginary-0.1.2.tgz
+    version: 0.1.2
+  - annotations:
+      artifacthub.io/changes: |
         - Initial release
       artifacthub.io/images: |
         - name: imaginary
