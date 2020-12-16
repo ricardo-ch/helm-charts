@@ -1,6 +1,6 @@
 # PromLens
 
-![Version: 1.0.4](https://img.shields.io/badge/Version-1.0.4-informational?style=flat-square) ![AppVersion: 0.10.0](https://img.shields.io/badge/AppVersion-0.10.0-informational?style=flat-square) ![Release Status](https://github.com/ricardo-ch/helm-charts/workflows/Release%20Charts/badge.svg) [![License](https://img.shields.io/github/license/ricardo-ch/helm-charts)](https://github.com/ricardo-ch/helm-charts/blob/main/LICENSE)
+![Version: 1.0.5](https://img.shields.io/badge/Version-1.0.5-informational?style=flat-square) ![AppVersion: 0.11.0](https://img.shields.io/badge/AppVersion-0.11.0-informational?style=flat-square) ![Release Status](https://github.com/ricardo-ch/helm-charts/workflows/Release%20Charts/badge.svg) [![License](https://img.shields.io/github/license/ricardo-ch/helm-charts)](https://github.com/ricardo-ch/helm-charts/blob/main/LICENSE)
 
 This chart installs [PromLens](https://promlens.com/) from [PromLabs](https://promlabs.com/).
 
@@ -36,7 +36,7 @@ Simply add this Chart repository to Helm:
 | config.web.external_url | string | `nil` | The URL under which PromLens is externally reachable (for example, if PromLens is served via a reverse proxy). Used for generating relative and absolute links back to PromLens itself. If the URL has a path portion, it will be used to prefix all HTTP endpoints served by PromLens. If omitted, relevant URL components will be derived automatically. |
 | deployment.image | string | `"promlabs/promlens"` | PromLens Conatiner Image |
 | deployment.replicas | int | `1` | Number of replicas |
-| deployment.version | string | `"v0.10.0"` | PromLens Container Image Version |
+| deployment.version | string | `"v0.11.0"` | PromLens Container Image Version |
 
 ## Source Code
 
