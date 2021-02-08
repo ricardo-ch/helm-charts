@@ -26,7 +26,17 @@ config:
       storage_account:
       # -- Bucket Name in Storage Account
       bucket: "promlens"
-
+    sql:
+      # -- Enable Link Sharing via SQL database
+      enabled: false
+      # -- The SQL driver to use for storing shared links in a SQL database. Supported values: [mysql, sqlite3].
+      driver: mysql
+      # -- SQL Data Source Name when using an SQL database to shared links (see https://github.com/go-sql-driver/mysql#dsn-data-source-name) for MySQL, https://github.com/mattn/go-sqlite3#dsn-examples for SQLite3).
+      dsn: ""
+      # -- Auto-create required tables in SQL database
+      create_tables: true
+      # -- The maximum retention time for shared links when using a SQL database (e.g. '10m', '12h', '720h'). Set to 0 for infinite retention.
+      retention: "0"
   web:
     # -- The URL under which PromLens is externally reachable (for example, if PromLens is served via a reverse proxy). Used for generating relative and absolute links back to PromLens itself. If the URL has a path portion, it will be used to prefix all HTTP endpoints served by PromLens. If omitted, relevant URL components will be derived automatically.
     external_url:

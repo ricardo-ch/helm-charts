@@ -1,6 +1,6 @@
 # PromLens
 
-![Version: 1.0.5](https://img.shields.io/badge/Version-1.0.5-informational?style=flat-square) ![AppVersion: 0.11.0](https://img.shields.io/badge/AppVersion-0.11.0-informational?style=flat-square) ![Release Status](https://github.com/ricardo-ch/helm-charts/workflows/Release%20Charts/badge.svg) [![License](https://img.shields.io/github/license/ricardo-ch/helm-charts)](https://github.com/ricardo-ch/helm-charts/blob/main/LICENSE)
+![Version: 1.0.6](https://img.shields.io/badge/Version-1.0.6-informational?style=flat-square) ![AppVersion: 0.11.0](https://img.shields.io/badge/AppVersion-0.11.0-informational?style=flat-square) ![Release Status](https://github.com/ricardo-ch/helm-charts/workflows/Release%20Charts/badge.svg) [![License](https://img.shields.io/github/license/ricardo-ch/helm-charts)](https://github.com/ricardo-ch/helm-charts/blob/main/LICENSE)
 
 This chart installs [PromLens](https://promlens.com/) from [PromLabs](https://promlabs.com/).
 
@@ -32,6 +32,11 @@ Simply add this Chart repository to Helm:
 | config.shared_links.gcs.bucket | string | `"promlens"` | Bucket Name in Storage Account |
 | config.shared_links.gcs.enabled | bool | `true` | Enable Link Sharing via Google Storage Bucket |
 | config.shared_links.gcs.storage_account | string | `nil` | Google Cloud Storage Account |
+| config.shared_links.sql.create_tables | bool | `true` | Auto-create required tables in SQL database |
+| config.shared_links.sql.driver | string | `"mysql"` | The SQL driver to use for storing shared links in a SQL database. Supported values: [mysql, sqlite3]. |
+| config.shared_links.sql.dsn | string | `""` | SQL Data Source Name when using an SQL database to shared links (see https://github.com/go-sql-driver/mysql#dsn-data-source-name) for MySQL, https://github.com/mattn/go-sqlite3#dsn-examples for SQLite3). |
+| config.shared_links.sql.enabled | bool | `false` | Enable Link Sharing via SQL database |
+| config.shared_links.sql.retention | string | `"0"` | The maximum retention time for shared links when using a SQL database (e.g. '10m', '12h', '720h'). Set to 0 for infinite retention. |
 | config.web.default_prometheus_url | string | `nil` | The default Prometheus URL to load PromLens with. |
 | config.web.external_url | string | `nil` | The URL under which PromLens is externally reachable (for example, if PromLens is served via a reverse proxy). Used for generating relative and absolute links back to PromLens itself. If the URL has a path portion, it will be used to prefix all HTTP endpoints served by PromLens. If omitted, relevant URL components will be derived automatically. |
 | deployment.image | string | `"promlabs/promlens"` | PromLens Conatiner Image |
