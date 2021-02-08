@@ -57,8 +57,14 @@ additionalLabels: {}
 # -- append annotation to the pod annotation list
 additionalAnnotations: {}
   # sumologic.com/exclude: "true"
+
 istio:
-  on: false
+  # -- istio sidecar configuration, enable injecting sidecar
+  inject: false
+  # -- istio sidecar memory request
+  memory: 128Mi
+  # -- istio sidecar cpu request
+  cpu: 10m
 
 # -- estimated time to propagate the information the pod is not part of the service anymore
 gracefulShutdownDelaySeconds:

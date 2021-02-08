@@ -2,7 +2,7 @@ apiVersion: v2
 appVersion: "1.2.4"
 description: Deploy imaginary to process pictures on the fly
 name: imaginary
-version: 0.1.2
+version: 0.1.3
 home: https://github.com/h2non/imaginary
 sources:
   - https://github.com/ricardo-ch/helm-charts/tree/main/charts/imaginary
