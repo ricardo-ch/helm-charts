@@ -22,8 +22,13 @@ spec:
         {{- range $key, $value := .Values.additionalLabels }}
         {{ $key }}: {{ $value }}
         {{- end }}
+{{ if .Values.additionalAnnotations }}
       annotations:
 {{ toYaml .Values.additionalAnnotations | indent 8 }}
+        sidecar.istio.io/inject: {{ default false .Values.istio.on }}                                                                                                                                                                     │
+        sidecar.istio.io/proxyCPU: {{ default "10m" .Values.istio.cpu }}                                                                                                                                                        │
+        sidecar.istio.io/proxyMemory: {{ default "10Mi" .Values.istio.memory }}
+{{ end }}
     spec:
       {{- if .Values.nodeSelector }}
       nodeSelector:

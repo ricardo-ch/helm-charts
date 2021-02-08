@@ -57,6 +57,8 @@ additionalLabels: {}
 # -- append annotation to the pod annotation list
 additionalAnnotations: {}
   # sumologic.com/exclude: "true"
+istio:
+  on: false
 
 # -- estimated time to propagate the information the pod is not part of the service anymore
 gracefulShutdownDelaySeconds:
