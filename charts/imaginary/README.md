@@ -34,8 +34,10 @@ Simply add this Chart repository to Helm:
 | image | string | `"h2non/imaginary:1.2.4"` | Docker image repository to pull it. |
 | imagePullPolicy | string | `"IfNotPresent"` | imagePullPolicy used by k8s |
 | istio.cpu | string | `"10m"` | istio sidecar cpu request |
+| istio.cpuLimit | string | `"10m"` | istio sidecar cpu request limit |
 | istio.inject | bool | `false` | istio sidecar configuration, enable injecting sidecar |
 | istio.memory | string | `"128Mi"` | istio sidecar memory request |
+| istio.memoryLimit | string | `"128Mi"` | istio sidecar memory limit |
 | livenessProbe.failureThreshold | int | `3` |  |
 | livenessProbe.periodSeconds | int | `10` |  |
 | livenessProbe.successThreshold | int | `1` |  |

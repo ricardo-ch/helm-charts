@@ -63,8 +63,12 @@ istio:
   inject: false
   # -- istio sidecar memory request
   memory: 128Mi
+  # -- istio sidecar memory limit
+  memoryLimit: 128Mi
   # -- istio sidecar cpu request
   cpu: 10m
+  # -- istio sidecar cpu request limit
+  cpuLimit: 10m
 
 # -- estimated time to propagate the information the pod is not part of the service anymore
 gracefulShutdownDelaySeconds:
