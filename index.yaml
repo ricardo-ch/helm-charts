@@ -3,6 +3,31 @@ entries:
   imaginary:
   - annotations:
       artifacthub.io/changes: |
+        - Adding configuration for istio sidecar(injection and resources). Support istio 1.8+ annotations.
+      artifacthub.io/images: |
+        - name: imaginary
+          image: h2non/imaginary:1.2.4
+    apiVersion: v2
+    appVersion: 1.2.4
+    created: "2021-02-10T07:46:59.069944632Z"
+    description: Deploy imaginary to process pictures on the fly
+    digest: d34c762985c34a1e4b0bdc41e87044af75f1e638f9e3db6c2118d3028fe2e92b
+    home: https://github.com/h2non/imaginary
+    keywords:
+    - imaginary
+    - h2non
+    maintainers:
+    - email: sre@ricardo.ch
+      name: ricardo-ch
+    name: imaginary
+    sources:
+    - https://github.com/ricardo-ch/helm-charts/tree/main/charts/imaginary
+    - https://github.com/h2non/imaginary
+    urls:
+    - https://github.com/ricardo-ch/helm-charts/releases/download/imaginary-0.1.3/imaginary-0.1.3.tgz
+    version: 0.1.3
+  - annotations:
+      artifacthub.io/changes: |
         - Fix Container Image Annotation
       artifacthub.io/images: |
         - name: imaginary
