@@ -1,7 +1,3 @@
-## 1.0.6 / 2021-02-08
-
-* [ENHANCMENT] Add options for link sharing via mysql database
-
 ## 1.0.4 / 2020-10-30
 
 * [ENHANCMENT] Use Artifact Hub's Annotation for the Changelog. See [Changelog](https://artifacthub.io/packages/helm/ricardo/promlens?modal=changelog) for future changes.

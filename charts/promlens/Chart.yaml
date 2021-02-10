@@ -18,7 +18,7 @@ keywords:
   - promql
 annotations:
   artifacthub.io/changes: |
-    - Update Chart to use PromLens v0.11.0
+    - Add options for link sharing via mysql database
   artifacthub.io/images: |
     - name: promlens
       image: promlabs/promlens:v0.11.0
