@@ -23,6 +23,13 @@ spec:
         {{ $key }}: {{ $value }}
         {{- end }}
       annotations:
+{{- if .Values.istio.inject }}
+        sidecar.istio.io/inject: {{ quote .Values.istio.inject }}
+        sidecar.istio.io/proxyCPU: {{ .Values.istio.cpu }}
+        sidecar.istio.io/proxyCPULimit: {{ .Values.istio.cpuLimit }}
+        sidecar.istio.io/proxyMemory: {{ .Values.istio.memory }}
+        sidecar.istio.io/proxyMemoryLimit: {{ .Values.istio.memoryLimit }}
+{{- end }}
 {{ toYaml .Values.additionalAnnotations | indent 8 }}
     spec:
       {{- if .Values.nodeSelector }}
