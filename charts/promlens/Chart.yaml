@@ -4,7 +4,7 @@ version: 1.0.6
 appVersion: 0.11.0
 description: This Chart installs and configures PromLens from PromLabs.
 home: https://promlens.com
-icon: https://promlens.com/apple-touch-icon.png
+icon: https://promlens.com/favicon-32x32.png
 sources:
   - https://github.com/ricardo-ch/helm-charts/tree/main/charts/promlens
   - https://github.com/promlabs/promlens-public
