@@ -104,6 +104,34 @@ entries:
   promlens:
   - annotations:
       artifacthub.io/changes: |
+        - Add options for link sharing via mysql database
+      artifacthub.io/images: |
+        - name: promlens
+          image: promlabs/promlens:v0.11.0
+    apiVersion: v2
+    appVersion: 0.11.0
+    created: "2021-02-11T08:46:34.436792829Z"
+    description: This Chart installs and configures PromLens from PromLabs.
+    digest: 12cea65bc15725643920235e22f5bc36f72dc964d2a1864126a5ed207f7fa3c0
+    home: https://promlens.com
+    icon: https://promlens.com/apple-touch-icon.png
+    keywords:
+    - promlens
+    - promlabs
+    - prometheus
+    - promql
+    maintainers:
+    - email: sre@ricardo.ch
+      name: ricardo-ch
+    name: promlens
+    sources:
+    - https://github.com/ricardo-ch/helm-charts/tree/main/charts/promlens
+    - https://github.com/promlabs/promlens-public
+    urls:
+    - https://github.com/ricardo-ch/helm-charts/releases/download/promlens-1.0.6/promlens-1.0.6.tgz
+    version: 1.0.6
+  - annotations:
+      artifacthub.io/changes: |
         - Update Chart to use PromLens v0.11.0
       artifacthub.io/images: |
         - name: promlens
