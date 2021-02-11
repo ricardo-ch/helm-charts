@@ -24,6 +24,13 @@ spec:
           {{- if .Values.config.shared_links.gcs.enabled }}
           - --shared-links.gcs.bucket={{ .Values.config.shared_links.gcs.bucket }}
           {{- end }}
+          {{- if .Values.config.shared_links.sql.enabled }}
+          - --shared-links.sql.driver={{ .Values.config.shared_links.sql.driver }}
+          - --shared-links.sql.retention={{ .Values.config.shared_links.sql.retention }}
+          {{- if not .Values.config.shared_links.sql.create_tables }}
+          - --no-shared-links.sql.create-tables
+          {{- end }}
+          {{- end }}
           {{- if .Values.config.grafana.enabled }}
           - --grafana.url={{ .Values.config.grafana.url }}
           - --grafana.api-token={{ .Values.config.grafana.api_token }}
@@ -50,4 +57,12 @@ spec:
           secret:
             defaultMode: 420
             secretName: promlens-secrets
+{{ end }}
+{{ if .Values.config.shared_links.sql.enabled }}
+        env:
+          - name: PROMLENS_SHARED_LINKS_DSN
+            valueFrom:
+              secretKeyRef:
+                name: promlens-secrets
+                key: sql-dsn
 {{ end }}
