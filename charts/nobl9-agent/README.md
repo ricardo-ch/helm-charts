@@ -19,8 +19,8 @@ Simply add this Chart repository to Helm:
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| config.client_id | string | `""` | Client ID  |
-| config.client_secret | string | `""` | Client Secret |
+| config.client_id | string | `""` | Client ID as configured in Nobl9 |
+| config.client_secret | string | `""` | Client Secret as configured in Nobl9 |
 | config.datasource_name | string | `""` | Name of the datasource as configured in Nobl9 |
 | config.organization | string | `""` | Name of the organization as configured in Nobl9 |
 | config.project | string | `""` | Name of the project as configured in Nobl9 |

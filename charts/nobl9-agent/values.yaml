@@ -22,7 +22,7 @@ config:
   datasource_name: ""
   # -- Name of the project as configured in Nobl9
   project: ""
-  # -- Client ID 
+  # -- Client ID as configured in Nobl9
   client_id: ""
-  # -- Client Secret
+  # -- Client Secret as configured in Nobl9
   client_secret: ""
