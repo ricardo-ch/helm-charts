@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ template "noble9-agent.fullname" . }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: {{ template "noble9-agent.name" . }}
+    chart: {{ template "noble9-agent.chart" . }}
+    release: {{ .Release.Name | quote }}
+    heritage: {{ .Release.Service | quote }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ template "noble9-agent.name" . }}
+      nobl9-agent-name: {{ .Values.config.datasource_name }}
+      nobl9-agent-project: {{ .Values.config.project }}
+      nobl9-agent-organization: {{ .Values.config.organization }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "noble9-agent.name" . }}
+        nobl9-agent-name: {{ .Values.config.datasource_name }}
+        nobl9-agent-project: {{ .Values.config.project }}
+        nobl9-agent-organization: {{ .Values.config.organization }}
+    spec:
+      containers:
+        - name: "agent-container"
+          image: {{ .Values.deployment.image }}:{{ .Values.deployment.version }}
+          imagePullPolicy: {{ .Values.deployment.pull_policy }}
+          resources:
+            requests:
+{{ toYaml .Values.resources | indent 14 }}
+          env:
+            - name: N9_CLIENT_ID
+              valueFrom:
+                secretKeyRef:
+                  key: client_id
+                  name: {{ template "noble9-agent.fullname" . }}
+            - name: N9_CLIENT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  key: client_secret
+                  name: {{ template "noble9-agent.fullname" . }}

@@ -1,0 +1,29 @@
+deployment:
+  # -- Nobl9 Agent Container Image
+  image: "nobl9/agent"
+  # -- Nobl9 Agent Container Image Version
+  version: "0.14.0"
+  # -- Pull Policy
+  pull_policy: IfNotPresent
+
+# -- Set kubernetes specific resource limits
+resources: {}
+  # limits:
+  #   cpu: 700m
+  #   memory: 700Mi
+  # requests:
+  #   cpu: 700m
+  #   memory: 700Mi
+
+# -- Agent Configuration, get this data from the Nobl9 UI
+config:
+  # -- Name of the organization
+  organization: ""
+  # -- Name of the datasource
+  datasource_name: ""
+  # -- Name of the project
+  project: ""
+  # -- Client ID
+  client_id: ""
+  # -- Client Secret
+  client_secret: ""

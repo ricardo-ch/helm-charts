@@ -1,0 +1,20 @@
+apiVersion: v2
+name: nobl9-agent
+version: 1.0.0
+appVersion: 0.14.0
+description: This Chart installs and configures the agent used to communicate with Nobl9.
+home: https://nobl9.com
+sources:
+  - https://github.com/ricardo-ch/helm-charts/tree/main/charts/nobl9-agent
+maintainers:
+  - name: ricardo-ch
+    email: sre@ricardo.ch
+keywords:
+  - nobl9
+  - slo
+annotations:
+  artifacthub.io/changes: |
+    - initial release
+  artifacthub.io/images: |
+    - name: nobl9
+      image: nobl9/agent:0.14.0
