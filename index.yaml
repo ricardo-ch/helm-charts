@@ -130,6 +130,34 @@ entries:
   promlens:
   - annotations:
       artifacthub.io/changes: |
+        - Upgrade app version & fix icon 404
+      artifacthub.io/images: |
+        - name: promlens
+          image: promlabs/promlens:v0.11.1
+    apiVersion: v2
+    appVersion: 0.11.1
+    created: "2021-02-12T14:04:27.000893086Z"
+    description: This Chart installs and configures PromLens from PromLabs.
+    digest: 1ec911c9ddf52fabb9e05d71dade795d7e0910a2b5144e0c438fb8ab15340e7e
+    home: https://promlens.com
+    icon: https://promlens.com/favicon-32x32.png
+    keywords:
+    - promlens
+    - promlabs
+    - prometheus
+    - promql
+    maintainers:
+    - email: sre@ricardo.ch
+      name: ricardo-ch
+    name: promlens
+    sources:
+    - https://github.com/ricardo-ch/helm-charts/tree/main/charts/promlens
+    - https://github.com/promlabs/promlens-public
+    urls:
+    - https://github.com/ricardo-ch/helm-charts/releases/download/promlens-1.0.7/promlens-1.0.7.tgz
+    version: 1.0.7
+  - annotations:
+      artifacthub.io/changes: |
         - Add options for link sharing via mysql database
       artifacthub.io/images: |
         - name: promlens
