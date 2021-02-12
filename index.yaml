@@ -101,6 +101,32 @@ entries:
     urls:
     - https://github.com/ricardo-ch/helm-charts/releases/download/imaginary-0.1.0/imaginary-0.1.0.tgz
     version: 0.1.0
+  nobl9-agent:
+  - annotations:
+      artifacthub.io/changes: |
+        - initial release
+      artifacthub.io/images: |
+        - name: nobl9
+          image: nobl9/agent:0.14.0
+    apiVersion: v2
+    appVersion: 0.14.0
+    created: "2021-02-12T09:33:04.557225917Z"
+    description: This Chart installs and configures the agent used to communicate
+      with Nobl9.
+    digest: 2f6f77d4477c707afdfeb08a44231f47db2b27b38f767c22c95df100c2704fe6
+    home: https://nobl9.com
+    keywords:
+    - nobl9
+    - slo
+    maintainers:
+    - email: sre@ricardo.ch
+      name: ricardo-ch
+    name: nobl9-agent
+    sources:
+    - https://github.com/ricardo-ch/helm-charts/tree/main/charts/nobl9-agent
+    urls:
+    - https://github.com/ricardo-ch/helm-charts/releases/download/nobl9-agent-1.0.0/nobl9-agent-1.0.0.tgz
+    version: 1.0.0
   promlens:
   - annotations:
       artifacthub.io/changes: |
