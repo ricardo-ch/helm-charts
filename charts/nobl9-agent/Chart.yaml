@@ -5,7 +5,7 @@ appVersion: 0.14.0
 description: This Chart installs and configures the agent used to communicate with Nobl9.
 home: https://nobl9.com
 sources:
-  - https://github.com/ricardo-ch/helm-charts/tree/main/charts/nobl9
+  - https://github.com/ricardo-ch/helm-charts/tree/main/charts/nobl9-agent
 maintainers:
   - name: ricardo-ch
     email: sre@ricardo.ch

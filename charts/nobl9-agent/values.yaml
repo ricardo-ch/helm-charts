@@ -15,14 +15,15 @@ resources: {}
   #   cpu: 700m
   #   memory: 700Mi
 
+# -- Agent Configuration, get this data from the Nobl9 UI
 config:
-  # -- Name of the organization as configured in Nobl9
+  # -- Name of the organization
   organization: ""
-  # -- Name of the datasource as configured in Nobl9
+  # -- Name of the datasource
   datasource_name: ""
-  # -- Name of the project as configured in Nobl9
+  # -- Name of the project
   project: ""
-  # -- Client ID as configured in Nobl9
+  # -- Client ID
   client_id: ""
-  # -- Client Secret as configured in Nobl9
+  # -- Client Secret
   client_secret: ""
