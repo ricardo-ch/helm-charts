@@ -3,6 +3,31 @@ entries:
   imaginary:
   - annotations:
       artifacthub.io/changes: |
+        - Removing default value for Istio CPU limit
+      artifacthub.io/images: |
+        - name: imaginary
+          image: h2non/imaginary:1.2.4
+    apiVersion: v2
+    appVersion: 1.2.4
+    created: "2021-02-18T15:21:53.676106693Z"
+    description: Deploy imaginary to process pictures on the fly
+    digest: 21d712ac9b0e90e5a88354eb2a8fd6fda7cfbdb1445589c4eb873fc17fe6e38a
+    home: https://github.com/h2non/imaginary
+    keywords:
+    - imaginary
+    - h2non
+    maintainers:
+    - email: sre@ricardo.ch
+      name: ricardo-ch
+    name: imaginary
+    sources:
+    - https://github.com/ricardo-ch/helm-charts/tree/main/charts/imaginary
+    - https://github.com/h2non/imaginary
+    urls:
+    - https://github.com/ricardo-ch/helm-charts/releases/download/imaginary-0.1.4/imaginary-0.1.4.tgz
+    version: 0.1.4
+  - annotations:
+      artifacthub.io/changes: |
         - Adding configuration for istio sidecar(injection and resources). Support istio 1.8+ annotations.
       artifacthub.io/images: |
         - name: imaginary
