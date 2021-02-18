@@ -1,6 +1,6 @@
 # Imaginary
 
-![Version: 0.1.3](https://img.shields.io/badge/Version-0.1.3-informational?style=flat-square) ![AppVersion: 1.2.4](https://img.shields.io/badge/AppVersion-1.2.4-informational?style=flat-square) ![Release Status](https://github.com/ricardo-ch/helm-charts/workflows/Release%20Charts/badge.svg) [![License](https://img.shields.io/github/license/ricardo-ch/helm-charts)](https://github.com/ricardo-ch/helm-charts/blob/main/LICENSE)
+![Version: 0.1.4](https://img.shields.io/badge/Version-0.1.4-informational?style=flat-square) ![AppVersion: 1.2.4](https://img.shields.io/badge/AppVersion-1.2.4-informational?style=flat-square) ![Release Status](https://github.com/ricardo-ch/helm-charts/workflows/Release%20Charts/badge.svg) [![License](https://img.shields.io/github/license/ricardo-ch/helm-charts)](https://github.com/ricardo-ch/helm-charts/blob/main/LICENSE)
 
 This chart installs [Imaginary](https://github.com/h2non/imaginary).
 
@@ -34,7 +34,6 @@ Simply add this Chart repository to Helm:
 | image | string | `"h2non/imaginary:1.2.4"` | Docker image repository to pull it. |
 | imagePullPolicy | string | `"IfNotPresent"` | imagePullPolicy used by k8s |
 | istio.cpu | string | `"10m"` | istio sidecar cpu request |
-| istio.cpuLimit | string | `"10m"` | istio sidecar cpu request limit |
 | istio.inject | bool | `false` | istio sidecar configuration, enable injecting sidecar |
 | istio.memory | string | `"128Mi"` | istio sidecar memory request |
 | istio.memoryLimit | string | `"128Mi"` | istio sidecar memory limit |
