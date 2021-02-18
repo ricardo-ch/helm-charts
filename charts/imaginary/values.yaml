@@ -67,6 +67,9 @@ istio:
   memoryLimit: 128Mi
   # -- istio sidecar cpu request
   cpu: 10m
+  # -- istio sidecar cpu request limit
+  cpuLimit:
+
 
 # -- estimated time to propagate the information the pod is not part of the service anymore
 gracefulShutdownDelaySeconds:

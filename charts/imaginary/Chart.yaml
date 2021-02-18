@@ -15,7 +15,7 @@ keywords:
   - h2non
 annotations:
   artifacthub.io/changes: |
-    - Removing Istio CPU limit
+    - Removing default value for Istio CPU limit
   artifacthub.io/images: |
     - name: imaginary
       image: h2non/imaginary:1.2.4
