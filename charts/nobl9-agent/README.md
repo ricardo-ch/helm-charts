@@ -1,6 +1,6 @@
 # nobl9-agent
 
-![Version: 1.0.0](https://img.shields.io/badge/Version-1.0.0-informational?style=flat-square) ![AppVersion: 0.14.0](https://img.shields.io/badge/AppVersion-0.14.0-informational?style=flat-square) ![Release Status](https://github.com/ricardo-ch/helm-charts/workflows/Release%20Charts/badge.svg) [![License](https://img.shields.io/github/license/ricardo-ch/helm-charts)](https://github.com/ricardo-ch/helm-charts/blob/main/LICENSE)
+![Version: 1.0.1](https://img.shields.io/badge/Version-1.0.1-informational?style=flat-square) ![AppVersion: 0.15.0](https://img.shields.io/badge/AppVersion-0.15.0-informational?style=flat-square) ![Release Status](https://github.com/ricardo-ch/helm-charts/workflows/Release%20Charts/badge.svg) [![License](https://img.shields.io/github/license/ricardo-ch/helm-charts)](https://github.com/ricardo-ch/helm-charts/blob/main/LICENSE)
 
 This chart installs the agent required talk to [Nobl9](https://nobl9.com/).
 
@@ -28,6 +28,7 @@ Simply add this Chart repository to Helm:
 | deployment.image | string | `"nobl9/agent"` | Nobl9 Agent Container Image |
 | deployment.pull_policy | string | `"IfNotPresent"` | Pull Policy |
 | deployment.version | string | `"0.14.0"` | Nobl9 Agent Container Image Version |
+| pod_annotations | object | `{}` | Set custom pod annotations |
 | resources | object | `{}` | Set kubernetes specific resource limits |
 
 ## Source Code

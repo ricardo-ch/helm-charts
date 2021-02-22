@@ -23,6 +23,10 @@ spec:
         nobl9-agent-name: {{ .Values.config.datasource_name }}
         nobl9-agent-project: {{ .Values.config.project }}
         nobl9-agent-organization: {{ .Values.config.organization }}
+      {{- if .Values.pod_annotations }}
+      annotations:
+{{ toYaml .Values.pod_annotations | indent 8 }}
+      {{ end }}
     spec:
       containers:
         - name: "agent-container"
