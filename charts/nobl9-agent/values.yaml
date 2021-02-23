@@ -6,6 +6,9 @@ deployment:
   # -- Pull Policy
   pull_policy: IfNotPresent
 
+# -- Set custom pod annotations
+pod_annotations: {}
+
 # -- Set kubernetes specific resource limits
 resources: {}
   # limits:
