@@ -129,6 +129,32 @@ entries:
   nobl9-agent:
   - annotations:
       artifacthub.io/changes: |
+        - Add support for optional Pod Annotations
+        - Update appVersion to v0.15.0
+      artifacthub.io/images: |
+        - name: nobl9
+          image: nobl9/agent:0.15.0
+    apiVersion: v2
+    appVersion: 0.15.0
+    created: "2021-02-23T07:05:31.046152564Z"
+    description: This Chart installs and configures the agent used to communicate
+      with Nobl9.
+    digest: dc4ad48fab9223e2badd2e76c884c5a97462b13662b57b0fd9800f26ea20a2b3
+    home: https://nobl9.com
+    keywords:
+    - nobl9
+    - slo
+    maintainers:
+    - email: sre@ricardo.ch
+      name: ricardo-ch
+    name: nobl9-agent
+    sources:
+    - https://github.com/ricardo-ch/helm-charts/tree/main/charts/nobl9-agent
+    urls:
+    - https://github.com/ricardo-ch/helm-charts/releases/download/nobl9-agent-1.0.1/nobl9-agent-1.0.1.tgz
+    version: 1.0.1
+  - annotations:
+      artifacthub.io/changes: |
         - initial release
       artifacthub.io/images: |
         - name: nobl9
