@@ -9,6 +9,31 @@ entries:
           image: h2non/imaginary:1.2.4
     apiVersion: v2
     appVersion: 1.2.4
+    created: "2021-04-23T13:29:43.301409727Z"
+    description: Deploy imaginary to process pictures on the fly
+    digest: 3acf0b0170e001fe9f9fe4664d3b6bd9601130584c55bcf7b026603f87a061dc
+    home: https://github.com/h2non/imaginary
+    keywords:
+    - imaginary
+    - h2non
+    maintainers:
+    - email: sre@ricardo.ch
+      name: ricardo-ch
+    name: imaginary
+    sources:
+    - https://github.com/ricardo-ch/helm-charts/tree/main/charts/imaginary
+    - https://github.com/h2non/imaginary
+    urls:
+    - https://github.com/ricardo-ch/helm-charts/releases/download/imaginary-0.1.5/imaginary-0.1.5.tgz
+    version: 0.1.5
+  - annotations:
+      artifacthub.io/changes: |
+        - Removing default value for Istio CPU limit
+      artifacthub.io/images: |
+        - name: imaginary
+          image: h2non/imaginary:1.2.4
+    apiVersion: v2
+    appVersion: 1.2.4
     created: "2021-02-18T15:21:53.676106693Z"
     description: Deploy imaginary to process pictures on the fly
     digest: 21d712ac9b0e90e5a88354eb2a8fd6fda7cfbdb1445589c4eb873fc17fe6e38a
@@ -136,6 +161,32 @@ entries:
           image: nobl9/agent:0.15.0
     apiVersion: v2
     appVersion: 0.15.0
+    created: "2021-04-23T13:29:43.456648974Z"
+    description: This Chart installs and configures the agent used to communicate
+      with Nobl9.
+    digest: 29cabe69abaf11d5a16fe556472e3a8258fcd8c93bdb4d4facbf319e12372556
+    home: https://nobl9.com
+    keywords:
+    - nobl9
+    - slo
+    maintainers:
+    - email: sre@ricardo.ch
+      name: ricardo-ch
+    name: nobl9-agent
+    sources:
+    - https://github.com/ricardo-ch/helm-charts/tree/main/charts/nobl9-agent
+    urls:
+    - https://github.com/ricardo-ch/helm-charts/releases/download/nobl9-agent-1.0.2/nobl9-agent-1.0.2.tgz
+    version: 1.0.2
+  - annotations:
+      artifacthub.io/changes: |
+        - Add support for optional Pod Annotations
+        - Update appVersion to v0.15.0
+      artifacthub.io/images: |
+        - name: nobl9
+          image: nobl9/agent:0.15.0
+    apiVersion: v2
+    appVersion: 0.15.0
     created: "2021-02-23T07:05:31.046152564Z"
     description: This Chart installs and configures the agent used to communicate
       with Nobl9.
@@ -179,6 +230,34 @@ entries:
     - https://github.com/ricardo-ch/helm-charts/releases/download/nobl9-agent-1.0.0/nobl9-agent-1.0.0.tgz
     version: 1.0.0
   promlens:
+  - annotations:
+      artifacthub.io/changes: |
+        - Upgrade app version & fix icon 404
+      artifacthub.io/images: |
+        - name: promlens
+          image: promlabs/promlens:v0.11.1
+    apiVersion: v2
+    appVersion: 0.11.1
+    created: "2021-04-23T13:29:43.602479757Z"
+    description: This Chart installs and configures PromLens from PromLabs.
+    digest: ca971c92c90baa1c6e7dbcd11e9824961164f51129f7808e56919dfd7492a672
+    home: https://promlens.com
+    icon: https://promlens.com/favicon-32x32.png
+    keywords:
+    - promlens
+    - promlabs
+    - prometheus
+    - promql
+    maintainers:
+    - email: sre@ricardo.ch
+      name: ricardo-ch
+    name: promlens
+    sources:
+    - https://github.com/ricardo-ch/helm-charts/tree/main/charts/promlens
+    - https://github.com/promlabs/promlens-public
+    urls:
+    - https://github.com/ricardo-ch/helm-charts/releases/download/promlens-1.0.8/promlens-1.0.8.tgz
+    version: 1.0.8
   - annotations:
       artifacthub.io/changes: |
         - Upgrade app version & fix icon 404
