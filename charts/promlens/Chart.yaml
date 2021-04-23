@@ -1,6 +1,6 @@
 apiVersion: v2
 name: promlens
-version: 1.0.7
+version: 1.0.8
 appVersion: 0.11.1
 description: This Chart installs and configures PromLens from PromLabs.
 home: https://promlens.com
