@@ -19,3 +19,4 @@ Run `helm repo add` to use the charts in this repository:
 $ helm repo add ricardo https://ricardo-ch.github.io/helm-charts/
 "ricardo" has been added to your repositories
 ```
+
