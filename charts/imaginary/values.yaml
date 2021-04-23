@@ -1,3 +1,9 @@
+# -- A toleration
+tolerations: []
+# - key: "test"
+#   operator: "Exists"
+#   effect: "NoSchedule"
+
 # -- A node selector label
 nodeSelector: {}
 
