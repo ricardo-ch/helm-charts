@@ -259,6 +259,34 @@ entries:
   promlens:
   - annotations:
       artifacthub.io/changes: |
+        - Upgrade app version to 1.0.0
+      artifacthub.io/images: |
+        - name: promlens
+          image: promlabs/promlens:v1.0.0
+    apiVersion: v2
+    appVersion: 1.0.0
+    created: "2021-05-28T14:33:12.17091777Z"
+    description: This Chart installs and configures PromLens from PromLabs.
+    digest: 417b79a9f960b8cd561acc1cb763eac97225ecf852195eb0ee42cf7a9e562f36
+    home: https://promlens.com
+    icon: https://promlens.com/favicon-32x32.png
+    keywords:
+    - promlens
+    - promlabs
+    - prometheus
+    - promql
+    maintainers:
+    - email: sre@ricardo.ch
+      name: ricardo-ch
+    name: promlens
+    sources:
+    - https://github.com/ricardo-ch/helm-charts/tree/main/charts/promlens
+    - https://github.com/promlabs/promlens-public
+    urls:
+    - https://github.com/ricardo-ch/helm-charts/releases/download/promlens-1.0.9/promlens-1.0.9.tgz
+    version: 1.0.9
+  - annotations:
+      artifacthub.io/changes: |
         - Upgrade app version & fix icon 404
       artifacthub.io/images: |
         - name: promlens
