@@ -1,48 +1,49 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ template "noble9-agent.fullname" . }}
+  name: {{ template "nobl9-agent.fullname" . }}
   namespace: {{ .Release.Namespace }}
   labels:
-    app: {{ template "noble9-agent.name" . }}
-    chart: {{ template "noble9-agent.chart" . }}
+    app: {{ template "nobl9-agent.name" . }}
+    chart: {{ template "nobl9-agent.chart" . }}
     release: {{ .Release.Name | quote }}
     heritage: {{ .Release.Service | quote }}
 spec:
   replicas: 1
+  strategy:
+    type: Recreate
   selector:
     matchLabels:
-      app: {{ template "noble9-agent.name" . }}
-      nobl9-agent-name: {{ .Values.config.datasource_name }}
-      nobl9-agent-project: {{ .Values.config.project }}
-      nobl9-agent-organization: {{ .Values.config.organization }}
+      app: {{ template "nobl9-agent.name" . }}
+      nobl9-agent-name: {{ .Values.config.datasource_name | quote  }}
+      nobl9-agent-project: {{ .Values.config.project | quote  }}
+      nobl9-agent-organization: {{ .Values.config.organization | quote }}
   template:
     metadata:
       labels:
-        app: {{ template "noble9-agent.name" . }}
-        nobl9-agent-name: {{ .Values.config.datasource_name }}
-        nobl9-agent-project: {{ .Values.config.project }}
-        nobl9-agent-organization: {{ .Values.config.organization }}
+        app: {{ template "nobl9-agent.name" . }}
+        nobl9-agent-name: {{ .Values.config.datasource_name | quote  }}
+        nobl9-agent-project: {{ .Values.config.project | quote  }}
+        nobl9-agent-organization: {{ .Values.config.organization | quote  }}
       {{- if .Values.pod_annotations }}
       annotations:
 {{ toYaml .Values.pod_annotations | indent 8 }}
       {{ end }}
     spec:
       containers:
-        - name: "agent-container"
+        - name: agent-container
           image: {{ .Values.deployment.image }}:{{ .Values.deployment.version }}
           imagePullPolicy: {{ .Values.deployment.pull_policy }}
           resources:
-            requests:
-{{ toYaml .Values.resources | indent 14 }}
+{{ toYaml .Values.resources | indent 12 }}
           env:
             - name: N9_CLIENT_ID
               valueFrom:
                 secretKeyRef:
                   key: client_id
-                  name: {{ template "noble9-agent.fullname" . }}
+                  name: {{ template "nobl9-agent.fullname" . }}
             - name: N9_CLIENT_SECRET
               valueFrom:
                 secretKeyRef:
                   key: client_secret
-                  name: {{ template "noble9-agent.fullname" . }}
+                  name: {{ template "nobl9-agent.fullname" . }}
