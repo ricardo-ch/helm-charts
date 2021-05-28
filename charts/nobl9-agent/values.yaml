@@ -2,7 +2,7 @@ deployment:
   # -- Nobl9 Agent Container Image
   image: "nobl9/agent"
   # -- Nobl9 Agent Container Image Version
-  version: "0.14.0"
+  version: "0.21.0"
   # -- Pull Policy
   pull_policy: IfNotPresent
 
