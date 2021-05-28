@@ -15,6 +15,8 @@ keywords:
 annotations:
   artifacthub.io/changes: |
     - Update appVersion to v0.21.0
+    - Change deployment strategy to Recreate
+    - Set defaults for resource requests
   artifacthub.io/images: |
     - name: nobl9
       image: nobl9/agent:0.21.0

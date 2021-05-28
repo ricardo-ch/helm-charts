@@ -29,7 +29,7 @@ Simply add this Chart repository to Helm:
 | deployment.pull_policy | string | `"IfNotPresent"` | Pull Policy |
 | deployment.version | string | `"0.21.0"` | Nobl9 Agent Container Image Version |
 | pod_annotations | object | `{}` | Set custom pod annotations |
-| resources | object | `{}` | Set kubernetes specific resource limits |
+| resources | object | `{"requests":{"cpu":"0.1","memory":"350Mi"}}` | Set kubernetes specific resource limits |
 
 ## Source Code
 
