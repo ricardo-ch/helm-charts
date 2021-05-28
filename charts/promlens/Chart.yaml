@@ -1,7 +1,7 @@
 apiVersion: v2
 name: promlens
-version: 1.0.8
-appVersion: 0.11.1
+version: 1.0.9
+appVersion: 1.0.0
 description: This Chart installs and configures PromLens from PromLabs.
 home: https://promlens.com
 icon: https://promlens.com/favicon-32x32.png
@@ -18,7 +18,7 @@ keywords:
   - promql
 annotations:
   artifacthub.io/changes: |
-    - Upgrade app version & fix icon 404
+    - Upgrade app version to 1.0.0
   artifacthub.io/images: |
     - name: promlens
-      image: promlabs/promlens:v0.11.1
+      image: promlabs/promlens:v1.0.0
