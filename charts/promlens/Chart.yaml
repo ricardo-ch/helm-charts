@@ -21,4 +21,4 @@ annotations:
     - Upgrade app version to 1.0.0
   artifacthub.io/images: |
     - name: promlens
-      image: promlabs/promlens:v0.11.1
+      image: promlabs/promlens:v1.0.0
