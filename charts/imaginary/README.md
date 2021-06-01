@@ -50,7 +50,7 @@ Simply add this Chart repository to Helm:
 | tls.certificate | string | `""` | Base64 encoded TLS certificate file |
 | tls.privateKey | string | `""` | Base64 encoded private key file for TLS certificate. |
 | tolerations | list | `[]` | A toleration |
-
+| env | object | `{}` | Add extra ENVIRONMENT variables to Deployment|
 ## Source Code
 
 * <https://github.com/ricardo-ch/helm-charts/tree/main/charts/imaginary>

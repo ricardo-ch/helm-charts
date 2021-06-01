@@ -49,6 +49,12 @@ spec:
         env:
         - name: PORT
           value: {{ .Values.httpPort | quote }}
+        {{- if .Values.env -}}
+        {{- range $name, $value := .Values.env }}
+        - name: {{ $name }}
+          value: {{ $value | quote }}
+        {{- end }}
+        {{- end }}
         {{- if .Values.apiKey }}
         - name: API_KEY
           valueFrom:
