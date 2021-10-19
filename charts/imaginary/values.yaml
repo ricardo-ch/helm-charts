@@ -45,6 +45,8 @@ livenessProbe:
 config: {}
   # example
   # path-prefix: "/nya"
+env: {}
+  # MALLOC_ARENA_MAX: 2
 
 tls:
   # -- Base64 encoded private key file for TLS certificate.

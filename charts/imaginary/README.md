@@ -1,6 +1,6 @@
 # Imaginary
 
-![Version: 0.1.5](https://img.shields.io/badge/Version-0.1.5-informational?style=flat-square) ![AppVersion: 1.2.4](https://img.shields.io/badge/AppVersion-1.2.4-informational?style=flat-square) ![Release Status](https://github.com/ricardo-ch/helm-charts/workflows/Release%20Charts/badge.svg) [![License](https://img.shields.io/github/license/ricardo-ch/helm-charts)](https://github.com/ricardo-ch/helm-charts/blob/main/LICENSE)
+![Version: 0.1.6](https://img.shields.io/badge/Version-0.1.6-informational?style=flat-square) ![AppVersion: 1.2.4](https://img.shields.io/badge/AppVersion-1.2.4-informational?style=flat-square) ![Release Status](https://github.com/ricardo-ch/helm-charts/workflows/Release%20Charts/badge.svg) [![License](https://img.shields.io/github/license/ricardo-ch/helm-charts)](https://github.com/ricardo-ch/helm-charts/blob/main/LICENSE)
 
 This chart installs [Imaginary](https://github.com/h2non/imaginary).
 
@@ -28,6 +28,7 @@ Simply add this Chart repository to Helm:
 | additionalLabels | object | `{}` | append labels to both the deployment, pdb, hpa and the pods label list |
 | apikey | string | `""` | Define API key for authorization |
 | config | object | `{}` | Imaginary arguments. use the same hyphen separated synthax for the key. use strings for the value or you might get a bad formatting. |
+| env | object | `{}` |  |
 | gracefulShutdownDelaySeconds | int | `10` | estimated time to propagate the information the pod is not part of the service anymore |
 | hpa | object | `{"maxReplicas":2,"minReplicas":2}` | Horizontal pod autoscaling configuration |
 | httpPort | int | `8080` | Which port should Imaginary and its Kubernetes service listen |
