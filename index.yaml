@@ -3,6 +3,31 @@ entries:
   imaginary:
   - annotations:
       artifacthub.io/changes: |
+        - Add env-vars to deployment
+      artifacthub.io/images: |
+        - name: imaginary
+          image: h2non/imaginary:1.2.4
+    apiVersion: v2
+    appVersion: 1.2.4
+    created: "2021-10-19T07:24:52.303882348Z"
+    description: Deploy imaginary to process pictures on the fly
+    digest: 98b702edc8c6e49a34f7415560c18915a8b62028ddc6b6e3604c3dd7f8558e15
+    home: https://github.com/h2non/imaginary
+    keywords:
+    - imaginary
+    - h2non
+    maintainers:
+    - email: sre@ricardo.ch
+      name: ricardo-ch
+    name: imaginary
+    sources:
+    - https://github.com/ricardo-ch/helm-charts/tree/main/charts/imaginary
+    - https://github.com/h2non/imaginary
+    urls:
+    - https://github.com/ricardo-ch/helm-charts/releases/download/imaginary-0.1.6/imaginary-0.1.6.tgz
+    version: 0.1.6
+  - annotations:
+      artifacthub.io/changes: |
         - Removing default value for Istio CPU limit
       artifacthub.io/images: |
         - name: imaginary
