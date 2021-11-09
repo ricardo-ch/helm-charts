@@ -179,6 +179,31 @@ entries:
   nobl9-agent:
   - annotations:
       artifacthub.io/changes: |
+        - Update appVersion to v0.33.0
+      artifacthub.io/images: |
+        - name: nobl9
+          image: nobl9/agent:0.33.0
+    apiVersion: v2
+    appVersion: 0.33.0
+    created: "2021-11-09T13:35:40.300198833Z"
+    description: This Chart installs and configures the agent used to communicate
+      with Nobl9.
+    digest: 9b3cdc21701adb66c1de000de0c8104d047df3dbc06e217c50e1e8f138e30be2
+    home: https://nobl9.com
+    keywords:
+    - nobl9
+    - slo
+    maintainers:
+    - email: sre@ricardo.ch
+      name: ricardo-ch
+    name: nobl9-agent
+    sources:
+    - https://github.com/ricardo-ch/helm-charts/tree/main/charts/nobl9-agent
+    urls:
+    - https://github.com/ricardo-ch/helm-charts/releases/download/nobl9-agent-1.0.4/nobl9-agent-1.0.4.tgz
+    version: 1.0.4
+  - annotations:
+      artifacthub.io/changes: |
         - Update appVersion to v0.21.0
         - Change deployment strategy to Recreate
         - Set defaults for resource requests
