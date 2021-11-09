@@ -1,7 +1,7 @@
 apiVersion: v2
 name: nobl9-agent
-version: 1.0.3
-appVersion: 0.21.0
+version: 1.0.4
+appVersion: 0.33.0
 description: This Chart installs and configures the agent used to communicate with Nobl9.
 home: https://nobl9.com
 sources:
@@ -14,9 +14,7 @@ keywords:
   - slo
 annotations:
   artifacthub.io/changes: |
-    - Update appVersion to v0.21.0
-    - Change deployment strategy to Recreate
-    - Set defaults for resource requests
+    - Update appVersion to v0.33.0
   artifacthub.io/images: |
     - name: nobl9
-      image: nobl9/agent:0.21.0
+      image: nobl9/agent:0.33.0
