@@ -2,7 +2,8 @@ apiVersion: v2
 name: metrics-exporter
 version: 1.0.0
 appVersion: "0.5"
-description: This Chart installs and configures agnostic metrics exporter for sql servers
+description: This Chart installs and configures agnostic metrics exporter for
+  sql servers
 sources:
   - https://github.com/ricardo-ch/helm-charts/tree/main/charts/metrics-exporter
 maintainers:
