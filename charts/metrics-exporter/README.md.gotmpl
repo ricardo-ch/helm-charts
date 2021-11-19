@@ -1,0 +1,22 @@
+# nobl9-agent
+
+{{ template "chart.deprecationWarning" . }}
+
+{{ template "chart.versionBadge" . }}{{ template "chart.typeBadge" . }}{{ template "chart.appVersionBadge" . }}![Release Status](https://github.com/ricardo-ch/helm-charts/workflows/Release%20Charts/badge.svg) [![License](https://img.shields.io/github/license/ricardo-ch/helm-charts)](https://github.com/ricardo-ch/helm-charts/blob/main/LICENSE)
+
+This chart installs [the agnostic metrics exporter for sql servers](https://github.com/free/sql_exporter)
+
+### How To Install
+
+Simply add this Chart repository to Helm:
+
+```sh
+➜ helm repo add ricardo https://ricardo-ch.github.io/helm-charts/
+"ricardo" has been added to your repositories
+```
+
+{{ template "chart.valuesSection" . }}
+
+{{ template "chart.sourcesSection" . }}
+
+{{ template "helm-docs.versionFooter" . }}

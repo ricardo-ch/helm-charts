@@ -46,14 +46,5 @@ resources:
 
 nodeSelector: {}
 
-labels:
-  release: "experimental"
-
-extraVolumeMounts:
-  - name: cloudsql-proxy-credentials
-    secret:
-      defaultMode: 420
-      secretName: cloudsql-proxy-legacy-credentials
-
 config:
   sqlexporter: {}
