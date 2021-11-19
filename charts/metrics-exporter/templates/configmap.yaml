@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "sqlserver-prometheus-exporter.fullname" . }}
+  labels:
+    app: {{ template "sqlserver-prometheus-exporter.name" . }}
+    chart: {{ template "sqlserver-prometheus-exporter.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+data:
+  {{ if .Values.config.sqlexporter }}
+  sql_exporter.yaml: |
+{{ printf .Values.config.sqlexporter | indent 4 }}
+  {{ end }}
