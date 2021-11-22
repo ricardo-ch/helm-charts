@@ -2,7 +2,7 @@
 
 ![Version: 1.0.0](https://img.shields.io/badge/Version-1.0.0-informational?style=flat-square) ![AppVersion: 0.5](https://img.shields.io/badge/AppVersion-0.5-informational?style=flat-square) ![Release Status](https://github.com/ricardo-ch/helm-charts/workflows/Release%20Charts/badge.svg) [![License](https://img.shields.io/github/license/ricardo-ch/helm-charts)](https://github.com/ricardo-ch/helm-charts/blob/main/LICENSE)
 
-This chart installs [the agnostic metrics exporter for sql servers](https://github.com/free/sql_exporter)
+This chart installs [the DBMS agnostic metrics exporter](https://github.com/free/sql_exporter) based on SQL queries.
 
 ### How To Install
 
@@ -28,7 +28,7 @@ Simply add this Chart repository to Helm:
 | podAnnotations."prometheus.io/scrape" | string | `"true"` | Set a flag to mark pod for scrapping |
 | podSecurityContext | object | `{}` | Set a pod security context |
 | replicaCount | int | `1` | Set number of pods |
-| resources | object | `{"limits":{"cpu":"100m","memory":"128Mi"},"requests":{"cpu":"100m","memory":"128Mi"}}` | Set a exporter resources |
+| resources | object | `{"limits":{"memory":"128Mi"},"requests":{"cpu":"100m","memory":"128Mi"}}` | Set a exporter resources |
 | securityContext | object | `{}` | Set a security context |
 | service | object | `{"port":80,"type":"ClusterIP"}` | Set a service type and port |
 

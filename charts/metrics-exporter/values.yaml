@@ -46,7 +46,6 @@ service:
 # -- Set a exporter resources
 resources:
   limits:
-    cpu: 100m
     memory: 128Mi
   requests:
     cpu: 100m
