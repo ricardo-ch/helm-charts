@@ -2,25 +2,33 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
+# -- Set number of pods
 replicaCount: 1
 
+
 image:
+  # -- Set an exporter image
   repository: githubfree/sql_exporter
+  # -- Set an image pull policy
   pullPolicy: IfNotPresent
-  # Overrides the image tag whose default is the chart appVersion.
+  # -- Set an image tag
   tag: 0.5
 
+# -- Set an image pull secrets
 imagePullSecrets: []
-nameOverride: ""
-fullnameOverride: ""
 
+# -- Set a pod annotations
 podAnnotations:
+  # -- Set a Prometheus scrape port
   prometheus.io/port: "9399"
+  # -- Set a flag to mark pod for scrapping
   prometheus.io/scrape: "true"
 
+# -- Set a pod security context
 podSecurityContext: {}
   # fsGroup: 2000
 
+# -- Set a security context
 securityContext: {}
   # capabilities:
   #   drop:
@@ -29,11 +37,13 @@ securityContext: {}
   # runAsNonRoot: true
   # runAsUser: 1000
 
+# -- Set a service type and port
 service:
   type: ClusterIP
   port: 80
 
 
+# -- Set a exporter resources
 resources:
   limits:
     cpu: 100m
@@ -42,7 +52,9 @@ resources:
     cpu: 100m
     memory: 128Mi
 
+# -- Set a node selector
 nodeSelector: {}
 
+# -- Set a exporter configuration
 config:
   sqlexporter: {}
