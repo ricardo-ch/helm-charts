@@ -1,0 +1,20 @@
+apiVersion: v2
+name: metrics-exporter
+version: 1.0.0
+appVersion: "0.5"
+description: This Chart installs and configures agnostic metrics exporter for
+  sql servers
+sources:
+  - https://github.com/ricardo-ch/helm-charts/tree/main/charts/metrics-exporter
+maintainers:
+  - name: ricardo-ch
+    email: sre@ricardo.ch
+keywords:
+  - exporter_prometheus
+  - sql_server
+annotations:
+  artifacthub.io/changes: |
+    - Inital release
+  artifacthub.io/images: |
+    - name: free/sql_exporter
+      image: githubfree/sql_exporter:0.5
