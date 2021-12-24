@@ -179,6 +179,30 @@ entries:
   metrics-exporter:
   - annotations:
       artifacthub.io/changes: |
+        - Spelling corrections
+      artifacthub.io/images: |
+        - name: free/sql_exporter
+          image: githubfree/sql_exporter:0.5
+    apiVersion: v2
+    appVersion: "0.5"
+    created: "2021-12-24T13:24:27.105263174Z"
+    description: This Chart installs and configures agnostic metrics exporter for
+      sql servers
+    digest: 07a68b612deea9dce16112ab82b2ba464c7585454cef33e52d3fb2b3b3ddad37
+    keywords:
+    - exporter_prometheus
+    - sql_server
+    maintainers:
+    - email: sre@ricardo.ch
+      name: ricardo-ch
+    name: metrics-exporter
+    sources:
+    - https://github.com/ricardo-ch/helm-charts/tree/main/charts/metrics-exporter
+    urls:
+    - https://github.com/ricardo-ch/helm-charts/releases/download/metrics-exporter-1.0.1/metrics-exporter-1.0.1.tgz
+    version: 1.0.1
+  - annotations:
+      artifacthub.io/changes: |
         - Inital release
       artifacthub.io/images: |
         - name: free/sql_exporter
@@ -357,6 +381,34 @@ entries:
     - https://github.com/ricardo-ch/helm-charts/releases/download/nobl9-agent-1.0.0/nobl9-agent-1.0.0.tgz
     version: 1.0.0
   promlens:
+  - annotations:
+      artifacthub.io/changes: |
+        - Spelling corrections
+      artifacthub.io/images: |
+        - name: promlens
+          image: promlabs/promlens:v1.1.0
+    apiVersion: v2
+    appVersion: 1.1.0
+    created: "2021-12-24T13:24:27.217048551Z"
+    description: This Chart installs and configures PromLens from PromLabs.
+    digest: 3b1fe2669372049977efe03cb9619f903c38a4885d0a2853562d205291a25ca7
+    home: https://promlens.com
+    icon: https://promlens.com/favicon-32x32.png
+    keywords:
+    - promlens
+    - promlabs
+    - prometheus
+    - promql
+    maintainers:
+    - email: sre@ricardo.ch
+      name: ricardo-ch
+    name: promlens
+    sources:
+    - https://github.com/ricardo-ch/helm-charts/tree/main/charts/promlens
+    - https://github.com/promlabs/promlens-public
+    urls:
+    - https://github.com/ricardo-ch/helm-charts/releases/download/promlens-1.0.11/promlens-1.0.11.tgz
+    version: 1.0.11
   - annotations:
       artifacthub.io/changes: |
         - Upgrade app version to 1.1.0
