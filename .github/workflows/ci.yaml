@@ -4,9 +4,9 @@ on:
   pull_request:
     paths:
       - 'charts/**'
+      - '.github/**'
 
 jobs:
-
 
   lint-chart:
     runs-on: ubuntu-latest
