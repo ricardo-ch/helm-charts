@@ -1,6 +1,6 @@
 apiVersion: v2
 name: metrics-exporter
-version: 1.0.0
+version: 1.0.1
 appVersion: "0.5"
 description: This Chart installs and configures agnostic metrics exporter for
   sql servers
@@ -14,7 +14,7 @@ keywords:
   - sql_server
 annotations:
   artifacthub.io/changes: |
-    - Inital release
+    - Spelling corrections
   artifacthub.io/images: |
     - name: free/sql_exporter
       image: githubfree/sql_exporter:0.5

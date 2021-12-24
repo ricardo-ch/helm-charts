@@ -8,8 +8,22 @@ on:
 
 jobs:
 
+  check-spelling:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Codespell
+        uses: codespell-project/actions-codespell@master
+        with:
+          check_filenames: true
+
   lint-chart:
     runs-on: ubuntu-latest
+    needs:
+      - kubeval-chart
+      - lint-docs
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -51,7 +65,6 @@ jobs:
 
   lint-docs:
     runs-on: ubuntu-latest
-    needs: lint-chart
     steps:
       - name: Checkout
         uses: actions/checkout@v1
@@ -60,9 +73,6 @@ jobs:
 
   kubeval-chart:
     runs-on: ubuntu-latest
-    needs:
-      - lint-chart
-      - lint-docs
     strategy:
       matrix:
         k8s:

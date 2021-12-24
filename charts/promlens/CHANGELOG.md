@@ -1,6 +1,6 @@
 ## 1.0.4 / 2020-10-30
 
-* [ENHANCMENT] Use Artifact Hub's Annotation for the Changelog. See [Changelog](https://artifacthub.io/packages/helm/ricardo/promlens?modal=changelog) for future changes.
+* [ENHANCEMENT] Use Artifact Hub's Annotation for the Changelog. See [Changelog](https://artifacthub.io/packages/helm/ricardo/promlens?modal=changelog) for future changes.
 
 ## 1.0.3 / 2020-10-19
 
