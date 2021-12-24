@@ -39,7 +39,7 @@ Simply add this Chart repository to Helm:
 | config.shared_links.sql.retention | string | `"0"` | The maximum retention time for shared links when using a SQL database (e.g. '10m', '12h', '720h'). Set to 0 for infinite retention. |
 | config.web.default_prometheus_url | string | `nil` | The default Prometheus URL to load PromLens with. |
 | config.web.external_url | string | `nil` | The URL under which PromLens is externally reachable (for example, if PromLens is served via a reverse proxy). Used for generating relative and absolute links back to PromLens itself. If the URL has a path portion, it will be used to prefix all HTTP endpoints served by PromLens. If omitted, relevant URL components will be derived automatically. |
-| deployment.image | string | `"promlabs/promlens"` | PromLens Conatiner Image |
+| deployment.image | string | `"promlabs/promlens"` | PromLens Container Image |
 | deployment.replicas | int | `1` | Number of replicas |
 | deployment.version | string | `"v1.1.0"` | PromLens Container Image Version |
 

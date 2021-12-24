@@ -1,7 +1,7 @@
 deployment:
   # -- Number of replicas
   replicas: 1
-  # -- PromLens Conatiner Image
+  # -- PromLens Container Image
   image: "promlabs/promlens"
   # -- PromLens Container Image Version
   version: "v1.1.0"

@@ -14,7 +14,7 @@ keywords:
   - sql_server
 annotations:
   artifacthub.io/changes: |
-    - Inital release
+    - Initial release
   artifacthub.io/images: |
     - name: free/sql_exporter
       image: githubfree/sql_exporter:0.5
