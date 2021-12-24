@@ -8,6 +8,19 @@ on:
 
 jobs:
 
+  check-spelling:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Codespell
+        uses: codespell-project/actions-codespell@master
+        with:
+          check_filenames: true
+          check_hidden: true
+          skip: .git
+
   lint-chart:
     runs-on: ubuntu-latest
     steps:
