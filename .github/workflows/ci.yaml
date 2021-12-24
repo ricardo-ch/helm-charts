@@ -44,7 +44,8 @@ jobs:
         if: steps.list-changed.outputs.changed == 'true'
 
       - name: Run chart-testing (install)
-        run: ct install
+        run: ct install --config .github/ct.yaml
+        if: steps.list-changed.outputs.changed == 'true'
 
 
   lint-docs:
