@@ -21,6 +21,9 @@ jobs:
 
   lint-chart:
     runs-on: ubuntu-latest
+    needs:
+      - kubeval-chart
+      - lint-docs
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -70,9 +73,6 @@ jobs:
 
   kubeval-chart:
     runs-on: ubuntu-latest
-    needs:
-      - lint-chart
-      - lint-docs
     strategy:
       matrix:
         k8s:
