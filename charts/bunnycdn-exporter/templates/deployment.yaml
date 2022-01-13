@@ -23,8 +23,8 @@ spec:
       labels:
         app: {{ template "bunnycdn-exporter.name" . }}
       annotations:
-        prometheus.io/scrape: {{ .Values.scrape }}
-        prometheus.io/port: {{ .Values.port }}
+        prometheus.io/scrape: {{ .Values.scrape | quote  }}
+        prometheus.io/port: {{ .Values.port | quote  }}
     spec:
       containers:
         - name: bunnycdn-exporter
