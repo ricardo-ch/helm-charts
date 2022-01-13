@@ -18,6 +18,6 @@ resources:
 # -- The BunnyCDN API Key, see https://support.bunny.net/hc/en-us/articles/360012168840
 api_key: ""
 # -- Scraping enabled?
-scrape: true
+scrape: "true"
 # -- Scrape port
-port: 9584
+port: "9584"
