@@ -22,11 +22,9 @@ spec:
     metadata:
       labels:
         app: {{ template "bunnycdn-exporter.name" . }}
-      {{- if .Values.pod_annotations }}
       annotations:
         prometheus.io/scrape: {{ .Values.scrape }}
         prometheus.io/port: {{ .Values.port }}
-      {{ end }}
     spec:
       containers:
         - name: bunnycdn-exporter
