@@ -11,6 +11,7 @@ The public Ricardo AG Helm Charts. The code is provided as-is with no warranties
 * [nobl9-agent](https://github.com/ricardo-ch/helm-charts/tree/main/charts/nobl9-agent)
 * [promlens](https://github.com/ricardo-ch/helm-charts/tree/main/charts/promlens)
 * [metrics-exporter](https://github.com/ricardo-ch/helm-charts/tree/main/charts/metrics-exporter)
+* [bunnycdn-exporter](https://github.com/ricardo-ch/helm-charts/tree/main/charts/bunnycdn-exporter)
 
 ## How To Use These Charts
 
