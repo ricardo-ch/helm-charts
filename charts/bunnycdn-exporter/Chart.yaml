@@ -1,0 +1,20 @@
+apiVersion: v2
+name: bunnycdn-exporter
+version: 0.9.0
+appVersion: 1.0.0
+description: Prometheus exporter for BunnyCDN
+home: https://bunny.net/
+sources:
+  - https://github.com/permutive/bunnycdn_exporter
+  - https://github.com/ricardo-ch/helm-charts/tree/main/charts/bunnycdn-exporter
+maintainers:
+  - name: ricardo-ch
+    email: sre@ricardo.ch
+keywords:
+  - bunnycdn
+annotations:
+  artifacthub.io/changes: |
+    - Initial release
+  artifacthub.io/images: |
+    - name: bunnycdn-exporter
+      image: permutive/bunnycdn-exporter:0.1.0

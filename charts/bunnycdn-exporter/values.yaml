@@ -1,0 +1,23 @@
+deployment:
+  # -- BunnyCDN Exporter Container Image
+  image: "permutive/bunnycdn-exporter"
+  # -- BunnyCDN Exporter Image Version
+  version: "0.1.0"
+  # -- Pull Policy
+  pull_policy: IfNotPresent
+
+# -- Kubernetes resource limits
+resources:
+  limits:
+    # cpu: "0.5"
+    memory: "20Mi"
+  requests:
+    cpu: "2m"
+    memory: "20Mi"
+
+# -- The BunnyCDN API Key, see https://support.bunny.net/hc/en-us/articles/360012168840
+api_key: ""
+# -- Scraping enabled?
+scrape: true
+# -- Scrape port
+port: 9584
