@@ -1,8 +1,8 @@
 deployment:
   # -- BunnyCDN Exporter Container Image
-  image: "permutive/bunnycdn-exporter"
+  image: "ricardoag/bunnycdn_exporter"
   # -- BunnyCDN Exporter Image Version
-  version: "0.1.0"
+  version: "v0.2.3"
   # -- Pull Policy
   pull_policy: IfNotPresent
 
