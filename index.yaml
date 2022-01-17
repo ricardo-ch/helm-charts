@@ -3,6 +3,30 @@ entries:
   bunnycdn-exporter:
   - annotations:
       artifacthub.io/changes: |
+        - Change default image to ricardoag/bunnycdn_exporter which includes metric bugfixes, updated dependencies and doesn't run as root user.
+      artifacthub.io/images: |
+        - name: bunnycdn_exporter
+          image: ricardoag/bunnycdn_exporter:v0.2.3
+    apiVersion: v2
+    appVersion: 0.2.3
+    created: "2022-01-17T09:01:12.919852146Z"
+    description: Prometheus exporter for BunnyCDN
+    digest: 4bfbaa215a9ecf08795008a59bee3477c74c4f4b8dbeb4ecd35ac41a23919be7
+    home: https://bunny.net/
+    keywords:
+    - bunnycdn
+    maintainers:
+    - email: sre@ricardo.ch
+      name: ricardo-ch
+    name: bunnycdn-exporter
+    sources:
+    - https://github.com/ricardo-ch/bunnycdn_exporter
+    - https://github.com/ricardo-ch/helm-charts/tree/main/charts/bunnycdn-exporter
+    urls:
+    - https://github.com/ricardo-ch/helm-charts/releases/download/bunnycdn-exporter-1.1.0/bunnycdn-exporter-1.1.0.tgz
+    version: 1.1.0
+  - annotations:
+      artifacthub.io/changes: |
         - First public release
       artifacthub.io/images: |
         - name: bunnycdn-exporter
