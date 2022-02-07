@@ -21,6 +21,10 @@ spec:
       labels:
         app.kubernetes.io/name: {{ include "kafka-proxy.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
+      annotations:
+      {{- with .Values.podAnnotations }}
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
     spec:
       containers:
         - name:  {{ include "kafka-proxy.name" . }}
