@@ -1,0 +1,44 @@
+# -- Number of replicas
+replicaCount: 1
+# -- Kafka-proxy Container Image
+image: "grepplabs/kafka-proxy"
+# -- Kafka-proxy Container Image Version
+version: "v0.3.0"
+# -- Kubernetes PullPolicy
+pullPolicy: IfNotPresent
+
+# -- Set kubernetes specific resource limits
+resources: {}
+  # requests:
+  #   memory: 128Mi
+  #   cpu: 1000m
+  # limits:
+  #   cpu: 2000m
+  #   memory: 256Mi
+
+# -- Set a pod annotations
+podAnnotations:
+  # -- Set a Prometheus scrape port
+  prometheus.io/port: "9399"
+  # -- Set a flag to mark pod for scrapping
+  prometheus.io/scrape: "true"
+
+# -- A toleration
+tolerations: []
+  # - key: "test"
+  #   operator: "Exists"
+  #   effect: "NoSchedule"
+
+# -- A node selector label
+nodeSelector: {}
+
+# -- Node affinity configuration
+affinity: {}
+
+config:
+  # -- Kafka client configuration
+  kafkaClient:
+    jaas: org.apache.kafka.common.security.plain.PlainLoginModule required username="username" password="password";
+    brokers:
+    - kafka-0:9092
+    - kafka-1:9092

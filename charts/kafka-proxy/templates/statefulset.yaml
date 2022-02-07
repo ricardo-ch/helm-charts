@@ -1,0 +1,93 @@
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ include "kafka-proxy.fullname" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "kafka-proxy.name" . }}
+    helm.sh/chart: {{ include "kafka-proxy.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    release: production
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ include "kafka-proxy.name" . }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  replicas: {{ .Values.replicaCount }}
+  serviceName: {{ include "kafka-proxy.name" . }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{ include "kafka-proxy.name" . }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+    spec:
+      containers:
+        - name:  {{ include "kafka-proxy.name" . }}
+          image: "{{ .Values.image }}:{{ .Values.version }}"
+          args:
+            - 'server'
+            - '--log-format=json'
+            {{- range $index, $broker := .Values.config.kafkaClient.brokers }}
+            - '--bootstrap-server-mapping={{ $broker }},0.0.0.0:{{ add 32400 $index}}{{ if ne $index 0}},$(MY_POD_IP):{{ add 32400 $index }}{{ end }}'
+            {{- end }}
+            - '--tls-enable'
+            - '--sasl-enable'
+            - '--sasl-plugin-mechanism=PLAIN'
+            - '--sasl-jaas-config-file=/var/run/secret/jaas.config'
+            - '--proxy-request-buffer-size=32768'
+            - '--proxy-response-buffer-size=32768'
+            - '--proxy-listener-read-buffer-size=32768'
+            - '--proxy-listener-write-buffer-size=131072'
+            - '--kafka-connection-read-buffer-size=131072'
+            - '--kafka-connection-write-buffer-size=32768'
+          env:
+          - name: MY_POD_IP
+            valueFrom:
+              fieldRef:
+                apiVersion: v1
+                fieldPath: status.podIP
+          volumeMounts:
+          - name: "proxy-config"
+            mountPath: "/var/run/secret"
+          ports:
+          - name: metrics
+            containerPort: 9080
+          {{- range $index, $broker := .Values.config.brokers }}
+          - name: kafka-{{ add $index }}
+            containerPort: {{ add 32400 $index }}
+          {{- end }}
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 9080
+            initialDelaySeconds: 5
+            periodSeconds: 3
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 9080
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            timeoutSeconds: 5
+            successThreshold: 2
+            failureThreshold: 5
+          resources:
+{{ toYaml .Values.resources | indent 12 }}
+    {{- with .Values.nodeSelector }}
+      nodeSelector:
+{{ toYaml . | indent 8 }}
+    {{- end }}
+    {{- with .Values.affinity }}
+      affinity:
+{{ toYaml . | indent 8 }}
+    {{- end }}
+    {{- with .Values.tolerations }}
+      tolerations:
+{{ toYaml . | indent 8 }}
+    {{- end }}
+      restartPolicy: Always
+      volumes:
+      - name: proxy-config
+        secret:
+          secretName: {{ include "kafka-proxy.fullname" . }}-config
