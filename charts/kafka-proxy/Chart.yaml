@@ -1,0 +1,20 @@
+apiVersion: v2
+name: kafka-proxy
+version: 0.0.1
+appVersion: 0.3.0
+description: Deploying the grepplabs kafka-proxy as a StatefulSet
+home: https://github.com/grepplabs/kafka-proxy
+sources:
+  - https://github.com/grepplabs/kafka-proxy
+  - https://github.com/ricardo-ch/helm-charts/tree/main/charts/kafka-proxy
+maintainers:
+  - name: ricardo-ch
+    email: sre@ricardo.ch
+keywords:
+  - kafka-proxy
+annotations:
+  artifacthub.io/changes: |
+    - Initial release
+  artifacthub.io/images: |
+    - name: kafka-proxy
+      image: grepplabs/kafka-proxy:v0.3.0
