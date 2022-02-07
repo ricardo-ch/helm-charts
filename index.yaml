@@ -3,6 +3,30 @@ entries:
   bunnycdn-exporter:
   - annotations:
       artifacthub.io/changes: |
+        - Update Helm Docs to v1.6.0
+      artifacthub.io/images: |
+        - name: bunnycdn_exporter
+          image: ricardoag/bunnycdn_exporter:v0.2.3
+    apiVersion: v2
+    appVersion: 0.2.3
+    created: "2022-02-07T12:48:05.484567675Z"
+    description: Prometheus exporter for BunnyCDN
+    digest: eee1fffc94bc2bb5fb2f6782c6a832a8b4b4d2b10c859960be9d0ae84e9a75be
+    home: https://bunny.net/
+    keywords:
+    - bunnycdn
+    maintainers:
+    - email: sre@ricardo.ch
+      name: ricardo-ch
+    name: bunnycdn-exporter
+    sources:
+    - https://github.com/ricardo-ch/bunnycdn_exporter
+    - https://github.com/ricardo-ch/helm-charts/tree/main/charts/bunnycdn-exporter
+    urls:
+    - https://github.com/ricardo-ch/helm-charts/releases/download/bunnycdn-exporter-1.1.1/bunnycdn-exporter-1.1.1.tgz
+    version: 1.1.1
+  - annotations:
+      artifacthub.io/changes: |
         - Change default image to ricardoag/bunnycdn_exporter which includes metric bugfixes, updated dependencies and doesn't run as root user.
       artifacthub.io/images: |
         - name: bunnycdn_exporter
@@ -74,6 +98,31 @@ entries:
     - https://github.com/ricardo-ch/helm-charts/releases/download/bunnycdn-exporter-0.9.0/bunnycdn-exporter-0.9.0.tgz
     version: 0.9.0
   imaginary:
+  - annotations:
+      artifacthub.io/changes: |
+        - Update Helm Docs to v1.6.0
+      artifacthub.io/images: |
+        - name: imaginary
+          image: h2non/imaginary:1.2.4
+    apiVersion: v2
+    appVersion: 1.2.4
+    created: "2022-02-07T12:48:05.697414237Z"
+    description: Deploy imaginary to process pictures on the fly
+    digest: f79ebaffbb18bac85290602d37be184e936fe6b959eea288f2e71a903f0945c1
+    home: https://github.com/h2non/imaginary
+    keywords:
+    - imaginary
+    - h2non
+    maintainers:
+    - email: sre@ricardo.ch
+      name: ricardo-ch
+    name: imaginary
+    sources:
+    - https://github.com/ricardo-ch/helm-charts/tree/main/charts/imaginary
+    - https://github.com/h2non/imaginary
+    urls:
+    - https://github.com/ricardo-ch/helm-charts/releases/download/imaginary-0.1.7/imaginary-0.1.7.tgz
+    version: 0.1.7
   - annotations:
       artifacthub.io/changes: |
         - Add env-vars to deployment
@@ -249,7 +298,56 @@ entries:
     urls:
     - https://github.com/ricardo-ch/helm-charts/releases/download/imaginary-0.1.0/imaginary-0.1.0.tgz
     version: 0.1.0
+  kafka-proxy:
+  - annotations:
+      artifacthub.io/changes: |
+        - Initial release
+      artifacthub.io/images: |
+        - name: kafka-proxy
+          image: grepplabs/kafka-proxy:v0.3.0
+    apiVersion: v2
+    appVersion: 0.3.0
+    created: "2022-02-07T12:48:05.899581292Z"
+    description: Deploying the grepplabs kafka-proxy as a StatefulSet
+    digest: 7b8abe80203a25f0a6f3da23f8bf0adc8f01aa77c29ac22ed3ca27609e4cbabf
+    home: https://github.com/grepplabs/kafka-proxy
+    keywords:
+    - kafka-proxy
+    maintainers:
+    - email: sre@ricardo.ch
+      name: ricardo-ch
+    name: kafka-proxy
+    sources:
+    - https://github.com/grepplabs/kafka-proxy
+    - https://github.com/ricardo-ch/helm-charts/tree/main/charts/kafka-proxy
+    urls:
+    - https://github.com/ricardo-ch/helm-charts/releases/download/kafka-proxy-0.0.1/kafka-proxy-0.0.1.tgz
+    version: 0.0.1
   metrics-exporter:
+  - annotations:
+      artifacthub.io/changes: |
+        - Update Helm Docs to v1.6.0
+      artifacthub.io/images: |
+        - name: free/sql_exporter
+          image: githubfree/sql_exporter:0.5
+    apiVersion: v2
+    appVersion: "0.5"
+    created: "2022-02-07T12:48:06.106148649Z"
+    description: This Chart installs and configures agnostic metrics exporter for
+      sql servers
+    digest: cd741e558cd86ad5af41cd879dda4efcbbf9ec9e1b60ed036120e57a91d36aa1
+    keywords:
+    - exporter_prometheus
+    - sql_server
+    maintainers:
+    - email: sre@ricardo.ch
+      name: ricardo-ch
+    name: metrics-exporter
+    sources:
+    - https://github.com/ricardo-ch/helm-charts/tree/main/charts/metrics-exporter
+    urls:
+    - https://github.com/ricardo-ch/helm-charts/releases/download/metrics-exporter-1.0.2/metrics-exporter-1.0.2.tgz
+    version: 1.0.2
   - annotations:
       artifacthub.io/changes: |
         - Spelling corrections
@@ -299,6 +397,31 @@ entries:
     - https://github.com/ricardo-ch/helm-charts/releases/download/metrics-exporter-1.0.0/metrics-exporter-1.0.0.tgz
     version: 1.0.0
   nobl9-agent:
+  - annotations:
+      artifacthub.io/changes: |
+        - Update Helm Docs to v1.6.0
+      artifacthub.io/images: |
+        - name: nobl9
+          image: nobl9/agent:0.36.0
+    apiVersion: v2
+    appVersion: 0.36.0
+    created: "2022-02-07T12:48:06.336003225Z"
+    description: This Chart installs and configures the agent used to communicate
+      with Nobl9.
+    digest: 490ebc508a6f49bbfb0b178a0f7f815204c75ab152e84855371b10b288c4c50a
+    home: https://nobl9.com
+    keywords:
+    - nobl9
+    - slo
+    maintainers:
+    - email: sre@ricardo.ch
+      name: ricardo-ch
+    name: nobl9-agent
+    sources:
+    - https://github.com/ricardo-ch/helm-charts/tree/main/charts/nobl9-agent
+    urls:
+    - https://github.com/ricardo-ch/helm-charts/releases/download/nobl9-agent-1.0.6/nobl9-agent-1.0.6.tgz
+    version: 1.0.6
   - annotations:
       artifacthub.io/changes: |
         - Update appVersion to v0.36.0
@@ -454,6 +577,34 @@ entries:
     - https://github.com/ricardo-ch/helm-charts/releases/download/nobl9-agent-1.0.0/nobl9-agent-1.0.0.tgz
     version: 1.0.0
   promlens:
+  - annotations:
+      artifacthub.io/changes: |
+        - Update Helm Docs to v1.6.0
+      artifacthub.io/images: |
+        - name: promlens
+          image: promlabs/promlens:v1.1.0
+    apiVersion: v2
+    appVersion: 1.1.0
+    created: "2022-02-07T12:48:06.542954582Z"
+    description: This Chart installs and configures PromLens from PromLabs.
+    digest: d7e976164d71dc2ac14896c90dbf4a85c39d78747557912cca525e50046f769d
+    home: https://promlens.com
+    icon: https://promlens.com/favicon-32x32.png
+    keywords:
+    - promlens
+    - promlabs
+    - prometheus
+    - promql
+    maintainers:
+    - email: sre@ricardo.ch
+      name: ricardo-ch
+    name: promlens
+    sources:
+    - https://github.com/ricardo-ch/helm-charts/tree/main/charts/promlens
+    - https://github.com/promlabs/promlens-public
+    urls:
+    - https://github.com/ricardo-ch/helm-charts/releases/download/promlens-1.0.12/promlens-1.0.12.tgz
+    version: 1.0.12
   - annotations:
       artifacthub.io/changes: |
         - Spelling corrections
