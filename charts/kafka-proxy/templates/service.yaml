@@ -8,13 +8,15 @@ metadata:
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
 spec:
-  type: LoadBalancer
+  type: {{ .Values.config.loadBalancerType }}
+  {{- if eq .Values.config.loadBalancerType "LoadBalancer" }}
   loadBalancerSourceRanges:
     {{- range .Values.config.loadBalancerSourceRanges }}
     - {{ . | title | quote }}
     {{- end }}
+  {{- end }}
   {{- if .Values.config.loadBalancerIP }}
-  loadBalancerIP: {{ .Values.config.loadBalancerIP  }}
+  loadBalancerIP: {{ .Values.config.loadBalancerIP }}
   {{- end }}
   ports:
   {{- range $index, $broker := .Values.config.kafkaClient.brokers }}

@@ -33,7 +33,7 @@ spec:
             - 'server'
             - '--log-format=json'
             {{- range $index, $broker := .Values.config.kafkaClient.brokers }}
-            - '--bootstrap-server-mapping={{ $broker }},0.0.0.0:{{ add 32400 $index}}{{ if ne $index 0}},{{ $.Values.config.loadBalancerIP }}:{{ add 32400 $index }}{{ end }}'
+            - '--bootstrap-server-mapping={{ $broker }},0.0.0.0:{{ add 32400 $index}}{{ if ne $index 0}},{{ $.Values.config.loadBalancerIP | default "$(MY_POD_IP)" }}:{{ add 32400 $index }}{{ end }}'
             {{- end }}
             - '--tls-enable'
             - '--sasl-enable'
