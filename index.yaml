@@ -301,6 +301,30 @@ entries:
   kafka-proxy:
   - annotations:
       artifacthub.io/changes: |
+        - Use GKE LoadBalancer
+      artifacthub.io/images: |
+        - name: kafka-proxy
+          image: grepplabs/kafka-proxy:v0.3.1
+    apiVersion: v2
+    appVersion: 0.3.1
+    created: "2022-02-11T09:19:17.741522086Z"
+    description: Deploying the grepplabs kafka-proxy as a StatefulSet with a GKE LoadBalancer
+    digest: 8d6053894c0ba652d6220aefc070e8f4b85d5ab8445bac3a01564517d5d39d9f
+    home: https://github.com/grepplabs/kafka-proxy
+    keywords:
+    - kafka-proxy
+    maintainers:
+    - email: sre@ricardo.ch
+      name: ricardo-ch
+    name: kafka-proxy
+    sources:
+    - https://github.com/grepplabs/kafka-proxy
+    - https://github.com/ricardo-ch/helm-charts/tree/main/charts/kafka-proxy
+    urls:
+    - https://github.com/ricardo-ch/helm-charts/releases/download/kafka-proxy-0.0.2/kafka-proxy-0.0.2.tgz
+    version: 0.0.2
+  - annotations:
+      artifacthub.io/changes: |
         - Initial release
       artifacthub.io/images: |
         - name: kafka-proxy
