@@ -3,7 +3,7 @@ replicaCount: 1
 # -- Kafka-proxy Container Image
 image: "grepplabs/kafka-proxy"
 # -- Kafka-proxy Container Image Version
-version: "v0.3.0"
+version: "v0.3.1"
 # -- Kubernetes PullPolicy
 pullPolicy: IfNotPresent
 
@@ -42,3 +42,8 @@ config:
     brokers:
     - kafka-0:9092
     - kafka-1:9092
+  # -- Specifies an IP for the load balancers. If omitted, an ephemeral IP is assigned.
+  loadBalancerIP: ""
+  # -- Configures optional firewall rules in GKE and in the VPC to only allow certain source ranges. If you omit this field, your Service accepts traffic from any IP address (0.0.0.0/0).
+  loadBalancerSourceRanges:
+    - 0.0.0.0/0
