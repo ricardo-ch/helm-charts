@@ -301,6 +301,30 @@ entries:
   kafka-proxy:
   - annotations:
       artifacthub.io/changes: |
+        - Support for NodePort and LoadBalancer services
+      artifacthub.io/images: |
+        - name: kafka-proxy
+          image: grepplabs/kafka-proxy:v0.3.1
+    apiVersion: v2
+    appVersion: 0.3.1
+    created: "2022-02-14T07:40:20.518140867Z"
+    description: Deploying the grepplabs kafka-proxy as a StatefulSet with a GKE LoadBalancer
+    digest: b46926207978a041739dc046c3c34a8f73ec8bce8d00449cf96ef53a4a4e2322
+    home: https://github.com/grepplabs/kafka-proxy
+    keywords:
+    - kafka-proxy
+    maintainers:
+    - email: sre@ricardo.ch
+      name: ricardo-ch
+    name: kafka-proxy
+    sources:
+    - https://github.com/grepplabs/kafka-proxy
+    - https://github.com/ricardo-ch/helm-charts/tree/main/charts/kafka-proxy
+    urls:
+    - https://github.com/ricardo-ch/helm-charts/releases/download/kafka-proxy-0.1.1/kafka-proxy-0.1.1.tgz
+    version: 0.1.1
+  - annotations:
+      artifacthub.io/changes: |
         - Use LoadBalancer IP in bootstrap-server-mapping
       artifacthub.io/images: |
         - name: kafka-proxy
