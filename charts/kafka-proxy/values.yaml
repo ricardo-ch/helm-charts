@@ -42,6 +42,8 @@ config:
     brokers:
     - kafka-0:9092
     - kafka-1:9092
+  # -- Service Type, supported: LoadBalancer, NodePort
+  loadBalancerType: NodePort
   # -- Specifies an IP for the load balancers. If omitted, an ephemeral IP is assigned.
   loadBalancerIP: ""
   # -- Configures optional firewall rules in GKE and in the VPC to only allow certain source ranges. If you omit this field, your Service accepts traffic from any IP address (0.0.0.0/0).
