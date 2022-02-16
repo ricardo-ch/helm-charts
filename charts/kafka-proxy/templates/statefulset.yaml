@@ -62,8 +62,11 @@ spec:
                 apiVersion: v1
                 fieldPath: status.podIP
           volumeMounts:
+          {{- if .Values.config.proxyClientSaslEnabled }}
           - name: "proxy-config"
             mountPath: "/var/run/secret"
+            readOnly: true
+          {{- end }}
           {{- if .Values.config.proxyServerTlsEnabled }}
           - name: "tls-client-cert-file"
             mountPath: "/var/run/secret/kafka-client-certificate"
