@@ -36,6 +36,12 @@ nodeSelector: {}
 affinity: {}
 
 config:
+  # -- TLS enabled on the proxy client.
+  proxyClientTlsEnabled: true
+  # -- TLS enabled on the proxy server. Requires a certificate deployed in a secret called 'kafka-proxy-cert' containing the certificate and key.
+  proxyServerTlsEnabled: false
+  # -- SASL enabled on the proxy client.
+  proxyClientSaslEnabled: false
   # -- Kafka client configuration
   kafkaClient:
     jaas: org.apache.kafka.common.security.plain.PlainLoginModule required username="username" password="password";

@@ -35,16 +35,26 @@ spec:
             {{- range $index, $broker := .Values.config.kafkaClient.brokers }}
             - '--bootstrap-server-mapping={{ $broker }},0.0.0.0:{{ add 32400 $index}}{{ if ne $index 0}},{{ $.Values.config.loadBalancerIP | default "$(MY_POD_IP)" }}:{{ add 32400 $index }}{{ end }}'
             {{- end }}
+            {{- if .Values.config.proxyClientTlsEnabled }}
             - '--tls-enable'
+            {{- end }}
+            {{- if .Values.config.proxyServerTlsEnabled }}
+            - '--proxy-listener-tls-enable'
+            - '--proxy-listener-key-file=/var/run/secret/kafka-client-certificate/tls.key'
+            - '--proxy-listener-cert-file=/var/run/secret/kafka-client-certificate/tls.crt'
+            {{- end }}
+            {{- if .Values.config.proxyClientSaslEnabled }}
             - '--sasl-enable'
             - '--sasl-plugin-mechanism=PLAIN'
             - '--sasl-jaas-config-file=/var/run/secret/jaas.config'
+            {{- end }}
             - '--proxy-request-buffer-size=32768'
             - '--proxy-response-buffer-size=32768'
             - '--proxy-listener-read-buffer-size=32768'
             - '--proxy-listener-write-buffer-size=131072'
             - '--kafka-connection-read-buffer-size=131072'
             - '--kafka-connection-write-buffer-size=32768'
+
           env:
           - name: MY_POD_IP
             valueFrom:
@@ -52,8 +62,16 @@ spec:
                 apiVersion: v1
                 fieldPath: status.podIP
           volumeMounts:
+          {{- if .Values.config.proxyClientSaslEnabled }}
           - name: "proxy-config"
             mountPath: "/var/run/secret"
+            readOnly: true
+          {{- end }}
+          {{- if .Values.config.proxyServerTlsEnabled }}
+          - name: "tls-client-cert-file"
+            mountPath: "/var/run/secret/kafka-client-certificate"
+            readOnly: true
+          {{- end }}
           ports:
           - name: metrics
             containerPort: 9080
@@ -95,3 +113,8 @@ spec:
       - name: proxy-config
         secret:
           secretName: {{ include "kafka-proxy.fullname" . }}-config
+      {{- if .Values.config.proxyServerTlsEnabled }}
+      - name: tls-client-cert-file
+        secret:
+          secretName: kafka-proxy-cert
+      {{- end }}

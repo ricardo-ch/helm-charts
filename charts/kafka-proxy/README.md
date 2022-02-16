@@ -1,6 +1,6 @@
 # PromLens
 
-![Version: 0.1.1](https://img.shields.io/badge/Version-0.1.1-informational?style=flat-square) ![AppVersion: 0.3.1](https://img.shields.io/badge/AppVersion-0.3.1-informational?style=flat-square) ![Release Status](https://github.com/ricardo-ch/helm-charts/workflows/Release%20Charts/badge.svg) [![License](https://img.shields.io/github/license/ricardo-ch/helm-charts)](https://github.com/ricardo-ch/helm-charts/blob/main/LICENSE)
+![Version: 0.2.0](https://img.shields.io/badge/Version-0.2.0-informational?style=flat-square) ![AppVersion: 0.3.1](https://img.shields.io/badge/AppVersion-0.3.1-informational?style=flat-square) ![Release Status](https://github.com/ricardo-ch/helm-charts/workflows/Release%20Charts/badge.svg) [![License](https://img.shields.io/github/license/ricardo-ch/helm-charts)](https://github.com/ricardo-ch/helm-charts/blob/main/LICENSE)
 
 This chart installs [kafka-proxy](https://github.com/grepplabs/kafka-proxy).
 
@@ -28,6 +28,9 @@ This chart expects to run on GKE and makes use of [TCP/UDP load balancing](https
 | config.loadBalancerIP | string | `""` | Specifies an IP for the load balancers. If omitted, an ephemeral IP is assigned. |
 | config.loadBalancerSourceRanges | list | `["0.0.0.0/0"]` | Configures optional firewall rules in GKE and in the VPC to only allow certain source ranges. If you omit this field, your Service accepts traffic from any IP address (0.0.0.0/0). |
 | config.loadBalancerType | string | `"NodePort"` | Service Type, supported: LoadBalancer, NodePort |
+| config.proxyClientSaslEnabled | bool | `false` | SASL enabled on the proxy client. |
+| config.proxyClientTlsEnabled | bool | `true` | TLS enabled on the proxy client. |
+| config.proxyServerTlsEnabled | bool | `false` | TLS enabled on the proxy server. Requires a certificate deployed in a secret called 'kafka-proxy-cert' containing the certificate and key. |
 | image | string | `"grepplabs/kafka-proxy"` | Kafka-proxy Container Image |
 | nodeSelector | object | `{}` | A node selector label |
 | podAnnotations | object | `{"prometheus.io/port":"9399","prometheus.io/scrape":"true"}` | Set a pod annotations |
