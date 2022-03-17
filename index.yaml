@@ -419,6 +419,38 @@ entries:
     urls:
     - https://github.com/ricardo-ch/helm-charts/releases/download/kafka-proxy-0.0.1/kafka-proxy-0.0.1.tgz
     version: 0.0.1
+  keycloak:
+  - apiVersion: v2
+    appVersion: 16.1.1
+    created: "2022-03-17T09:23:50.735860511Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 10.3.13
+    description: Open Source Identity and Access Management For Modern Applications
+      and Services
+    digest: b31a17bb8a2c600e66adb02dbf525cbb09a8865fb573f1790b9b3158d2a803f0
+    home: https://www.keycloak.org/
+    icon: https://www.keycloak.org/resources/images/keycloak_icon_512px.svg
+    keywords:
+    - sso
+    - idm
+    - openid connect
+    - saml
+    - kerberos
+    - ldap
+    maintainers:
+    - email: sre@ricardo.ch
+      name: ricardo-ch
+    name: keycloak
+    sources:
+    - https://github.com/codecentric/helm-charts
+    - https://github.com/jboss-dockerfiles/keycloak
+    - https://github.com/bitnami/charts/tree/master/bitnami/postgresql
+    urls:
+    - https://github.com/ricardo-ch/helm-charts/releases/download/keycloak-17.0.3/keycloak-17.0.3.tgz
+    version: 17.0.3
   metrics-exporter:
   - annotations:
       artifacthub.io/changes: |
