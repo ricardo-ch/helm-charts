@@ -7,12 +7,13 @@ The public Ricardo AG Helm Charts. The code is provided as-is with no warranties
 
 ## Available Charts
 
+* [bunnycdn-exporter](https://github.com/ricardo-ch/helm-charts/tree/main/charts/bunnycdn-exporter)
 * [imaginary](https://github.com/ricardo-ch/helm-charts/tree/main/charts/imaginary)
+* [kafka-proxy](https://github.com/ricardo-ch/helm-charts/tree/main/charts/kafka-proxy)
+* [keycloak](https://github.com/ricardo-ch/helm-charts/tree/main/charts/keycloak)
+* [metrics-exporter](https://github.com/ricardo-ch/helm-charts/tree/main/charts/metrics-exporter)
 * [nobl9-agent](https://github.com/ricardo-ch/helm-charts/tree/main/charts/nobl9-agent)
 * [promlens](https://github.com/ricardo-ch/helm-charts/tree/main/charts/promlens)
-* [metrics-exporter](https://github.com/ricardo-ch/helm-charts/tree/main/charts/metrics-exporter)
-* [bunnycdn-exporter](https://github.com/ricardo-ch/helm-charts/tree/main/charts/bunnycdn-exporter)
-* [kafka-proxy](https://github.com/ricardo-ch/helm-charts/tree/main/charts/kafka-proxy)
 
 ## How To Use These Charts
 
