@@ -9,9 +9,9 @@ replicas: 1
 
 image:
   # The Keycloak image repository
-  repository: docker.io/jboss/keycloak
+  repository: quay.io/keycloak/keycloak
   # Overrides the Keycloak image tag whose default is the chart appVersion
-  tag: ""
+  tag: "17.0.1"
   # The Keycloak image pull policy
   pullPolicy: IfNotPresent
 
@@ -37,6 +37,8 @@ restartPolicy: Always
 serviceAccount:
   # Specifies whether a ServiceAccount should be created
   create: true
+  # Specifies whether the ServiceAccount can get and list pods
+  allowReadPods: false
   # The name of the service account to use.
   # If not set and create is true, a name is generated using the fullname template
   name: ""
@@ -162,7 +164,7 @@ podAnnotations: {}
 # Liveness probe configuration
 livenessProbe: |
   httpGet:
-    path: /auth/
+    path: '{{ trimSuffix "/" .Values.http.relativePath}}/'
     port: http
   initialDelaySeconds: 0
   timeoutSeconds: 5
@@ -170,17 +172,17 @@ livenessProbe: |
 # Readiness probe configuration
 readinessProbe: |
   httpGet:
-    path: /auth/realms/master
+    path: '{{ trimSuffix "/" .Values.http.relativePath}}/realms/master'
     port: http
-  initialDelaySeconds: 30
+  initialDelaySeconds: 10
   timeoutSeconds: 1
 
 # Startup probe configuration
 startupProbe: |
   httpGet:
-    path: /auth/
+    path: '{{ trimSuffix "/" .Values.http.relativePath}}/'
     port: http
-  initialDelaySeconds: 30
+  initialDelaySeconds: 15
   timeoutSeconds: 1
   failureThreshold: 60
   periodSeconds: 5
@@ -193,16 +195,6 @@ resources: {}
   # limits:
   #   cpu: "500m"
   #   memory: "1024Mi"
-
-# Startup scripts to run before Keycloak starts up
-startupScripts:
-  # WildFly CLI script for configuring the node-identifier
-  keycloak.cli: |
-    {{- .Files.Get "scripts/keycloak.cli" }}
-  # mystartup.sh: |
-  #   #!/bin/sh
-  #
-  # echo 'Hello from my custom startup script!'
 
 # Add additional volumes, e. g. for custom themes
 extraVolumes: ""
@@ -251,10 +243,6 @@ service:
   httpsPort: 8443
   # The HTTPS Service node port if type is NodePort
   httpsNodePort: null
-  # The WildFly management Service port
-  httpManagementPort: 9990
-  # The WildFly management Service node port if type is NodePort
-  httpManagementNodePort: null
   # Additional Service ports, e. g. for custom admin console
   extraPorts: []
   # When using Service type LoadBalancer, you can restrict source ranges allowed
@@ -293,7 +281,7 @@ ingress:
       host: '{{ .Release.Name }}.keycloak.example.com'
       # Paths for the host
       paths:
-        - path: /
+        - path: '{{ trimSuffix "/" .Values.http.relativePath}}/'
           pathType: Prefix
   # TLS configuration
   tls:
@@ -316,8 +304,14 @@ ingress:
         host: '{{ .Release.Name }}.keycloak.example.com'
         # Paths for the host
         paths:
-          - path: /auth/admin/
+          - path: '{{ trimSuffix "/" .Values.http.relativePath}}/admin'
             pathType: Prefix
+
+    # Console TLS configuration
+    tls: []
+#      - hosts:
+#          - console.keycloak.example.com
+#        secretName: ""
 
 ## Network policy configuration
 networkPolicy:
@@ -351,21 +345,22 @@ route:
     # TLS termination of the route. Can be `edge`, `passthrough`, or `reencrypt`
     termination: edge
 
-pgchecker:
+dbchecker:
+  enabled: false
   image:
-    # Docker image used to check Postgresql readiness at startup
+    # Docker image used to check Database readiness at startup
     repository: docker.io/busybox
-    # Image tag for the pgchecker image
+    # Image tag for the dbchecker image
     tag: 1.32
-    # Image pull policy for the pgchecker image
+    # Image pull policy for the dbchecker image
     pullPolicy: IfNotPresent
-  # SecurityContext for the pgchecker container
+  # SecurityContext for the dbchecker container
   securityContext:
     allowPrivilegeEscalation: false
     runAsUser: 1000
     runAsGroup: 1000
     runAsNonRoot: true
-  # Resource requests and limits for the pgchecker container
+  # Resource requests and limits for the dbchecker container
   resources:
     requests:
       cpu: "20m"
@@ -374,18 +369,29 @@ pgchecker:
       cpu: "20m"
       memory: "32Mi"
 
-postgresql:
-  # If `true`, the Postgresql dependency is enabled
+database:
+  # E.g. dev-file, dev-mem, mariadb, mssql, mysql, oracle or postgres
+  vendor:
+  hostname:
+  port:
+  database:
+  username:
+  password:
+
+cache:
+  # Use "custom" to disable automatic cache configuration
+  stack: default
+
+proxy:
   enabled: true
-  # PostgreSQL User to create
-  postgresqlUsername: keycloak
-  # PostgreSQL Password for the new user
-  postgresqlPassword: keycloak
-  # PostgreSQL Database to create
-  postgresqlDatabase: keycloak
-  # PostgreSQL network policy configuration
-  networkPolicy:
-    enabled: false
+  mode: edge
+
+metrics:
+  enabled: true
+
+http:
+  # For backwards compatibility reasons we set this to the value used by previous Keycloak versions.
+  relativePath: "/auth"
 
 serviceMonitor:
   # If `true`, a ServiceMonitor resource for the prometheus-operator is created
@@ -403,7 +409,7 @@ serviceMonitor:
   # Timeout for scraping
   scrapeTimeout: 10s
   # The path at which metrics are served
-  path: /metrics
+  path: '{{ trimSuffix "/" .Value.http.relativePath}}/metrics'
   # The Service port at which metrics are served
   port: http-management
 
@@ -423,7 +429,7 @@ extraServiceMonitor:
   # Timeout for scraping
   scrapeTimeout: 10s
   # The path at which metrics are served
-  path: /auth/realms/master/metrics
+  path: '{{ trimSuffix "/" .Values.http.relativePath}}/realms/master/metrics'
   # The Service port at which metrics are served
   port: http
 
@@ -502,3 +508,5 @@ test:
   securityContext:
     runAsUser: 1000
     runAsNonRoot: true
+  # See https://helm.sh/docs/topics/charts_hooks/#hook-deletion-policies
+  deletionPolicy: before-hook-creation
