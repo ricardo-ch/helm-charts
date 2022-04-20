@@ -37,8 +37,6 @@ spec:
           port: 8080
         - protocol: TCP
           port: 8443
-        - protocol: TCP
-          port: 9990
         {{ range .Values.extraPorts }}
         - protocol: {{ default "TCP" .protocol }}
           port: {{ .containerPort }}
