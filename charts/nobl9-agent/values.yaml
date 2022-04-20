@@ -27,6 +27,6 @@ config:
   # -- Name of the project
   project: ""
   # -- Client ID
-  client_id: ""
+  client_id: "placeholder"
   # -- Client Secret
-  client_secret: ""
+  client_secret: "placeholder"

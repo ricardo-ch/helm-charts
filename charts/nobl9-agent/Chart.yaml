@@ -1,6 +1,6 @@
 apiVersion: v2
 name: nobl9-agent
-version: 1.0.6
+version: 1.0.7
 appVersion: 0.36.0
 description: This Chart installs and configures the agent used to communicate with Nobl9.
 home: https://nobl9.com
@@ -14,7 +14,7 @@ keywords:
   - slo
 annotations:
   artifacthub.io/changes: |
-    - Update Helm Docs to v1.6.0
+    - Update Helm Docs to v1.8.1
   artifacthub.io/images: |
     - name: nobl9
       image: nobl9/agent:0.36.0
