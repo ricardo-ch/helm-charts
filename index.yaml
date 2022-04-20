@@ -3,6 +3,30 @@ entries:
   bunnycdn-exporter:
   - annotations:
       artifacthub.io/changes: |
+        - Update Helm Docs to v1.8.1
+      artifacthub.io/images: |
+        - name: bunnycdn_exporter
+          image: ricardoag/bunnycdn_exporter:v0.2.3
+    apiVersion: v2
+    appVersion: 0.2.3
+    created: "2022-04-20T11:08:25.764673685Z"
+    description: Prometheus exporter for BunnyCDN
+    digest: 1ec6917a946a50afa1ebcd762fbbc240744bfcdfd9be1b1a2ee6f8c6a5f58abf
+    home: https://bunny.net/
+    keywords:
+    - bunnycdn
+    maintainers:
+    - email: sre@ricardo.ch
+      name: ricardo-ch
+    name: bunnycdn-exporter
+    sources:
+    - https://github.com/ricardo-ch/bunnycdn_exporter
+    - https://github.com/ricardo-ch/helm-charts/tree/main/charts/bunnycdn-exporter
+    urls:
+    - https://github.com/ricardo-ch/helm-charts/releases/download/bunnycdn-exporter-1.1.2/bunnycdn-exporter-1.1.2.tgz
+    version: 1.1.2
+  - annotations:
+      artifacthub.io/changes: |
         - Update Helm Docs to v1.6.0
       artifacthub.io/images: |
         - name: bunnycdn_exporter
@@ -98,6 +122,31 @@ entries:
     - https://github.com/ricardo-ch/helm-charts/releases/download/bunnycdn-exporter-0.9.0/bunnycdn-exporter-0.9.0.tgz
     version: 0.9.0
   imaginary:
+  - annotations:
+      artifacthub.io/changes: |
+        - Update Helm Docs to v1.8.1
+      artifacthub.io/images: |
+        - name: imaginary
+          image: h2non/imaginary:1.2.4
+    apiVersion: v2
+    appVersion: 1.2.4
+    created: "2022-04-20T11:08:25.974766261Z"
+    description: Deploy imaginary to process pictures on the fly
+    digest: 19b21a54d43ce5a0ec923d2641f439aa15d6c9223def106e019daf2960b818da
+    home: https://github.com/h2non/imaginary
+    keywords:
+    - imaginary
+    - h2non
+    maintainers:
+    - email: sre@ricardo.ch
+      name: ricardo-ch
+    name: imaginary
+    sources:
+    - https://github.com/ricardo-ch/helm-charts/tree/main/charts/imaginary
+    - https://github.com/h2non/imaginary
+    urls:
+    - https://github.com/ricardo-ch/helm-charts/releases/download/imaginary-0.1.8/imaginary-0.1.8.tgz
+    version: 0.1.8
   - annotations:
       artifacthub.io/changes: |
         - Update Helm Docs to v1.6.0
@@ -301,6 +350,30 @@ entries:
   kafka-proxy:
   - annotations:
       artifacthub.io/changes: |
+        - Update Helm Docs to v1.8.1
+      artifacthub.io/images: |
+        - name: kafka-proxy
+          image: grepplabs/kafka-proxy:v0.3.1
+    apiVersion: v2
+    appVersion: 0.3.1
+    created: "2022-04-20T11:08:26.166459942Z"
+    description: Deploying the grepplabs kafka-proxy as a StatefulSet with a GKE LoadBalancer
+    digest: 3f39c794ca1e83b022b3c2b1fd5096b2d75fc74b2742fc4fbfdb223dbcf468f6
+    home: https://github.com/grepplabs/kafka-proxy
+    keywords:
+    - kafka-proxy
+    maintainers:
+    - email: sre@ricardo.ch
+      name: ricardo-ch
+    name: kafka-proxy
+    sources:
+    - https://github.com/grepplabs/kafka-proxy
+    - https://github.com/ricardo-ch/helm-charts/tree/main/charts/kafka-proxy
+    urls:
+    - https://github.com/ricardo-ch/helm-charts/releases/download/kafka-proxy-0.2.1/kafka-proxy-0.2.1.tgz
+    version: 0.2.1
+  - annotations:
+      artifacthub.io/changes: |
         - Proxy server TLS support
       artifacthub.io/images: |
         - name: kafka-proxy
@@ -451,7 +524,60 @@ entries:
     urls:
     - https://github.com/ricardo-ch/helm-charts/releases/download/keycloak-17.0.3/keycloak-17.0.3.tgz
     version: 17.0.3
+  keycloakx:
+  - apiVersion: v2
+    appVersion: 17.0.1
+    created: "2022-04-20T11:08:26.36393123Z"
+    description: Keycloak.X - Open Source Identity and Access Management for Modern
+      Applications and Services
+    digest: 78a8558cdbc6dfadd67638fd2f72df2d66f0ba7d1ae9e9a18a7714bc90473288
+    home: https://www.keycloak.org/
+    icon: https://www.keycloak.org/resources/images/keycloak_logo_200px.svg
+    keywords:
+    - sso
+    - idm
+    - openid connect
+    - saml
+    - kerberos
+    - oauth
+    - ldap
+    - keycloakx
+    - quarkus
+    maintainers:
+    - email: sre@ricardo.ch
+      name: ricardo-ch
+    name: keycloakx
+    sources:
+    - https://github.com/codecentric/helm-charts
+    - https://github.com/keycloak/keycloak/tree/main/quarkus/container
+    urls:
+    - https://github.com/ricardo-ch/helm-charts/releases/download/keycloakx-1.3.0/keycloakx-1.3.0.tgz
+    version: 1.3.0
   metrics-exporter:
+  - annotations:
+      artifacthub.io/changes: |
+        - Update Helm Docs to v1.8.1
+      artifacthub.io/images: |
+        - name: free/sql_exporter
+          image: githubfree/sql_exporter:0.5
+    apiVersion: v2
+    appVersion: "0.5"
+    created: "2022-04-20T11:08:26.573592175Z"
+    description: This Chart installs and configures agnostic metrics exporter for
+      sql servers
+    digest: f607d1e343804273fc2a08894fa88547bb7c2b954382500b2a7434d8bf2b0f40
+    keywords:
+    - exporter_prometheus
+    - sql_server
+    maintainers:
+    - email: sre@ricardo.ch
+      name: ricardo-ch
+    name: metrics-exporter
+    sources:
+    - https://github.com/ricardo-ch/helm-charts/tree/main/charts/metrics-exporter
+    urls:
+    - https://github.com/ricardo-ch/helm-charts/releases/download/metrics-exporter-1.0.3/metrics-exporter-1.0.3.tgz
+    version: 1.0.3
   - annotations:
       artifacthub.io/changes: |
         - Update Helm Docs to v1.6.0
@@ -525,6 +651,31 @@ entries:
     - https://github.com/ricardo-ch/helm-charts/releases/download/metrics-exporter-1.0.0/metrics-exporter-1.0.0.tgz
     version: 1.0.0
   nobl9-agent:
+  - annotations:
+      artifacthub.io/changes: |
+        - Update Helm Docs to v1.8.1
+      artifacthub.io/images: |
+        - name: nobl9
+          image: nobl9/agent:0.36.0
+    apiVersion: v2
+    appVersion: 0.36.0
+    created: "2022-04-20T11:08:26.775897603Z"
+    description: This Chart installs and configures the agent used to communicate
+      with Nobl9.
+    digest: f3fa2e9a9106e6830e4db2102897aa592d2bddd98198f2439f94ac2389d76324
+    home: https://nobl9.com
+    keywords:
+    - nobl9
+    - slo
+    maintainers:
+    - email: sre@ricardo.ch
+      name: ricardo-ch
+    name: nobl9-agent
+    sources:
+    - https://github.com/ricardo-ch/helm-charts/tree/main/charts/nobl9-agent
+    urls:
+    - https://github.com/ricardo-ch/helm-charts/releases/download/nobl9-agent-1.0.7/nobl9-agent-1.0.7.tgz
+    version: 1.0.7
   - annotations:
       artifacthub.io/changes: |
         - Update Helm Docs to v1.6.0
@@ -705,6 +856,34 @@ entries:
     - https://github.com/ricardo-ch/helm-charts/releases/download/nobl9-agent-1.0.0/nobl9-agent-1.0.0.tgz
     version: 1.0.0
   promlens:
+  - annotations:
+      artifacthub.io/changes: |
+        - Update Helm Docs to v1.8.1
+      artifacthub.io/images: |
+        - name: promlens
+          image: promlabs/promlens:v1.1.0
+    apiVersion: v2
+    appVersion: 1.1.0
+    created: "2022-04-20T11:08:27.017845619Z"
+    description: This Chart installs and configures PromLens from PromLabs.
+    digest: 23eb2256387d63b468fd34fa813d0db08fde393288a4a286d414b7efc6170fb2
+    home: https://promlens.com
+    icon: https://promlens.com/favicon-32x32.png
+    keywords:
+    - promlens
+    - promlabs
+    - prometheus
+    - promql
+    maintainers:
+    - email: sre@ricardo.ch
+      name: ricardo-ch
+    name: promlens
+    sources:
+    - https://github.com/ricardo-ch/helm-charts/tree/main/charts/promlens
+    - https://github.com/promlabs/promlens-public
+    urls:
+    - https://github.com/ricardo-ch/helm-charts/releases/download/promlens-1.0.13/promlens-1.0.13.tgz
+    version: 1.0.13
   - annotations:
       artifacthub.io/changes: |
         - Update Helm Docs to v1.6.0
