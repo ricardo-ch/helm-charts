@@ -1,6 +1,6 @@
 apiVersion: v2
 name: metrics-exporter
-version: 1.0.2
+version: 1.0.3
 appVersion: "0.5"
 description: This Chart installs and configures agnostic metrics exporter for
   sql servers
@@ -14,7 +14,7 @@ keywords:
   - sql_server
 annotations:
   artifacthub.io/changes: |
-    - Update Helm Docs to v1.6.0
+    - Update Helm Docs to v1.8.1
   artifacthub.io/images: |
     - name: free/sql_exporter
       image: githubfree/sql_exporter:0.5
