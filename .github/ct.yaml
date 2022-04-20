@@ -3,4 +3,4 @@ helm-extra-args: --timeout 300s
 check-version-increment: true
 chart-repos:
   - bitnami=https://charts.bitnami.com/bitnami
-excluded-charts: keycloak
+excluded-charts: keycloakx
