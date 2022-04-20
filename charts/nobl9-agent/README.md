@@ -19,9 +19,9 @@ Simply add this Chart repository to Helm:
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| config | object | `{"client_id":"","client_secret":"","datasource_name":"","organization":"","project":""}` | Agent Configuration, get this data from the Nobl9 UI |
-| config.client_id | string | `""` | Client ID |
-| config.client_secret | string | `""` | Client Secret |
+| config | object | `{"client_id":"placeholder","client_secret":"placeholder","datasource_name":"","organization":"","project":""}` | Agent Configuration, get this data from the Nobl9 UI |
+| config.client_id | string | `"placeholder"` | Client ID |
+| config.client_secret | string | `"placeholder"` | Client Secret |
 | config.datasource_name | string | `""` | Name of the datasource |
 | config.organization | string | `""` | Name of the organization |
 | config.project | string | `""` | Name of the project |
