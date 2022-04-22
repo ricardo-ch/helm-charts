@@ -1,23 +1,26 @@
 apiVersion: v2
-name: keycloakx
-version: 1.3.0
-appVersion: 17.0.1
-description: Keycloak.X - Open Source Identity and Access Management for Modern Applications and Services
-keywords:
-  - sso
-  - idm
-  - openid connect
-  - saml
-  - kerberos
-  - oauth
-  - ldap
-  - keycloakx
-  - quarkus
+appVersion: 16.1.1
+dependencies:
+- condition: postgresql.enabled
+  name: postgresql
+  repository: https://charts.bitnami.com/bitnami
+  version: 10.3.13
+description: Open Source Identity and Access Management For Modern Applications and Services
 home: https://www.keycloak.org/
-icon: https://www.keycloak.org/resources/images/keycloak_logo_200px.svg
-sources:
-  - https://github.com/codecentric/helm-charts
-  - https://github.com/keycloak/keycloak/tree/main/quarkus/container
+icon: https://www.keycloak.org/resources/images/keycloak_icon_512px.svg
+keywords:
+- sso
+- idm
+- openid connect
+- saml
+- kerberos
+- ldap
 maintainers:
   - name: ricardo-ch
     email: sre@ricardo.ch
+name: keycloak
+sources:
+- https://github.com/codecentric/helm-charts
+- https://github.com/jboss-dockerfiles/keycloak
+- https://github.com/bitnami/charts/tree/master/bitnami/postgresql
+version: 17.0.3

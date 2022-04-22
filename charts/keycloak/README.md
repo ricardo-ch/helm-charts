@@ -1,8 +1,8 @@
-# keycloakx
+# keycloak
 
-![Version: 1.3.0](https://img.shields.io/badge/Version-1.3.0-informational?style=flat-square) ![AppVersion: 17.0.1](https://img.shields.io/badge/AppVersion-17.0.1-informational?style=flat-square)
+![Version: 17.0.3](https://img.shields.io/badge/Version-17.0.3-informational?style=flat-square) ![AppVersion: 16.1.1](https://img.shields.io/badge/AppVersion-16.1.1-informational?style=flat-square)
 
-Keycloak.X - Open Source Identity and Access Management for Modern Applications and Services
+Open Source Identity and Access Management For Modern Applications and Services
 
 **Homepage:** <https://www.keycloak.org/>
 
@@ -15,7 +15,14 @@ Keycloak.X - Open Source Identity and Access Management for Modern Applications 
 ## Source Code
 
 * <https://github.com/codecentric/helm-charts>
-* <https://github.com/keycloak/keycloak/tree/main/quarkus/container>
+* <https://github.com/jboss-dockerfiles/keycloak>
+* <https://github.com/bitnami/charts/tree/master/bitnami/postgresql>
+
+## Requirements
+
+| Repository | Name | Version |
+|------------|------|---------|
+| https://charts.bitnami.com/bitnami | postgresql | 10.3.13 |
 
 ## Values
 
@@ -35,27 +42,8 @@ Keycloak.X - Open Source Identity and Access Management for Modern Applications 
 | autoscaling.metrics[0].resource.target.type | string | `"Utilization"` |  |
 | autoscaling.metrics[0].type | string | `"Resource"` |  |
 | autoscaling.minReplicas | int | `3` |  |
-| cache.stack | string | `"default"` |  |
 | clusterDomain | string | `"cluster.local"` |  |
 | command | list | `[]` |  |
-| database.database | string | `nil` |  |
-| database.hostname | string | `nil` |  |
-| database.password | string | `nil` |  |
-| database.port | string | `nil` |  |
-| database.username | string | `nil` |  |
-| database.vendor | string | `nil` |  |
-| dbchecker.enabled | bool | `false` |  |
-| dbchecker.image.pullPolicy | string | `"IfNotPresent"` |  |
-| dbchecker.image.repository | string | `"docker.io/busybox"` |  |
-| dbchecker.image.tag | float | `1.32` |  |
-| dbchecker.resources.limits.cpu | string | `"20m"` |  |
-| dbchecker.resources.limits.memory | string | `"32Mi"` |  |
-| dbchecker.resources.requests.cpu | string | `"20m"` |  |
-| dbchecker.resources.requests.memory | string | `"32Mi"` |  |
-| dbchecker.securityContext.allowPrivilegeEscalation | bool | `false` |  |
-| dbchecker.securityContext.runAsGroup | int | `1000` |  |
-| dbchecker.securityContext.runAsNonRoot | bool | `true` |  |
-| dbchecker.securityContext.runAsUser | int | `1000` |  |
 | enableServiceLinks | bool | `true` |  |
 | extraContainers | string | `""` |  |
 | extraEnv | string | `""` |  |
@@ -68,58 +56,69 @@ Keycloak.X - Open Source Identity and Access Management for Modern Applications 
 | extraServiceMonitor.labels | object | `{}` |  |
 | extraServiceMonitor.namespace | string | `""` |  |
 | extraServiceMonitor.namespaceSelector | object | `{}` |  |
-| extraServiceMonitor.path | string | `"{{ trimSuffix \"/\" .Values.http.relativePath}}/realms/master/metrics"` |  |
+| extraServiceMonitor.path | string | `"/auth/realms/master/metrics"` |  |
 | extraServiceMonitor.port | string | `"http"` |  |
 | extraServiceMonitor.scrapeTimeout | string | `"10s"` |  |
 | extraVolumeMounts | string | `""` |  |
 | extraVolumes | string | `""` |  |
 | fullnameOverride | string | `""` |  |
 | hostAliases | list | `[]` |  |
-| http.relativePath | string | `"/auth"` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
-| image.repository | string | `"quay.io/keycloak/keycloak"` |  |
-| image.tag | string | `"17.0.1"` |  |
+| image.repository | string | `"docker.io/jboss/keycloak"` |  |
+| image.tag | string | `""` |  |
 | imagePullSecrets | list | `[]` |  |
 | ingress.annotations | object | `{}` |  |
 | ingress.console.annotations | object | `{}` |  |
 | ingress.console.enabled | bool | `false` |  |
 | ingress.console.ingressClassName | string | `""` |  |
 | ingress.console.rules[0].host | string | `"{{ .Release.Name }}.keycloak.example.com"` |  |
-| ingress.console.rules[0].paths[0].path | string | `"{{ trimSuffix \"/\" .Values.http.relativePath}}/admin"` |  |
+| ingress.console.rules[0].paths[0].path | string | `"/auth/admin/"` |  |
 | ingress.console.rules[0].paths[0].pathType | string | `"Prefix"` |  |
-| ingress.console.tls | list | `[]` |  |
 | ingress.enabled | bool | `false` |  |
 | ingress.ingressClassName | string | `""` |  |
 | ingress.labels | object | `{}` |  |
 | ingress.rules[0].host | string | `"{{ .Release.Name }}.keycloak.example.com"` |  |
-| ingress.rules[0].paths[0].path | string | `"{{ trimSuffix \"/\" .Values.http.relativePath}}/"` |  |
+| ingress.rules[0].paths[0].path | string | `"/"` |  |
 | ingress.rules[0].paths[0].pathType | string | `"Prefix"` |  |
 | ingress.servicePort | string | `"http"` |  |
 | ingress.tls[0].hosts[0] | string | `"keycloak.example.com"` |  |
 | ingress.tls[0].secretName | string | `""` |  |
 | lifecycleHooks | string | `""` |  |
-| livenessProbe | string | `"httpGet:\n  path: '{{ trimSuffix \"/\" .Values.http.relativePath}}/'\n  port: http\ninitialDelaySeconds: 0\ntimeoutSeconds: 5\n"` |  |
-| metrics.enabled | bool | `true` |  |
+| livenessProbe | string | `"httpGet:\n  path: /auth/\n  port: http\ninitialDelaySeconds: 0\ntimeoutSeconds: 5\n"` |  |
 | nameOverride | string | `""` |  |
 | networkPolicy.enabled | bool | `false` |  |
 | networkPolicy.extraFrom | list | `[]` |  |
 | networkPolicy.labels | object | `{}` |  |
 | nodeSelector | object | `{}` |  |
+| pgchecker.image.pullPolicy | string | `"IfNotPresent"` |  |
+| pgchecker.image.repository | string | `"docker.io/busybox"` |  |
+| pgchecker.image.tag | float | `1.32` |  |
+| pgchecker.resources.limits.cpu | string | `"20m"` |  |
+| pgchecker.resources.limits.memory | string | `"32Mi"` |  |
+| pgchecker.resources.requests.cpu | string | `"20m"` |  |
+| pgchecker.resources.requests.memory | string | `"32Mi"` |  |
+| pgchecker.securityContext.allowPrivilegeEscalation | bool | `false` |  |
+| pgchecker.securityContext.runAsGroup | int | `1000` |  |
+| pgchecker.securityContext.runAsNonRoot | bool | `true` |  |
+| pgchecker.securityContext.runAsUser | int | `1000` |  |
 | podAnnotations | object | `{}` |  |
 | podDisruptionBudget | object | `{}` |  |
 | podLabels | object | `{}` |  |
 | podManagementPolicy | string | `"Parallel"` |  |
 | podSecurityContext.fsGroup | int | `1000` |  |
+| postgresql.enabled | bool | `true` |  |
+| postgresql.networkPolicy.enabled | bool | `false` |  |
+| postgresql.postgresqlDatabase | string | `"keycloak"` |  |
+| postgresql.postgresqlPassword | string | `"keycloak"` |  |
+| postgresql.postgresqlUsername | string | `"keycloak"` |  |
 | priorityClassName | string | `""` |  |
 | prometheusRule.annotations | object | `{}` |  |
 | prometheusRule.enabled | bool | `false` |  |
 | prometheusRule.labels | object | `{}` |  |
 | prometheusRule.rules | list | `[]` |  |
-| proxy.enabled | bool | `true` |  |
-| proxy.mode | string | `"edge"` |  |
 | rbac.create | bool | `false` |  |
 | rbac.rules | list | `[]` |  |
-| readinessProbe | string | `"httpGet:\n  path: '{{ trimSuffix \"/\" .Values.http.relativePath}}/realms/master'\n  port: http\ninitialDelaySeconds: 10\ntimeoutSeconds: 1\n"` |  |
+| readinessProbe | string | `"httpGet:\n  path: /auth/realms/master\n  port: http\ninitialDelaySeconds: 30\ntimeoutSeconds: 1\n"` |  |
 | replicas | int | `1` |  |
 | resources | object | `{}` |  |
 | restartPolicy | string | `"Always"` |  |
@@ -137,6 +136,8 @@ Keycloak.X - Open Source Identity and Access Management for Modern Applications 
 | service.annotations | object | `{}` |  |
 | service.externalTrafficPolicy | string | `"Cluster"` |  |
 | service.extraPorts | list | `[]` |  |
+| service.httpManagementNodePort | string | `nil` |  |
+| service.httpManagementPort | int | `9990` |  |
 | service.httpNodePort | string | `nil` |  |
 | service.httpPort | int | `80` |  |
 | service.httpsNodePort | string | `nil` |  |
@@ -147,7 +148,6 @@ Keycloak.X - Open Source Identity and Access Management for Modern Applications 
 | service.sessionAffinity | string | `""` |  |
 | service.sessionAffinityConfig | object | `{}` |  |
 | service.type | string | `"ClusterIP"` |  |
-| serviceAccount.allowReadPods | bool | `false` |  |
 | serviceAccount.annotations | object | `{}` |  |
 | serviceAccount.create | bool | `true` |  |
 | serviceAccount.imagePullSecrets | list | `[]` |  |
@@ -159,15 +159,15 @@ Keycloak.X - Open Source Identity and Access Management for Modern Applications 
 | serviceMonitor.labels | object | `{}` |  |
 | serviceMonitor.namespace | string | `""` |  |
 | serviceMonitor.namespaceSelector | object | `{}` |  |
-| serviceMonitor.path | string | `"{{ trimSuffix \"/\" .Value.http.relativePath}}/metrics"` |  |
+| serviceMonitor.path | string | `"/metrics"` |  |
 | serviceMonitor.port | string | `"http-management"` |  |
 | serviceMonitor.scrapeTimeout | string | `"10s"` |  |
 | skipInitContainers | bool | `false` |  |
-| startupProbe | string | `"httpGet:\n  path: '{{ trimSuffix \"/\" .Values.http.relativePath}}/'\n  port: http\ninitialDelaySeconds: 15\ntimeoutSeconds: 1\nfailureThreshold: 60\nperiodSeconds: 5\n"` |  |
+| startupProbe | string | `"httpGet:\n  path: /auth/\n  port: http\ninitialDelaySeconds: 30\ntimeoutSeconds: 1\nfailureThreshold: 60\nperiodSeconds: 5\n"` |  |
+| startupScripts."keycloak.cli" | string | `"{{- .Files.Get \"scripts/keycloak.cli\" }}\n"` |  |
 | statefulsetAnnotations | object | `{}` |  |
 | statefulsetLabels | object | `{}` |  |
 | terminationGracePeriodSeconds | int | `60` |  |
-| test.deletionPolicy | string | `"before-hook-creation"` |  |
 | test.enabled | bool | `false` |  |
 | test.image.pullPolicy | string | `"IfNotPresent"` |  |
 | test.image.repository | string | `"docker.io/unguiculus/docker-python3-phantomjs-selenium"` |  |

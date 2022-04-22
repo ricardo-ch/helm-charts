@@ -1,4 +1,4 @@
-{{- range $key, $serviceMonitor := dict "keycloakx" .Values.serviceMonitor "extra" .Values.extraServiceMonitor }}
+{{- range $key, $serviceMonitor := dict "wildfly" .Values.serviceMonitor "extra" .Values.extraServiceMonitor }}
 {{- with $serviceMonitor }}
 {{- if .enabled }}
 ---
@@ -31,7 +31,7 @@ spec:
       app.kubernetes.io/component: http
   endpoints:
     - port: {{ .port }}
-      path: {{ tpl .path $ | quote }}
+      path: {{ .path }}
       interval: {{ .interval }}
       scrapeTimeout: {{ .scrapeTimeout }}
 {{- end }}
