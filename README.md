@@ -11,6 +11,7 @@ The public Ricardo AG Helm Charts. The code is provided as-is with no warranties
 * [imaginary](https://github.com/ricardo-ch/helm-charts/tree/main/charts/imaginary)
 * [kafka-proxy](https://github.com/ricardo-ch/helm-charts/tree/main/charts/kafka-proxy)
 * [keycloak](https://github.com/ricardo-ch/helm-charts/tree/main/charts/keycloak)
+* [keycloakx](https://github.com/ricardo-ch/helm-charts/tree/main/charts/keycloakx)
 * [metrics-exporter](https://github.com/ricardo-ch/helm-charts/tree/main/charts/metrics-exporter)
 * [nobl9-agent](https://github.com/ricardo-ch/helm-charts/tree/main/charts/nobl9-agent)
 * [promlens](https://github.com/ricardo-ch/helm-charts/tree/main/charts/promlens)
