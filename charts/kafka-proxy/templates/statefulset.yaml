@@ -2,6 +2,8 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
+  annotations:
+    reloader.stakater.com/search: "true"
   name: {{ include "kafka-proxy.fullname" . }}
   labels:
     app.kubernetes.io/name: {{ include "kafka-proxy.name" . }}
