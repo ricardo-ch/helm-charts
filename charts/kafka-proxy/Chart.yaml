@@ -18,5 +18,3 @@ annotations:
   artifacthub.io/images: |
     - name: kafka-proxy
       image: grepplabs/kafka-proxy:v0.3.1
-reloader:
-  onChange: false
