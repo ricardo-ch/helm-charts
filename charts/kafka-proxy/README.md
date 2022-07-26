@@ -37,7 +37,7 @@ This chart expects to run on GKE and makes use of [TCP/UDP load balancing](https
 | podAnnotations."prometheus.io/port" | string | `"9399"` | Set a Prometheus scrape port |
 | podAnnotations."prometheus.io/scrape" | string | `"true"` | Set a flag to mark pod for scrapping |
 | pullPolicy | string | `"IfNotPresent"` | Kubernetes PullPolicy |
-| reloader.onChange | bool | `false` | Add annotation on statefulset in order to perform a rolling upgrade on secret/configmap changes    |
+| reloader.onChange | bool | `false` | Add annotation on statefulset in order to perform a rolling upgrade on secret/configmap changes |
 | replicaCount | int | `1` | Number of replicas |
 | resources | object | `{}` | Set kubernetes specific resource limits |
 | tolerations | list | `[]` | A toleration |

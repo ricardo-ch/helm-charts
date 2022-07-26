@@ -56,5 +56,5 @@ config:
   loadBalancerSourceRanges:
     - 0.0.0.0/0
 reloader:
-  # -- Add annotation on statefulset in order to perform a rolling upgrade on secret/configmap changes   
+  # -- Add annotation on statefulset in order to perform a rolling upgrade on secret/configmap changes
   onChange: false
