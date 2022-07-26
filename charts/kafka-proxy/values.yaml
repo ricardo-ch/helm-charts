@@ -55,6 +55,6 @@ config:
   # -- Configures optional firewall rules in GKE and in the VPC to only allow certain source ranges. If you omit this field, your Service accepts traffic from any IP address (0.0.0.0/0).
   loadBalancerSourceRanges:
     - 0.0.0.0/0
-## -- Add annotation on statefulset in order to perform a rolling upgrade on secret/configmap changes   
+# -- Add annotation on statefulset in order to perform a rolling upgrade on secret/configmap changes   
 reloader:
   onChange: false
