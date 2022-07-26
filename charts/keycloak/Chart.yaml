@@ -4,7 +4,7 @@ dependencies:
 - condition: postgresql.enabled
   name: postgresql
   repository: https://charts.bitnami.com/bitnami
-  version: 10.3.13
+  version: 10.16.2
 description: Open Source Identity and Access Management For Modern Applications and Services
 home: https://www.keycloak.org/
 icon: https://www.keycloak.org/resources/images/keycloak_icon_512px.svg

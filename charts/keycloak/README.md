@@ -22,7 +22,7 @@ Open Source Identity and Access Management For Modern Applications and Services
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://charts.bitnami.com/bitnami | postgresql | 10.3.13 |
+| https://charts.bitnami.com/bitnami | postgresql | 10.16.2 |
 
 ## Values
 
