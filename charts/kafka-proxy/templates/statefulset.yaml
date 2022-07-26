@@ -1,6 +1,7 @@
 ---
 apiVersion: apps/v1
 kind: StatefulSet
+
 metadata:
   name: {{ include "kafka-proxy.fullname" . }}
   labels:
@@ -9,6 +10,10 @@ metadata:
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
     release: production
+{{- if .Values.reloader.onChange }}
+  annotations:
+    reloader.stakater.com/search: "true"
+{{- end }}
 spec:
   selector:
     matchLabels:

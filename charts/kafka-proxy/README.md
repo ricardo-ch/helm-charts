@@ -1,6 +1,6 @@
 # PromLens
 
-![Version: 0.2.1](https://img.shields.io/badge/Version-0.2.1-informational?style=flat-square) ![AppVersion: 0.3.1](https://img.shields.io/badge/AppVersion-0.3.1-informational?style=flat-square) ![Release Status](https://github.com/ricardo-ch/helm-charts/workflows/Release%20Charts/badge.svg) [![License](https://img.shields.io/github/license/ricardo-ch/helm-charts)](https://github.com/ricardo-ch/helm-charts/blob/main/LICENSE)
+![Version: 0.2.2](https://img.shields.io/badge/Version-0.2.2-informational?style=flat-square) ![AppVersion: 0.3.1](https://img.shields.io/badge/AppVersion-0.3.1-informational?style=flat-square) ![Release Status](https://github.com/ricardo-ch/helm-charts/workflows/Release%20Charts/badge.svg) [![License](https://img.shields.io/github/license/ricardo-ch/helm-charts)](https://github.com/ricardo-ch/helm-charts/blob/main/LICENSE)
 
 This chart installs [kafka-proxy](https://github.com/grepplabs/kafka-proxy).
 
@@ -37,6 +37,7 @@ This chart expects to run on GKE and makes use of [TCP/UDP load balancing](https
 | podAnnotations."prometheus.io/port" | string | `"9399"` | Set a Prometheus scrape port |
 | podAnnotations."prometheus.io/scrape" | string | `"true"` | Set a flag to mark pod for scrapping |
 | pullPolicy | string | `"IfNotPresent"` | Kubernetes PullPolicy |
+| reloader.onChange | bool | `false` | Add annotation on statefulset in order to perform a rolling upgrade on secret/configmap changes |
 | replicaCount | int | `1` | Number of replicas |
 | resources | object | `{}` | Set kubernetes specific resource limits |
 | tolerations | list | `[]` | A toleration |
