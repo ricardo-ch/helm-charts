@@ -350,6 +350,30 @@ entries:
   kafka-proxy:
   - annotations:
       artifacthub.io/changes: |
+        - Add ability to use stakater/Reloader to automatically reload the TLS certificate
+      artifacthub.io/images: |
+        - name: kafka-proxy
+          image: grepplabs/kafka-proxy:v0.3.1
+    apiVersion: v2
+    appVersion: 0.3.3
+    created: "2022-07-27T07:24:18.412174019Z"
+    description: Deploying the grepplabs kafka-proxy as a StatefulSet with a GKE LoadBalancer
+    digest: f7e3bb5690752d81dce6cda373fd5622e7305c4f478cb4686365a36bca9509e0
+    home: https://github.com/grepplabs/kafka-proxy
+    keywords:
+    - kafka-proxy
+    maintainers:
+    - email: sre@ricardo.ch
+      name: ricardo-ch
+    name: kafka-proxy
+    sources:
+    - https://github.com/grepplabs/kafka-proxy
+    - https://github.com/ricardo-ch/helm-charts/tree/main/charts/kafka-proxy
+    urls:
+    - https://github.com/ricardo-ch/helm-charts/releases/download/kafka-proxy-0.2.3/kafka-proxy-0.2.3.tgz
+    version: 0.2.3
+  - annotations:
+      artifacthub.io/changes: |
         - Update Helm Docs to v1.8.1
       artifacthub.io/images: |
         - name: kafka-proxy
