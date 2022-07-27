@@ -1,7 +1,7 @@
 apiVersion: v2
 name: kafka-proxy
-version: 0.2.2
-appVersion: 0.3.1
+version: 0.2.3
+appVersion: 0.3.3
 description: Deploying the grepplabs kafka-proxy as a StatefulSet with a GKE LoadBalancer
 home: https://github.com/grepplabs/kafka-proxy
 sources:
@@ -14,7 +14,7 @@ keywords:
   - kafka-proxy
 annotations:
   artifacthub.io/changes: |
-    - Update Helm Docs to v1.8.1
+    - Add ability to use stakater/Reloader to automatically reload the TLS certificate
   artifacthub.io/images: |
     - name: kafka-proxy
       image: grepplabs/kafka-proxy:v0.3.1
