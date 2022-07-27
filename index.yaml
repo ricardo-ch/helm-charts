@@ -350,6 +350,30 @@ entries:
   kafka-proxy:
   - annotations:
       artifacthub.io/changes: |
+        - Fix appVersion. This was an unintentional change in 0.2.3.
+      artifacthub.io/images: |
+        - name: kafka-proxy
+          image: grepplabs/kafka-proxy:v0.3.1
+    apiVersion: v2
+    appVersion: 0.3.1
+    created: "2022-07-27T07:38:25.655742724Z"
+    description: Deploying the grepplabs kafka-proxy as a StatefulSet with a GKE LoadBalancer
+    digest: df60ef0e4368dc4715645f048a9faef69ab01e1a1396c75d93e73bcebf39248f
+    home: https://github.com/grepplabs/kafka-proxy
+    keywords:
+    - kafka-proxy
+    maintainers:
+    - email: sre@ricardo.ch
+      name: ricardo-ch
+    name: kafka-proxy
+    sources:
+    - https://github.com/grepplabs/kafka-proxy
+    - https://github.com/ricardo-ch/helm-charts/tree/main/charts/kafka-proxy
+    urls:
+    - https://github.com/ricardo-ch/helm-charts/releases/download/kafka-proxy-0.2.4/kafka-proxy-0.2.4.tgz
+    version: 0.2.4
+  - annotations:
+      artifacthub.io/changes: |
         - Add ability to use stakater/Reloader to automatically reload the TLS certificate
       artifacthub.io/images: |
         - name: kafka-proxy
