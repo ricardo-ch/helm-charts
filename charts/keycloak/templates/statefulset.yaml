@@ -74,7 +74,6 @@ spec:
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
-          # image: "{{ .Values.image.repository }}{{- if .Values.image.shasum }}@{{ .Values.image.shasum }}{{- else }}:{{ .Values.image.tag | default .Chart.AppVersion }}{{- end }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           command:
             {{- toYaml .Values.command | nindent 12 }}
