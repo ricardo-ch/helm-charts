@@ -14,7 +14,7 @@ keywords:
   - kafka-proxy
 annotations:
   artifacthub.io/changes: |
-    - Update Helm Docs to v1.11.0
+    - Modify skataker annotation
   artifacthub.io/images: |
     - name: kafka-proxy
       image: grepplabs/kafka-proxy:v0.3.1
