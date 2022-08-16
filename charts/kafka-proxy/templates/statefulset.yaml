@@ -12,7 +12,7 @@ metadata:
     release: production
 {{- if .Values.reloader.onChange }}
   annotations:
-    reloader.stakater.com/search: "true"
+    reloader.stakater.com/auto: "true"
 {{- end }}
 spec:
   selector:
