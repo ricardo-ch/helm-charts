@@ -1,4 +1,4 @@
-# Ricardo Helm Charts 
+# Ricardo Helm Charts
 
 [![Artifact HUB](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/ricardo)](https://artifacthub.io/packages/search?repo=ricardo)
 [![License](https://img.shields.io/github/license/ricardo-ch/helm-charts)](https://github.com/ricardo-ch/helm-charts/blob/main/LICENSE)
