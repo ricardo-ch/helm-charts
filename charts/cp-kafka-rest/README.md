@@ -30,6 +30,7 @@ A Helm chart for Confluent Kafka REST Proxy on Kubernetes
 | imagePullSecrets | string | `nil` |  |
 | imageTag | string | `"6.1.0"` |  |
 | jmx.port | int | `5555` |  |
+| namespace | string | `"platform"` |  |
 | nodeSelector | object | `{}` |  |
 | podAnnotations | object | `{}` |  |
 | prometheus.jmx.enabled | bool | `true` |  |
