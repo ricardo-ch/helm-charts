@@ -3,3 +3,6 @@ appVersion: "1.0"
 description: A Helm chart for Confluent Kafka REST Proxy on Kubernetes
 name: cp-kafka-rest
 version: 0.1.0
+maintainers:
+  - name: ricardo-ch
+    email: sre@ricardo.ch

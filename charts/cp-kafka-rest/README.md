@@ -4,6 +4,12 @@
 
 A Helm chart for Confluent Kafka REST Proxy on Kubernetes
 
+## Maintainers
+
+| Name | Email | Url |
+| ---- | ------ | --- |
+| ricardo-ch | <sre@ricardo.ch> |  |
+
 ## Values
 
 | Key | Type | Default | Description |
