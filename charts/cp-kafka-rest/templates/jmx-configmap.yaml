@@ -2,7 +2,9 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  namespace: {{ .Values.namespace }}
+  {{- if .Values.namespace -}}
+  namespace: {{ .Values.namespace }} 
+  {{- end }}
   name: {{ template "cp-kafka-rest.fullname" . }}-jmx-configmap
   labels:
     app: {{ template "cp-kafka-rest.name" . }}
