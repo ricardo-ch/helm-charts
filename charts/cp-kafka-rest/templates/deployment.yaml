@@ -81,6 +81,8 @@ spec:
             value: {{ template "cp-kafka-rest.cp-schema-registry.service-name" . }}
           - name: KAFKAREST_HEAP_OPTS
             value: "{{ .Values.heapOptions }}"
+          - name: SASL_JAAS_CONFIG
+            value: "{{ .Values.jaasConfig }}"  
           {{- range $key, $value := .Values.configurationOverrides }}
           - name: {{ printf "KAFKA_REST_%s" $key | replace "." "_" | upper | quote }}
             value: {{ $value | quote }}
