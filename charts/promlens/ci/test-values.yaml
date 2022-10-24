@@ -1,6 +1,0 @@
-config:
-  grafana:
-    enabled: false
-  shared_links:
-    gcs:
-      enabled: false
