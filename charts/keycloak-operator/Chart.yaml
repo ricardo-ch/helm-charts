@@ -1,0 +1,22 @@
+apiVersion: v2
+name: keycloak-operator
+type: application
+description: "Installs the keycloak-operator"
+appVersion: "20.0.3"
+version: 0.1.0
+home: https://keycloak.com
+icon: https://www.keycloak.org/resources/favicon.ico
+sources:
+  - https://github.com/ricardo-ch/helm-charts/tree/main/charts/keycloak-operator
+  - https://github.com/keycloak/keycloak
+maintainers:
+  - name: ricardo-ch
+    email: sre@ricardo.ch
+keywords:
+  - keycloak-operator
+annotations:
+  artifacthub.io/changes: |
+    - Initial release
+  artifacthub.io/images: |
+    - name: keycloak-operator
+      image: quay.io/keycloak/keycloak-operator:20.0.3
