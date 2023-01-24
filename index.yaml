@@ -676,6 +676,33 @@ entries:
     urls:
     - https://github.com/ricardo-ch/helm-charts/releases/download/keycloak-17.0.3/keycloak-17.0.3.tgz
     version: 17.0.3
+  keycloak-operator:
+  - annotations:
+      artifacthub.io/changes: |
+        - Initial release
+      artifacthub.io/images: |
+        - name: keycloak-operator
+          image: quay.io/keycloak/keycloak-operator:20.0.3
+    apiVersion: v2
+    appVersion: 20.0.3
+    created: "2023-01-24T08:56:17.83558382Z"
+    description: Installs the keycloak-operator
+    digest: ec547bb49e2c5d4811350f4cf60fbaedf6557eddfb9ac1be54b1431801dc91d4
+    home: https://keycloak.com
+    icon: https://www.keycloak.org/resources/favicon.ico
+    keywords:
+    - keycloak-operator
+    maintainers:
+    - email: sre@ricardo.ch
+      name: ricardo-ch
+    name: keycloak-operator
+    sources:
+    - https://github.com/ricardo-ch/helm-charts/tree/main/charts/keycloak-operator
+    - https://github.com/keycloak/keycloak
+    type: application
+    urls:
+    - https://github.com/ricardo-ch/helm-charts/releases/download/keycloak-operator-0.1.0/keycloak-operator-0.1.0.tgz
+    version: 0.1.0
   keycloakx:
   - apiVersion: v2
     appVersion: 17.0.1
@@ -1551,4 +1578,4 @@ entries:
     urls:
     - https://github.com/ricardo-ch/helm-charts/releases/download/promlens-0.1.3/promlens-0.1.3.tgz
     version: 0.1.3
-generated: "2022-07-27T11:30:34.660256967Z"
+generated: "2023-01-24T08:56:17.835769223Z"
