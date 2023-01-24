@@ -60,4 +60,4 @@ spec:
             periodSeconds: 30
             successThreshold: 1
             timeoutSeconds: 10
-      serviceAccountName: keycloak-operator
+      serviceAccountName: {{ include "keycloak-operator.fullname" . }}
