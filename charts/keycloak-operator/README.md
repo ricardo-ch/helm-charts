@@ -17,3 +17,8 @@ Simply add this Chart repository to Helm:
 "ricardo" has been added to your repositories
 ```
 
+## Source Code
+
+* <https://github.com/ricardo-ch/helm-charts/tree/main/charts/keycloak-operator>
+* <https://github.com/keycloak/keycloak>
+
