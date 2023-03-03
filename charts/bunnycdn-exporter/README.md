@@ -1,6 +1,6 @@
 # bunnycdn-exporter
 
-![Version: 1.1.3](https://img.shields.io/badge/Version-1.1.3-informational?style=flat-square) ![AppVersion: 0.2.3](https://img.shields.io/badge/AppVersion-0.2.3-informational?style=flat-square) ![Release Status](https://github.com/ricardo-ch/helm-charts/workflows/Release%20Charts/badge.svg) [![License](https://img.shields.io/github/license/ricardo-ch/helm-charts)](https://github.com/ricardo-ch/helm-charts/blob/main/LICENSE)
+![Version: 1.1.4](https://img.shields.io/badge/Version-1.1.4-informational?style=flat-square) ![AppVersion: 0.2.3](https://img.shields.io/badge/AppVersion-0.2.3-informational?style=flat-square) ![Release Status](https://github.com/ricardo-ch/helm-charts/workflows/Release%20Charts/badge.svg) [![License](https://img.shields.io/github/license/ricardo-ch/helm-charts)](https://github.com/ricardo-ch/helm-charts/blob/main/LICENSE)
 
 Prometheus exporter for BunnyCDN
 
@@ -26,6 +26,7 @@ Simply add this Chart repository to Helm:
 | api_key | string | `""` | The BunnyCDN API Key, see https://support.bunny.net/hc/en-us/articles/360012168840 |
 | deployment.image | string | `"ricardoag/bunnycdn_exporter"` | BunnyCDN Exporter Container Image |
 | deployment.pull_policy | string | `"IfNotPresent"` | Pull Policy |
+| deployment.timeout | string | `"30s"` |  |
 | deployment.version | string | `"v0.2.3"` | BunnyCDN Exporter Image Version |
 | port | string | `"9584"` | Scrape port |
 | resources | object | `{"limits":{"memory":"20Mi"},"requests":{"cpu":"2m","memory":"20Mi"}}` | Kubernetes resource limits |

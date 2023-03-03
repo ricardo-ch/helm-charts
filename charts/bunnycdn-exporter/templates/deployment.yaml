@@ -30,8 +30,11 @@ spec:
         - name: bunnycdn-exporter
           image: {{ .Values.deployment.image }}:{{ .Values.deployment.version }}
           imagePullPolicy: {{ .Values.deployment.pull_policy }}
+          command: ["/bin/bunnycdn_exporter"]
+          args: 
+            - "--bunnycdn.timeout={{ .Values.deployment.timeout_second }}"
           resources:
 {{ toYaml .Values.resources | indent 12 }}
           env:
             - name: BUNNYCDN_API_KEY
-              value: {{ .Values.api_key }}
+              value: {{ .Values.api_key }}  
