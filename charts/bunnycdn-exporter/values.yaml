@@ -5,7 +5,7 @@ deployment:
   version: "v0.2.3"
   # -- Pull Policy
   pull_policy: IfNotPresent
-
+  timeout: 30s
 # -- Kubernetes resource limits
 resources:
   limits:
