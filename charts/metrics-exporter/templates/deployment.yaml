@@ -31,7 +31,7 @@ spec:
             items:
               - key: "sql_exporter.yaml"
                 path: "sql_exporter.yaml"
-{{- with .Values.extraVolumeMounts }}
+{{- with .Values.extraVolumes }}
 {{ toYaml . | indent 8 }}
 {{- end }}
       containers:
@@ -52,6 +52,9 @@ spec:
             - name: config
               mountPath: /config
               readOnly: true
+{{- with .Values.extraVolumeMounts }}
+{{ toYaml . | indent 12 }}
+{{- end }}
 {{- with .Values.extraContainers }}
 {{ toYaml . | indent 8 }}
 {{- end }}
