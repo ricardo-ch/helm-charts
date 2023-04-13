@@ -58,6 +58,6 @@ config:
   sqlexporter: {}
 
 # -- Configure additional volumes
-extraVolumes: {}
+extraVolumes: []
 # -- Configure additional volumeMounts
-extraVolumeMounts: {}
+extraVolumeMounts: []
