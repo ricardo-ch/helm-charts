@@ -815,6 +815,30 @@ entries:
   metrics-exporter:
   - annotations:
       artifacthub.io/changes: |
+        - Add volume and volumeMount configuration
+      artifacthub.io/images: |
+        - name: free/sql_exporter
+          image: githubfree/sql_exporter:0.5
+    apiVersion: v2
+    appVersion: "0.5"
+    created: "2023-04-13T13:48:42.553714323Z"
+    description: This Chart installs and configures agnostic metrics exporter for
+      sql servers
+    digest: 287b74f8081747a075737aeab47af84809879089c3c309ad0d1d7e95232537a8
+    keywords:
+    - exporter_prometheus
+    - sql_server
+    maintainers:
+    - email: sre@ricardo.ch
+      name: ricardo-ch
+    name: metrics-exporter
+    sources:
+    - https://github.com/ricardo-ch/helm-charts/tree/main/charts/metrics-exporter
+    urls:
+    - https://github.com/ricardo-ch/helm-charts/releases/download/metrics-exporter-1.1.0/metrics-exporter-1.1.0.tgz
+    version: 1.1.0
+  - annotations:
+      artifacthub.io/changes: |
         - Update Helm Docs to v1.11.0
       artifacthub.io/images: |
         - name: free/sql_exporter
@@ -1602,4 +1626,4 @@ entries:
     urls:
     - https://github.com/ricardo-ch/helm-charts/releases/download/promlens-0.1.3/promlens-0.1.3.tgz
     version: 0.1.3
-generated: "2023-03-03T15:16:14.871793877Z"
+generated: "2023-04-13T13:48:42.554065622Z"
