@@ -18,6 +18,8 @@ Simply add this Chart repository to Helm:
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | config | object | `{"sqlexporter":{}}` | Set a exporter configuration |
+| extraVolumeMounts | object | `{}` | Configure additional volumeMounts |
+| extraVolumes | object | `{}` | Configure additional volumes |
 | image.pullPolicy | string | `"IfNotPresent"` | Set an image pull policy |
 | image.repository | string | `"githubfree/sql_exporter"` | Set an exporter image |
 | image.tag | float | `0.5` | Set an image tag |
