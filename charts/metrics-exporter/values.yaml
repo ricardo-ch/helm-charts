@@ -5,7 +5,6 @@
 # -- Set number of pods
 replicaCount: 1
 
-
 image:
   # -- Set an exporter image
   repository: githubfree/sql_exporter
@@ -57,3 +56,8 @@ nodeSelector: {}
 # -- Set a exporter configuration
 config:
   sqlexporter: {}
+
+# -- Configure additional volumes
+extraVolumes: []
+# -- Configure additional volumeMounts
+extraVolumeMounts: []
