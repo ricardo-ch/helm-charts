@@ -15,6 +15,7 @@ keywords:
 annotations:
   artifacthub.io/changes: |
     - Add volume and volumeMount configuration
+    - Implement extra Envs and Args feature
   artifacthub.io/images: |
     - name: free/sql_exporter
       image: githubfree/sql_exporter:0.5
