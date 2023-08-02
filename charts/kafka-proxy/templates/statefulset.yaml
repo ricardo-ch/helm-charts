@@ -117,7 +117,7 @@ spec:
       volumes:
       - name: proxy-config
         secret:
-          secretName: {{ include "kafka-proxy.fullname" . }}-config
+          secretName: {{ include "kafka-proxy.fullname" . }}-secret
       {{- if .Values.config.proxyServerTlsEnabled }}
       - name: tls-client-cert-file
         secret:
