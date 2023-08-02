@@ -1,7 +1,7 @@
 apiVersion: v2
 name: kafka-proxy
-version: 0.2.6
-appVersion: 0.3.1
+version: 0.2.7
+appVersion: 0.3.6
 description: Deploying the grepplabs kafka-proxy as a StatefulSet with a GKE LoadBalancer
 home: https://github.com/grepplabs/kafka-proxy
 sources:
@@ -14,7 +14,8 @@ keywords:
   - kafka-proxy
 annotations:
   artifacthub.io/changes: |
-    - Modify skataker annotation
+    - Rename secret from kafka-proxy-config to kafka-proxy-secret
+    - Update kafka-proxy to v0.3.6
   artifacthub.io/images: |
     - name: kafka-proxy
-      image: grepplabs/kafka-proxy:v0.3.1
+      image: grepplabs/kafka-proxy:v0.3.6
