@@ -3,7 +3,7 @@ name: keycloak-operator
 type: application
 description: "Installs the keycloak-operator"
 appVersion: "20.0.3"
-version: 0.1.1
+version: 0.1.2
 home: https://keycloak.com
 icon: https://www.keycloak.org/resources/favicon.ico
 sources:
@@ -16,7 +16,7 @@ keywords:
   - keycloak-operator
 annotations:
   artifacthub.io/changes: |
-    - [internal] New Build Process
+    - "[internal] New Build Process"
   artifacthub.io/images: |
     - name: keycloak-operator
       image: quay.io/keycloak/keycloak-operator:20.0.3
