@@ -1,6 +1,6 @@
 # metrics-exporter
 
-![Version: 1.1.3](https://img.shields.io/badge/Version-1.1.3-informational?style=flat-square) ![AppVersion: 0.5](https://img.shields.io/badge/AppVersion-0.5-informational?style=flat-square) ![Release Status](https://github.com/ricardo-ch/helm-charts/workflows/Release%20Charts/badge.svg) [![License](https://img.shields.io/github/license/ricardo-ch/helm-charts)](https://github.com/ricardo-ch/helm-charts/blob/main/LICENSE)
+![Version: 1.2.0](https://img.shields.io/badge/Version-1.2.0-informational?style=flat-square) ![AppVersion: 0.5](https://img.shields.io/badge/AppVersion-0.5-informational?style=flat-square) ![Release Status](https://github.com/ricardo-ch/helm-charts/workflows/Release%20Charts/badge.svg) [![License](https://img.shields.io/github/license/ricardo-ch/helm-charts)](https://github.com/ricardo-ch/helm-charts/blob/main/LICENSE)
 
 This chart installs [the DBMS agnostic metrics exporter](https://github.com/free/sql_exporter) based on SQL queries.
 
@@ -18,6 +18,8 @@ Simply add this Chart repository to Helm:
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | config | object | `{"sqlexporter":{}}` | Set a exporter configuration |
+| extraArgs | list | `[]` | Define additional arguments |
+| extraEnvs | list | `[]` | Define additional environment variables |
 | extraVolumeMounts | list | `[]` | Configure additional volumeMounts |
 | extraVolumes | list | `[]` | Configure additional volumes |
 | image.pullPolicy | string | `"IfNotPresent"` | Set an image pull policy |

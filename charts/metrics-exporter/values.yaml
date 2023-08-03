@@ -41,7 +41,6 @@ service:
   type: ClusterIP
   port: 80
 
-
 # -- Set a exporter resources
 resources:
   limits:
@@ -59,5 +58,12 @@ config:
 
 # -- Configure additional volumes
 extraVolumes: []
+
 # -- Configure additional volumeMounts
 extraVolumeMounts: []
+
+# -- Define additional environment variables
+extraEnvs: []
+
+# -- Define additional arguments
+extraArgs: []
