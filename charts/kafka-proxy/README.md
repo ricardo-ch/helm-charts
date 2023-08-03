@@ -1,12 +1,8 @@
 # kafka-proxy
 
-Deploying the grepplabs kafka-proxy as a StatefulSet with a GKE LoadBalancer
-
 ![Version: 0.2.11](https://img.shields.io/badge/Version-0.2.11-informational?style=flat-square) ![AppVersion: 0.3.6](https://img.shields.io/badge/AppVersion-0.3.6-informational?style=flat-square) ![Release Status](https://github.com/ricardo-ch/helm-charts/workflows/Release%20Charts/badge.svg) [![License](https://img.shields.io/github/license/ricardo-ch/helm-charts)](https://github.com/ricardo-ch/helm-charts/blob/main/LICENSE)
 
-This chart installs [kafka-proxy](https://github.com/grepplabs/kafka-proxy).
-
-The Kafka Proxy is based on the idea of Cloud SQL Proxy. It allows a service to connect to Kafka brokers without having to deal with SASL/PLAIN authentication and SSL certificates.
+This chart installs [kafka-proxy](https://github.com/grepplabs/kafka-proxy). The Kafka Proxy is based on the idea of Cloud SQL Proxy. It allows a service to connect to Kafka brokers without having to deal with SASL/PLAIN authentication and SSL certificates.
 
 ## Helm Chart
 
