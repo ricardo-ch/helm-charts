@@ -1,6 +1,6 @@
 apiVersion: v2
 name: bunnycdn-exporter
-version: 1.2.3
+version: 1.2.4
 appVersion: 0.2.3
 description: Prometheus exporter for BunnyCDN
 home: https://bunny.net/
@@ -14,7 +14,7 @@ keywords:
   - bunnycdn
 annotations:
   artifacthub.io/changes: |
-    - Update Helm Docs to v1.11.0
+    - [internal] New Build Process
   artifacthub.io/images: |
     - name: bunnycdn_exporter
       image: ricardoag/bunnycdn_exporter:v0.2.3
