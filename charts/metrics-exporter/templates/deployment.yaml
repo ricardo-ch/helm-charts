@@ -50,7 +50,8 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
             - name: config
-              mountPath: /config
+              mountPath: /config/sql_exporter.yaml
+              subPath: sql_exporter.yaml
               readOnly: true
 {{- with .Values.extraVolumeMounts }}
 {{ toYaml . | indent 12 }}
