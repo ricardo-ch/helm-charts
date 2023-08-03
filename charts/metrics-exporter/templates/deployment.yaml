@@ -40,8 +40,15 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+{{- with .Values.extraEnvs }}
+          env:
+{{ toYaml . | indent 12 }}
+{{- end }}
           args:
             - -config.file=/config/sql_exporter.yaml
+{{- with .Values.extraArgs }}
+{{ toYaml . | indent 12 }}
+{{- end }}
           ports:
             - name: metrics
               containerPort: {{  get .Values.podAnnotations "prometheus.io/port"  }}
