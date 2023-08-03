@@ -1,6 +1,6 @@
 apiVersion: v2
 name: promlens
-version: 1.1.0
+version: 1.1.1
 appVersion: 1.1.1
 description: This Chart installs and configures PromLens from PromLabs.
 home: https://promlens.com
@@ -18,7 +18,7 @@ keywords:
   - promql
 annotations:
   artifacthub.io/changes: |
-    - "[internal] New Build Process"
+    - Readme template change
   artifacthub.io/images: |
     - name: promlens
       image: promlabs/promlens:v1.1.0
