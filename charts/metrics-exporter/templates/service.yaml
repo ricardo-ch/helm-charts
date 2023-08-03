@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "sqlserver-prometheus-exporter.fullname" . }}
+  labels:
+    app: {{ template "sqlserver-prometheus-exporter.name" . }}
+    chart: {{ template "sqlserver-prometheus-exporter.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  ports:
+    - name: http
+      port: {{ .Values.service.port }}
+      protocol: TCP
+      targetPort: 9399
+  selector:
+    {{- include "sqlserver-prometheus-exporter.selectorLabels" . | nindent 4 }}
+  sessionAffinity: None
+  type: {{ .Values.service.type }}
