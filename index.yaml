@@ -473,6 +473,33 @@ entries:
   kafka-proxy:
   - annotations:
       artifacthub.io/changes: |
+        - "fix readme title"
+      artifacthub.io/images: |
+        - name: kafka-proxy
+          image: grepplabs/kafka-proxy:0.3.6
+    apiVersion: v2
+    appVersion: 0.3.6
+    created: "2023-08-03T08:11:24.99571043Z"
+    description: This chart installs [kafka-proxy](https://github.com/grepplabs/kafka-proxy).
+      The Kafka Proxy is based on the idea of Cloud SQL Proxy. It allows a service
+      to connect to Kafka brokers without having to deal with SASL/PLAIN authentication
+      and SSL certificates.
+    digest: 8721343201779a89b392c0490a0019226d321d0654a1c534b890ee1fc2949892
+    home: https://github.com/grepplabs/kafka-proxy
+    keywords:
+    - kafka-proxy
+    maintainers:
+    - email: sre@ricardo.ch
+      name: ricardo-ch
+    name: kafka-proxy
+    sources:
+    - https://github.com/grepplabs/kafka-proxy
+    - https://github.com/ricardo-ch/helm-charts/tree/main/charts/kafka-proxy
+    urls:
+    - https://github.com/ricardo-ch/helm-charts/releases/download/kafka-proxy-0.2.11/kafka-proxy-0.2.11.tgz
+    version: 0.2.11
+  - annotations:
+      artifacthub.io/changes: |
         - [internal] New Build Process
       artifacthub.io/images: |
         - name: kafka-proxy
@@ -1928,4 +1955,4 @@ entries:
     urls:
     - https://github.com/ricardo-ch/helm-charts/releases/download/promlens-0.1.3/promlens-0.1.3.tgz
     version: 0.1.3
-generated: "2023-08-03T08:02:48.956513845Z"
+generated: "2023-08-03T08:11:24.996026524Z"
