@@ -1,3 +1,6 @@
+fullnameOverride: ""
+nameOverride: ""
+
 deployment:
   # -- BunnyCDN Exporter Container Image
   image: "ricardoag/bunnycdn_exporter"
@@ -17,7 +20,11 @@ resources:
     memory: "20Mi"
 
 # -- The BunnyCDN API Key, see https://support.bunny.net/hc/en-us/articles/360012168840
-api_key: ""
+api_key: "mykey"
+# -- Kubernetes secret which has api_key
+secret:
+  name: ""
+  key: key_ref
 # -- Scraping enabled?
 scrape: "true"
 # -- Scrape port

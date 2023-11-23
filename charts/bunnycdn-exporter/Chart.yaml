@@ -1,7 +1,7 @@
 apiVersion: v2
 name: bunnycdn-exporter
 version: 1.2.6
-appVersion: 0.2.3
+appVersion: 0.2.4
 description: Prometheus exporter for BunnyCDN
 home: https://bunny.net/
 sources:

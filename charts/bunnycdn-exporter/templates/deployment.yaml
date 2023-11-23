@@ -31,10 +31,17 @@ spec:
           image: {{ .Values.deployment.image }}:{{ .Values.deployment.version }}
           imagePullPolicy: {{ .Values.deployment.pull_policy }}
           command: ["/bin/bunnycdn_exporter"]
-          args: 
+          args:
             - "--bunnycdn.timeout={{ .Values.deployment.timeout }}"
           resources:
 {{ toYaml .Values.resources | indent 12 }}
           env:
             - name: BUNNYCDN_API_KEY
+              {{- if .Values.secret.name }}
+              valueFrom:
+                secretKeyRef:
+                  name: "{{ .Values.secret.name }}"
+                  key: "{{ .Values.secret.key }}"
+              {{- else}}
               value: {{ .Values.api_key }}
+              {{ end }}
