@@ -52,7 +52,7 @@ Simply add this Chart repository to Helm:
 | tls.privateKey | string | `""` | Base64 encoded private key file for TLS certificate. |
 | tolerations | list | `[]` | A toleration |
 | topologyAware | string | `"auto"` | Configures Toplogy Aware Hints |
-| topologySpreadConstraints | list | `[{"labelSelector":{"matchExpressions":[{"key":"app.kubernetes.io/name","operator":"In","values":["imaginary"]}]},"maxSkew":1,"topologyKey":"topology.kubernetes.io/zone","whenUnsatisfiable":"DoNotSchedule"}]` | Configures the topology spread constraints |
+| topologySpreadConstraints | list | `[]` | Configures the topology spread constraints |
 
 ## Source Code
 

@@ -96,13 +96,13 @@ hpa:
 topologyAware: auto
 
 # -- Configures the topology spread constraints
-topologySpreadConstraints:
-  - labelSelector:
-      matchExpressions:
-      - key: app.kubernetes.io/name
-        operator: In
-        values:
-        - "imaginary"
-    maxSkew: 1
-    topologyKey: topology.kubernetes.io/zone
-    whenUnsatisfiable: DoNotSchedule
+topologySpreadConstraints: []
+  # - labelSelector:
+  #     matchExpressions:
+  #     - key: app.kubernetes.io/name
+  #       operator: In
+  #       values:
+  #       - "imaginary"
+  #   maxSkew: 1
+  #   topologyKey: topology.kubernetes.io/zone
+  #   whenUnsatisfiable: DoNotSchedule
