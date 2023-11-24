@@ -91,3 +91,9 @@ pdb:
 hpa:
   minReplicas: 2
   maxReplicas: 2
+
+# -- Configures Toplogy Aware Hints
+topologyAware: auto
+
+# -- Configures the key for topology spread constraints
+topologyKey: topology.kubernetes.io/zone
