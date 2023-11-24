@@ -8,6 +8,8 @@ metadata:
     release: {{ .Release.Name | quote }}
     chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
     app: {{ .Release.Name | quote }}
+  annotations:
+    service.kubernetes.io/topology-aware-hints: {{ .Values.topologyAware | quote }}
 spec:
   selector:
     app: {{ template "imaginary.fullname" . }}
