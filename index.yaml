@@ -196,6 +196,31 @@ entries:
   imaginary:
   - annotations:
       artifacthub.io/changes: |
+        - Make TopologySpreadConstraints fully configurable
+      artifacthub.io/images: |
+        - name: imaginary
+          image: h2non/imaginary:1.2.4
+    apiVersion: v2
+    appVersion: 1.2.4
+    created: "2023-11-24T13:19:18.649673039Z"
+    description: Deploy imaginary to process pictures on the fly
+    digest: 26171a362f9070cc2a3a70b96acf3ff521e20597c67c66beaf59fd2e3e30252a
+    home: https://github.com/h2non/imaginary
+    keywords:
+    - imaginary
+    - h2non
+    maintainers:
+    - email: sre@ricardo.ch
+      name: ricardo-ch
+    name: imaginary
+    sources:
+    - https://github.com/ricardo-ch/helm-charts/tree/main/charts/imaginary
+    - https://github.com/h2non/imaginary
+    urls:
+    - https://github.com/ricardo-ch/helm-charts/releases/download/imaginary-0.2.1/imaginary-0.2.1.tgz
+    version: 0.2.1
+  - annotations:
+      artifacthub.io/changes: |
         - Add TopologySpreadConstraints to the deployment
         - Add Topology Aware Hints to the service
       artifacthub.io/images: |
@@ -1731,4 +1756,4 @@ entries:
     urls:
     - https://github.com/ricardo-ch/helm-charts/releases/download/promlens-0.1.3/promlens-0.1.3.tgz
     version: 0.1.3
-generated: "2023-11-24T09:44:52.094913225Z"
+generated: "2023-11-24T13:19:18.649958308Z"
