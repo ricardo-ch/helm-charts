@@ -96,4 +96,4 @@ hpa:
 topologyAware: auto
 
 # -- Configures Toplogy Spread Constraints
-topologySpreadConstraints: []
+topologySpreadConstraints: nil
