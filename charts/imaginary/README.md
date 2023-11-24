@@ -1,6 +1,6 @@
 # imaginary
 
-![Version: 0.2.0](https://img.shields.io/badge/Version-0.2.0-informational?style=flat-square) ![AppVersion: 1.2.4](https://img.shields.io/badge/AppVersion-1.2.4-informational?style=flat-square) ![Release Status](https://github.com/ricardo-ch/helm-charts/workflows/Release%20Charts/badge.svg) [![License](https://img.shields.io/github/license/ricardo-ch/helm-charts)](https://github.com/ricardo-ch/helm-charts/blob/main/LICENSE)
+![Version: 0.2.1](https://img.shields.io/badge/Version-0.2.1-informational?style=flat-square) ![AppVersion: 1.2.4](https://img.shields.io/badge/AppVersion-1.2.4-informational?style=flat-square) ![Release Status](https://github.com/ricardo-ch/helm-charts/workflows/Release%20Charts/badge.svg) [![License](https://img.shields.io/github/license/ricardo-ch/helm-charts)](https://github.com/ricardo-ch/helm-charts/blob/main/LICENSE)
 
 This chart installs [Imaginary](https://github.com/h2non/imaginary).
 
@@ -52,7 +52,7 @@ Simply add this Chart repository to Helm:
 | tls.privateKey | string | `""` | Base64 encoded private key file for TLS certificate. |
 | tolerations | list | `[]` | A toleration |
 | topologyAware | string | `"auto"` | Configures Toplogy Aware Hints |
-| topologyKey | string | `"topology.kubernetes.io/zone"` | Configures the key for topology spread constraints |
+| topologySpreadConstraints | list | `[{"labelSelector":{"matchExpressions":[{"key":"app.kubernetes.io/name","operator":"In","values":["imaginary"]}]},"maxSkew":1,"topologyKey":"topology.kubernetes.io/zone","whenUnsatisfiable":"DoNotSchedule"}]` | Configures the topology spread constraints |
 
 ## Source Code
 

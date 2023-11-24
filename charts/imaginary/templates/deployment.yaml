@@ -38,6 +38,10 @@ spec:
       tolerations:
 {{ toYaml .Values.tolerations | indent 8 }}
       {{- end }}
+      {{- if .Values.topologySpreadConstraints }}
+      topologySpreadConstraints:
+{{ toYaml .Values.topologySpreadConstraints | indent 8 }}
+      {{- end }}
       {{- if .Values.nodeSelector }}
       nodeSelector:
 {{ toYaml .Values.nodeSelector | indent 8 }}
@@ -46,16 +50,6 @@ spec:
       - name: "imaginary"
         image: {{ .Values.image | quote }}
         imagePullPolicy: {{ .Values.imagePullPolicy }}
-        topologySpreadConstraints:
-        - labelSelector:
-            matchExpressions:
-            - key: app.kubernetes.io/name
-              operator: In
-              values:
-              - {{ .Release.Name | quote }}
-          maxSkew: 1
-          topologyKey: {{ .Values.topologyKey | quote }}
-          whenUnsatisfiable: DoNotSchedule
         env:
         - name: PORT
           value: {{ .Values.httpPort | quote }}
