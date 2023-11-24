@@ -77,10 +77,10 @@ jobs:
     strategy:
       matrix:
         k8s:
-          - 1.24.16
-          - 1.25.12
-          - 1.26.7
-          - 1.27.4
+          - 1.25.16
+          - 1.26.9
+          - 1.27.8
+          - 1.28.4
     steps:
       - name: Checkout
         uses: actions/checkout@v1
