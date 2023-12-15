@@ -196,6 +196,31 @@ entries:
   imaginary:
   - annotations:
       artifacthub.io/changes: |
+        - "Rename templates/seccret_tls.yaml to templates/secret_tls.yaml"
+      artifacthub.io/images: |
+        - name: imaginary
+          image: h2non/imaginary:1.2.4
+    apiVersion: v2
+    appVersion: 1.2.4
+    created: "2023-12-15T06:53:36.279731655Z"
+    description: Deploy imaginary to process pictures on the fly
+    digest: 3e0434f95a792a4051d3df6864ed03a33799d85c420d427c93d399e6c80e8960
+    home: https://github.com/h2non/imaginary
+    keywords:
+    - imaginary
+    - h2non
+    maintainers:
+    - email: sre@ricardo.ch
+      name: ricardo-ch
+    name: imaginary
+    sources:
+    - https://github.com/ricardo-ch/helm-charts/tree/main/charts/imaginary
+    - https://github.com/h2non/imaginary
+    urls:
+    - https://github.com/ricardo-ch/helm-charts/releases/download/imaginary-0.2.2/imaginary-0.2.2.tgz
+    version: 0.2.2
+  - annotations:
+      artifacthub.io/changes: |
         - Make TopologySpreadConstraints fully configurable
       artifacthub.io/images: |
         - name: imaginary
@@ -1756,4 +1781,4 @@ entries:
     urls:
     - https://github.com/ricardo-ch/helm-charts/releases/download/promlens-0.1.3/promlens-0.1.3.tgz
     version: 0.1.3
-generated: "2023-11-24T13:19:18.649958308Z"
+generated: "2023-12-15T06:53:36.279997942Z"
