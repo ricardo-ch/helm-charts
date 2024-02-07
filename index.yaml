@@ -196,6 +196,31 @@ entries:
   imaginary:
   - annotations:
       artifacthub.io/changes: |
+        - "Change 'sidecar.istio.io/inject' annotation to label to following istio change"
+      artifacthub.io/images: |
+        - name: imaginary
+          image: h2non/imaginary:1.2.4
+    apiVersion: v2
+    appVersion: 1.2.4
+    created: "2024-02-07T13:05:48.9550068Z"
+    description: Deploy imaginary to process pictures on the fly
+    digest: 97b1ad22978ad4ac6fd61ef6ec8f69e3fa93f02169ac38c531077174d9d377d8
+    home: https://github.com/h2non/imaginary
+    keywords:
+    - imaginary
+    - h2non
+    maintainers:
+    - email: sre@ricardo.ch
+      name: ricardo-ch
+    name: imaginary
+    sources:
+    - https://github.com/ricardo-ch/helm-charts/tree/main/charts/imaginary
+    - https://github.com/h2non/imaginary
+    urls:
+    - https://github.com/ricardo-ch/helm-charts/releases/download/imaginary-0.2.3/imaginary-0.2.3.tgz
+    version: 0.2.3
+  - annotations:
+      artifacthub.io/changes: |
         - "Rename templates/seccret_tls.yaml to templates/secret_tls.yaml"
       artifacthub.io/images: |
         - name: imaginary
@@ -1781,4 +1806,4 @@ entries:
     urls:
     - https://github.com/ricardo-ch/helm-charts/releases/download/promlens-0.1.3/promlens-0.1.3.tgz
     version: 0.1.3
-generated: "2023-12-15T06:53:36.279997942Z"
+generated: "2024-02-07T13:05:48.955232499Z"
