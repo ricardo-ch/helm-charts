@@ -22,9 +22,11 @@ spec:
         {{- range $key, $value := .Values.additionalLabels }}
         {{ $key }}: {{ $value }}
         {{- end }}
-      annotations:
 {{- if .Values.istio.inject }}
         sidecar.istio.io/inject: {{ quote .Values.istio.inject }}
+{{- end }}
+      annotations:
+{{- if .Values.istio.inject }}
         sidecar.istio.io/proxyCPU: {{ .Values.istio.cpu }}
         {{- if .Values.istio.cpuLimit }}
         sidecar.istio.io/proxyCPULimit: {{ .Values.istio.cpuLimit }}
