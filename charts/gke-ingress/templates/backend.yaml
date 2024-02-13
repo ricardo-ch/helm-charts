@@ -1,0 +1,21 @@
+{{ range .Values.backends }}
+apiVersion: cloud.google.com/v1
+kind: BackendConfig
+metadata:
+  name: {{ .name }}
+  namespace: {{ default "istio-ingress" .namespace }}
+spec:
+  healthCheck:
+{{ toYaml .healthCheck | indent 4}}
+{{- if .policyName}}
+  securityPolicy:
+    name: {{.policyName}}
+{{- end}}
+{{- if .iap}}
+  iap:
+    enabled: {{.iap.enabled}}
+    oauthclientCredentials:
+      secretName: {{.iap.secretName}}
+{{- end}}
+---
+{{end}}

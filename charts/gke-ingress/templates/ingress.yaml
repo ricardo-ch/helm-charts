@@ -1,0 +1,40 @@
+{{range .Values.ingress}}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{.name}}
+  namespace: {{ default "istio-ingress" .namespace}}
+  annotations:
+{{toYaml .annotations | indent 4}}
+  {{- if .labels }}
+  labels:
+{{toYaml .labels | indent 4}}
+  {{- end}}
+spec:
+  {{- if .class}}
+  ingressClassName: {{.class}}
+  {{- end}}
+  defaultBackend:
+    service:
+      name: {{.defaultBackend.name}}
+      port:
+        number: {{.defaultBackend.port}}
+{{- if .rules }}
+{{- range .rules}}
+  rules:
+    - http:
+        paths:
+          - path: {{.path}}
+            pathType: {{.type}}
+            backend:
+              service:
+                name: {{.backend.name}}
+                port:
+                  number: {{.backend.port}}
+      {{- if .host}}
+      host: {{.host}}
+      {{- end}}
+{{end}}
+{{end}}
+---
+{{end}}
