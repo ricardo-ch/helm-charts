@@ -196,6 +196,25 @@ entries:
   gke-ingress:
   - annotations:
       artifacthub.io/changes: |
+        - Fix service
+    apiVersion: v2
+    appVersion: 0.1.0
+    created: "2024-02-13T13:58:01.254777437Z"
+    description: gke-ingress and related resources
+    digest: 65d2b3e7336b24bba7bbe9a23967cf5706ed7d256b36a431ffe880f1034eca94
+    keywords:
+    - ingress
+    maintainers:
+    - email: sre@ricardo.ch
+      name: ricardo-ch
+    name: gke-ingress
+    sources:
+    - https://github.com/ricardo-ch/helm-charts/tree/main/charts/gke-ingress
+    urls:
+    - https://github.com/ricardo-ch/helm-charts/releases/download/gke-ingress-0.2.0/gke-ingress-0.2.0.tgz
+    version: 0.2.0
+  - annotations:
+      artifacthub.io/changes: |
         - Initial chart
     apiVersion: v2
     appVersion: 0.1.0
@@ -1826,4 +1845,4 @@ entries:
     urls:
     - https://github.com/ricardo-ch/helm-charts/releases/download/promlens-0.1.3/promlens-0.1.3.tgz
     version: 0.1.3
-generated: "2024-02-13T09:13:22.502210844Z"
+generated: "2024-02-13T13:58:01.255041088Z"
