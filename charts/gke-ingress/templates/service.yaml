@@ -1,18 +1,17 @@
-{{range .Values.service}}
+{{ with .Values.service }}
 apiVersion: v1
 kind: Service
 metadata:
   name: {{ .name }}
   namespace: {{ default "istio-ingress" .namespace}}
   labels:
-    {{- include "gke-ingress.labels" . | nindent 4 }}
+{{- .labels | toYaml | nindent 4 }}
   annotations:
-    {{- .annotations | toYaml | nindent 4 }}
+{{- .annotations | toYaml | nindent 4 }}
 spec:
   type: {{ .type }}
   ports:
 {{ .ports | toYaml | indent 4 }}
   selector:
-    {{- include "gke-ingress.selectorLabels" . | nindent 4 }}
----
+{{- .selector | toYaml | nindent 4 }}
 {{ end }}
