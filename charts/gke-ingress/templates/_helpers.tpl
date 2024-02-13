@@ -46,13 +46,13 @@ app.kubernetes.io/name: {{ include "gke-ingress.name" . }}
 {{- if hasKey .Values.service.labels "app" }}
 {{- with .Values.service.labels.app }}app: {{.|quote}}
 {{- end}}
-{{- else }}app: {{ include "gateway.name" . }}
+{{- else }}app: {{ include "gke-ingress.name" . }}
 {{- end }}
 {{- if hasKey .Values.service.labels "istio" }}
 {{- with .Values.service.labels.istio }}
 istio: {{.|quote}}
 {{- end}}
 {{- else }}
-istio: {{ include "gateway.name" . | trimPrefix "istio-" }}
+istio: {{ include "gke-ingress.name" . | trimPrefix "istio-" }}
 {{- end }}
 {{- end }}
