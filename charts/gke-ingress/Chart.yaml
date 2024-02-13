@@ -1,0 +1,15 @@
+apiVersion: v2
+name: gke-ingress
+version: 0.1.0
+appVersion: 0.1.0
+description: gke-ingress and related resources
+sources:
+  - https://github.com/ricardo-ch/helm-charts/tree/main/charts/gke-ingress
+maintainers:
+  - name: ricardo-ch
+    email: sre@ricardo.ch
+keywords:
+  - ingress
+annotations:
+  artifacthub.io/changes: |
+    - Initial chart

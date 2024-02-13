@@ -13,6 +13,7 @@ The public Ricardo AG Helm Charts. The code is provided as-is with no warranties
 * [metrics-exporter](https://github.com/ricardo-ch/helm-charts/tree/main/charts/metrics-exporter)
 * [nobl9-agent](https://github.com/ricardo-ch/helm-charts/tree/main/charts/nobl9-agent)
 * [promlens](https://github.com/ricardo-ch/helm-charts/tree/main/charts/promlens)
+* [gke-ingress](https://github.com/ricardo-ch/helm-charts/tree/main/charts/gke-ingress)
 
 ## How To Use These Charts
 
