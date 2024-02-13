@@ -193,6 +193,26 @@ entries:
     urls:
     - https://github.com/ricardo-ch/helm-charts/releases/download/bunnycdn-exporter-0.9.0/bunnycdn-exporter-0.9.0.tgz
     version: 0.9.0
+  gke-ingress:
+  - annotations:
+      artifacthub.io/changes: |
+        - Initial chart
+    apiVersion: v2
+    appVersion: 0.1.0
+    created: "2024-02-13T09:13:22.501930321Z"
+    description: gke-ingress and related resources
+    digest: 8d27241a7e54e3fb5d9c27613cf42912887fdf67a4f4e6d91c860e0dc9cf8f61
+    keywords:
+    - ingress
+    maintainers:
+    - email: sre@ricardo.ch
+      name: ricardo-ch
+    name: gke-ingress
+    sources:
+    - https://github.com/ricardo-ch/helm-charts/tree/main/charts/gke-ingress
+    urls:
+    - https://github.com/ricardo-ch/helm-charts/releases/download/gke-ingress-0.1.0/gke-ingress-0.1.0.tgz
+    version: 0.1.0
   imaginary:
   - annotations:
       artifacthub.io/changes: |
@@ -1806,4 +1826,4 @@ entries:
     urls:
     - https://github.com/ricardo-ch/helm-charts/releases/download/promlens-0.1.3/promlens-0.1.3.tgz
     version: 0.1.3
-generated: "2024-02-07T13:05:48.955232499Z"
+generated: "2024-02-13T09:13:22.502210844Z"
