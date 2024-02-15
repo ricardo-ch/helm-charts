@@ -1,6 +1,6 @@
 apiVersion: v2
 name: gke-ingress
-version: 0.3.0
+version: 0.4.0
 appVersion: 0.1.0
 description: gke-ingress and related resources
 sources:
