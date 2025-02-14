@@ -9,7 +9,7 @@ on:
 jobs:
 
   check-spelling:
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-2vcpu-ubuntu-2204
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -20,7 +20,7 @@ jobs:
           check_filenames: true
 
   lint-chart:
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-2vcpu-ubuntu-2204
     needs:
       - kubeconform
       - lint-docs
@@ -65,7 +65,7 @@ jobs:
 
 
   lint-docs:
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-2vcpu-ubuntu-2204
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -73,7 +73,7 @@ jobs:
         run: .github/helm-docs.sh
 
   kubeconform:
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-2vcpu-ubuntu-2204
     strategy:
       matrix:
         k8s:
@@ -81,6 +81,7 @@ jobs:
           - 1.26.9
           - 1.27.8
           - 1.28.4
+          - 1.30.9
     steps:
       - name: Checkout
         uses: actions/checkout@v1
