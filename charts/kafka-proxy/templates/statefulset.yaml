@@ -80,7 +80,7 @@ spec:
           ports:
           - name: metrics
             containerPort: 9080
-          {{- range $index, $broker := .Values.config.brokers }}
+          {{- range $index, $broker := .Values.config.kafkaClient.brokers }}
           - name: kafka-{{ add $index }}
             containerPort: {{ add 32400 $index }}
           {{- end }}
