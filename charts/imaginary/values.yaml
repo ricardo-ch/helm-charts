@@ -92,7 +92,7 @@ hpa:
   minReplicas: 2
   maxReplicas: 2
 
-# -- Configures Toplogy Aware Hints
+# -- Configures Topology Aware Hints
 topologyAware: auto
 
 # -- Configures the topology spread constraints
